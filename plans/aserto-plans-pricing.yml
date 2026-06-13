@@ -1,0 +1,77 @@
+specificationVersion: "0.1"
+id: aserto-plans-pricing
+name: Aserto Plans and Pricing
+description: >
+  Aserto offered a tiered SaaS pricing model for its hosted authorization
+  control plane. The commercial SaaS service was wound down in May 2025; the
+  open-source Topaz project (github.com/aserto-dev/topaz) now provides
+  self-hosted authorization without licensing fees. The pricing tiers below
+  reflect the historical commercial offering for reference.
+url: https://www.aserto.com/pricing
+created: "2026-06-13"
+modified: "2026-06-13"
+plans:
+  - name: Free
+    description: >
+      Free tier for individual developers and small teams getting started with
+      fine-grained authorization. Includes access to the hosted Authorizer,
+      Directory, and Decision Logs APIs with limited monthly authorization
+      decisions.
+    price: 0
+    currency: USD
+    billingPeriod: monthly
+    features:
+      - Hosted Authorizer API
+      - Hosted Directory API
+      - Decision Logs (limited retention)
+      - Community Slack support
+      - Up to 1 policy module
+      - REST and gRPC access
+    rateLimits:
+      - name: Authorization Decisions
+        description: Monthly authorization decision limit on free tier
+        quota: 100000
+        unit: decisions/month
+  - name: Pro
+    description: >
+      For growing teams and production applications requiring higher decision
+      volumes, multiple policy modules, longer log retention, and priority
+      support.
+    price: 49
+    currency: USD
+    billingPeriod: monthly
+    features:
+      - Everything in Free
+      - Higher decision volume quotas
+      - Multiple policy modules
+      - Extended Decision Log retention
+      - Email support
+      - Edge Authorizer support
+      - Auth0, Okta, Google Workspace integrations
+    rateLimits:
+      - name: Authorization Decisions
+        description: Monthly authorization decision limit on Pro tier
+        quota: 5000000
+        unit: decisions/month
+  - name: Enterprise
+    description: >
+      Custom agreements for large organizations requiring unlimited decisions,
+      dedicated infrastructure, SLA guarantees, audit compliance, SSO, and
+      dedicated support. Contact sales for pricing.
+    price: null
+    currency: USD
+    billingPeriod: annual
+    contactSales: true
+    features:
+      - Everything in Pro
+      - Unlimited authorization decisions
+      - Dedicated infrastructure options
+      - Custom SLA
+      - SSO / SAML
+      - SOC 2 compliance support
+      - Dedicated support and onboarding
+      - Custom integrations
+notes: >
+  Aserto wound down its commercial SaaS control plane in May 2025. The
+  open-source Topaz project (https://www.topaz.sh/) continues as the community
+  successor, self-hosted at no licensing cost under Apache 2.0.

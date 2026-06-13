@@ -1,0 +1,110 @@
+specificationVersion: "0.1"
+id: aserto-rate-limits
+name: Aserto Rate Limits
+description: >
+  Rate limit information for Aserto's hosted API services (Authorizer,
+  Directory, Decision Logs, and Control Plane). Aserto's commercial SaaS
+  control plane was wound down in May 2025; rate limits below reflect the
+  historical hosted service behaviour. The open-source Topaz successor has no
+  imposed rate limits — limits are bounded only by self-hosted infrastructure
+  capacity.
+url: https://docs.aserto.com/docs/authorizer-guide/overview
+created: "2026-06-13"
+modified: "2026-06-13"
+rateLimits:
+  - api: Authorizer API
+    scope: per-tenant
+    limits:
+      - name: Authorization Decisions (Free)
+        description: >
+          Maximum number of /is, /query, and /decisiontree calls per calendar
+          month on the Free plan.
+        quota: 100000
+        unit: requests/month
+        enforcement: soft — excess requests may be throttled
+      - name: Authorization Decisions (Pro)
+        description: >
+          Maximum number of authorization decisions per calendar month on the
+          Pro plan.
+        quota: 5000000
+        unit: requests/month
+        enforcement: soft — contact sales for burst increases
+      - name: Concurrent Connections (gRPC)
+        description: >
+          Recommended maximum concurrent gRPC streams per tenant to avoid
+          connection saturation on shared infrastructure.
+        quota: 50
+        unit: concurrent streams
+        enforcement: best-effort
+  - api: Directory API
+    scope: per-tenant
+    limits:
+      - name: Read Operations (Free)
+        description: Monthly limit on Directory read operations (GetObject, GetRelation, etc.)
+        quota: 500000
+        unit: requests/month
+        enforcement: soft
+      - name: Write Operations (Free)
+        description: Monthly limit on Directory write operations (SetObject, SetRelation, etc.)
+        quota: 50000
+        unit: requests/month
+        enforcement: soft
+      - name: Read Operations (Pro)
+        description: Monthly limit on Directory read operations on Pro plan.
+        quota: 25000000
+        unit: requests/month
+        enforcement: soft
+      - name: Write Operations (Pro)
+        description: Monthly limit on Directory write operations on Pro plan.
+        quota: 2500000
+        unit: requests/month
+        enforcement: soft
+  - api: Decision Logs API
+    scope: per-tenant
+    limits:
+      - name: Log Retention (Free)
+        description: Decision log entries retained on the Free plan.
+        quota: 7
+        unit: days
+        enforcement: hard
+      - name: Log Retention (Pro)
+        description: Decision log entries retained on the Pro plan.
+        quota: 90
+        unit: days
+        enforcement: hard
+      - name: Log Ingestion Rate
+        description: Maximum decision log events ingested per second across all Authorizer instances.
+        quota: 1000
+        unit: events/second
+        enforcement: soft
+  - api: Control Plane API
+    scope: per-tenant
+    limits:
+      - name: Policy Deployments
+        description: >
+          Maximum number of policy module deployments triggered per hour to
+          prevent runaway automation from overwhelming shared infrastructure.
+        quota: 60
+        unit: requests/hour
+        enforcement: hard — HTTP 429 returned on excess
+      - name: Management API Calls
+        description: General management API rate limit (tenant CRUD, connection management, etc.)
+        quota: 300
+        unit: requests/minute
+        enforcement: hard — HTTP 429 returned on excess
+headers:
+  - name: Retry-After
+    description: >
+      Returned with HTTP 429 responses indicating the number of seconds the
+      client should wait before retrying the request.
+  - name: X-RateLimit-Limit
+    description: The maximum number of requests allowed in the current period.
+  - name: X-RateLimit-Remaining
+    description: The number of requests remaining in the current rate limit window.
+  - name: X-RateLimit-Reset
+    description: Unix timestamp indicating when the current rate limit window resets.
+notes: >
+  Aserto wound down its commercial SaaS control plane in May 2025. These rate
+  limits applied to the hosted service. For the open-source Topaz successor
+  (https://www.topaz.sh/), rate limits are entirely determined by the operator's
+  infrastructure configuration.

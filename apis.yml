@@ -1,0 +1,128 @@
+aid: aserto
+name: Aserto
+description: >
+  Aserto is a cloud-native authorization platform providing fine-grained,
+  policy-based access control for applications and APIs. Built on Open Policy
+  Agent (OPA) and a Google Zanzibar-inspired directory, Aserto exposes REST and
+  gRPC APIs for the Authorizer (real-time authorization decisions), Directory
+  (managing users, groups, objects, and relations), and Decision Logs
+  (audit trails of authorization events). The open-source Topaz engine carries
+  the technology forward after the commercial SaaS control plane was wound down
+  in May 2025.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/aserto/refs/heads/main/apis.yml
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+tags:
+  - Authorization
+  - Fine-Grained Access Control
+  - RBAC
+  - ABAC
+  - ReBAC
+  - Policy
+  - Open Policy Agent
+  - OPA
+  - Cloud-Native
+  - Security
+apis:
+  - name: Aserto Authorizer API
+    description: >
+      Real-time authorization decision engine powered by Open Policy Agent.
+      Exposes /is, /query, and /decisiontree endpoints that evaluate a policy
+      against identity context, resource context, and policy context to return
+      allow/deny decisions with sub-millisecond latency. Supports both gRPC and
+      HTTPS REST transports.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+    baseURL: https://authorizer.prod.aserto.com
+    tags:
+      - Authorization
+      - Policy Enforcement
+      - OPA
+    properties:
+      - type: Documentation
+        url: https://docs.aserto.com/docs/authorizer-guide/overview
+      - type: OpenAPI
+        url: https://github.com/aserto-dev/openapi-directory
+  - name: Aserto Directory API
+    description: >
+      Manages the authorization data store — users, groups, objects, relations,
+      and permissions — modelled after the Google Zanzibar relationship-based
+      access control (ReBAC) system. Provides read and write operations over
+      directory objects and relations used to evaluate fine-grained authorization
+      decisions at runtime.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.aserto.com/docs/api-reference
+    baseURL: https://directory.prod.aserto.com
+    tags:
+      - Directory
+      - ReBAC
+      - Objects
+      - Relations
+    properties:
+      - type: Documentation
+        url: https://docs.aserto.com/docs/api-reference
+      - type: OpenAPI
+        url: https://github.com/aserto-dev/openapi-directory
+  - name: Aserto Decision Logs API
+    description: >
+      Collects and surfaces a complete audit trail of authorization decisions
+      made by connected Authorizer instances. Supports compliance, debugging,
+      and analytics use cases by recording who was authorized (or denied),
+      which policy evaluated the decision, and the context at decision time.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.aserto.com/docs/api-reference
+    baseURL: https://console.aserto.com
+    tags:
+      - Decision Logs
+      - Audit
+      - Compliance
+    properties:
+      - type: Documentation
+        url: https://docs.aserto.com/docs/api-reference
+  - name: Aserto Control Plane API
+    description: >
+      Management API for the Aserto SaaS control plane (wound down May 2025,
+      succeeded by the open-source Topaz project). Provided lifecycle management
+      of policies, Edge Authorizer instances, tenants, and connection
+      configurations. Referenced here for historical completeness; the
+      open-source Topaz project at github.com/aserto-dev/topaz carries forward
+      the self-hosted control-plane functionality.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.aserto.com/docs/api-reference
+    baseURL: https://console.aserto.com
+    tags:
+      - Control Plane
+      - Management
+      - Policies
+    properties:
+      - type: Documentation
+        url: https://docs.aserto.com/docs/api-reference
+common:
+  - type: Website
+    url: https://www.aserto.com/
+  - type: Documentation
+    url: https://docs.aserto.com/docs
+  - type: GitHubOrg
+    url: https://github.com/aserto-dev
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/aserto-com
+  - type: X
+    url: https://x.com/aserto_com
+  - type: Blog
+    url: https://www.aserto.com/blog
+  - type: Pricing
+    url: https://www.aserto.com/pricing
+  - type: StatusPage
+    url: https://status.aserto.com
+  - type: Plans
+    url: plans/aserto-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/aserto-rate-limits.yml
+  - type: FinOps
+    url: finops/aserto-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

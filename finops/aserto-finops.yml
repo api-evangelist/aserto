@@ -1,0 +1,156 @@
+specificationVersion: "1.0"
+id: aserto-finops
+name: Aserto FinOps Framework Profile
+description: >
+  FinOps Framework FOCUS-aligned cost and usage profile for Aserto's
+  authorization platform APIs. Covers the historical commercial SaaS offering
+  (wound down May 2025) and guidance for the open-source Topaz successor for
+  organizations performing cloud cost allocation of self-hosted authorization
+  infrastructure.
+url: https://www.aserto.com/pricing
+created: "2026-06-13"
+modified: "2026-06-13"
+provider:
+  name: Aserto
+  url: https://www.aserto.com/
+  status: historical-saas-wound-down-2025
+  successor: https://www.topaz.sh/
+costDimensions:
+  - dimension: Authorization Decisions
+    description: >
+      The primary consumption unit for the Authorizer API. Each call to /is,
+      /query, or /decisiontree counts as one authorization decision. Decisions
+      are the main metered unit across Free and Pro plans.
+    unit: decisions
+    granularity: monthly
+    tiers:
+      - name: Free
+        upTo: 100000
+        pricePerUnit: 0.00
+        currency: USD
+      - name: Pro Included
+        upTo: 5000000
+        pricePerUnit: 0.00
+        currency: USD
+        note: Included in the $49/month Pro subscription
+      - name: Pro Overage
+        upTo: unlimited
+        pricePerUnit: 0.000005
+        currency: USD
+        note: Estimated — Aserto did not publish explicit overage pricing before wind-down
+  - dimension: Directory Operations
+    description: >
+      Read and write operations against the Aserto Directory service (object
+      and relation management). Write operations are typically priced at a
+      higher rate than reads due to consistency and replication overhead.
+    unit: operations
+    granularity: monthly
+    tiers:
+      - name: Free Reads
+        upTo: 500000
+        pricePerUnit: 0.00
+        currency: USD
+      - name: Free Writes
+        upTo: 50000
+        pricePerUnit: 0.00
+        currency: USD
+      - name: Pro Reads Included
+        upTo: 25000000
+        pricePerUnit: 0.00
+        currency: USD
+        note: Included in Pro subscription
+      - name: Pro Writes Included
+        upTo: 2500000
+        pricePerUnit: 0.00
+        currency: USD
+        note: Included in Pro subscription
+  - dimension: Decision Log Storage
+    description: >
+      Retention of authorization decision log events for compliance and
+      debugging. Priced by retention window; longer retention is available on
+      higher tiers.
+    unit: days-retained
+    granularity: monthly
+    tiers:
+      - name: Free
+        upTo: 7
+        pricePerUnit: 0.00
+        currency: USD
+      - name: Pro
+        upTo: 90
+        pricePerUnit: 0.00
+        currency: USD
+        note: Included in Pro subscription
+      - name: Enterprise
+        upTo: null
+        pricePerUnit: null
+        currency: USD
+        note: Custom — negotiated in enterprise contract
+  - dimension: SaaS Subscription
+    description: >
+      Base monthly subscription fee covering platform access, shared
+      infrastructure, support, and included quota allotments.
+    unit: month
+    granularity: monthly
+    tiers:
+      - name: Free
+        price: 0.00
+        currency: USD
+      - name: Pro
+        price: 49.00
+        currency: USD
+      - name: Enterprise
+        price: null
+        currency: USD
+        note: Annual contract, price negotiated with sales
+selfHostedFinOps:
+  description: >
+    Organizations running the open-source Topaz successor self-host all
+    authorization infrastructure. There is no per-decision or per-operation
+    licensing fee. FinOps practitioners should allocate costs through
+    infrastructure dimensions instead.
+  costDrivers:
+    - name: Compute
+      description: >
+        CPU and memory for Topaz authorizer pods/VMs. Authorization decisions
+        are CPU-bound (OPA policy evaluation); ~1 vCPU per ~5,000 decisions/sec
+        is a reasonable baseline estimate.
+      unit: vCPU-hours
+      allocationStrategy: tag-based or namespace-based in Kubernetes
+    - name: Storage
+      description: >
+        Persistent storage for the embedded directory (bbolt/BadgerDB) and
+        decision log buffers. Grows with directory object count and log
+        retention period.
+      unit: GB-months
+      allocationStrategy: PVC size x retention period
+    - name: Network Egress
+      description: >
+        Outbound network traffic from authorizer instances to calling services
+        and from the directory sync process to upstream identity providers.
+      unit: GB
+      allocationStrategy: per-cluster or per-namespace egress metering
+    - name: Observability
+      description: >
+        Metrics, traces, and log shipping costs (Prometheus, OTEL, Loki/Datadog)
+        for authorizer fleet monitoring. Typically small relative to compute.
+      unit: ingested-bytes
+      allocationStrategy: label-based cost allocation in observability platform
+focusMappings:
+  - focusColumn: ProviderName
+    value: Aserto (historical) / Self-hosted Topaz
+  - focusColumn: ServiceName
+    value: Authorization Platform
+  - focusColumn: ServiceCategory
+    value: Security & Identity
+  - focusColumn: ChargeType
+    value: Usage
+  - focusColumn: BillingCurrency
+    value: USD
+  - focusColumn: ChargeFrequency
+    value: Monthly
+notes: >
+  Aserto wound down its commercial SaaS offering in May 2025. All FinOps
+  figures for the hosted service are based on publicly available historical
+  pricing. For current deployments using Topaz (https://www.topaz.sh/) the
+  cost model is entirely infrastructure-based with no upstream licensing fees.
