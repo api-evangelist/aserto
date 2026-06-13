@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3ImportCounter",
+  "description": "v3ImportCounter schema from Aserto directory API",
+  "properties": {
+    "delete": {
+      "format": "uint64",
+      "title": "number of messages with OPCODE_DELETE",
+      "type": "string"
+    },
+    "error": {
+      "format": "uint64",
+      "title": "number of messages resulting in error",
+      "type": "string"
+    },
+    "recv": {
+      "format": "uint64",
+      "title": "number of messages received",
+      "type": "string"
+    },
+    "set": {
+      "format": "uint64",
+      "title": "number of messages with OPCODE_SET",
+      "type": "string"
+    },
+    "type": {
+      "title": "counter of type (object|relation)",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

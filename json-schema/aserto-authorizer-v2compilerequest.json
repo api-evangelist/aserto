@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2CompileRequest",
+  "description": "v2CompileRequest schema from Aserto authorizer API",
+  "properties": {
+    "disable_inlining": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "identity_context": {
+      "$ref": "#/components/schemas/apiIdentityContext"
+    },
+    "input": {
+      "type": "string"
+    },
+    "options": {
+      "$ref": "#/components/schemas/v2QueryOptions"
+    },
+    "policy_context": {
+      "$ref": "#/components/schemas/apiPolicyContext"
+    },
+    "policy_instance": {
+      "$ref": "#/components/schemas/apiPolicyInstance"
+    },
+    "query": {
+      "type": "string"
+    },
+    "resource_context": {
+      "type": "object"
+    },
+    "unknowns": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

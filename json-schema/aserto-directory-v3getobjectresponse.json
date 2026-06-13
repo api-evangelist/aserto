@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3GetObjectResponse",
+  "description": "v3GetObjectResponse schema from Aserto directory API",
+  "properties": {
+    "page": {
+      "$ref": "#/components/schemas/v3PaginationResponse"
+    },
+    "relations": {
+      "items": {
+        "$ref": "#/components/schemas/v3Relation"
+      },
+      "title": "object relations",
+      "type": "array"
+    },
+    "result": {
+      "$ref": "#/components/schemas/v3Object"
+    }
+  },
+  "type": "object"
+}

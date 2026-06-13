@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "protobufAny",
+  "description": "protobufAny schema from Aserto decision-logs API",
+  "properties": {
+    "type_url": {
+      "type": "string"
+    },
+    "value": {
+      "format": "byte",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

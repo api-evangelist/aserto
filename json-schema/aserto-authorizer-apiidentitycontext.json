@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "apiIdentityContext",
+  "description": "apiIdentityContext schema from Aserto authorizer API",
+  "properties": {
+    "identity": {
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/components/schemas/apiIdentityType"
+    }
+  },
+  "type": "object"
+}

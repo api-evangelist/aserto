@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3GetObjectManyResponse",
+  "description": "v3GetObjectManyResponse schema from Aserto directory API",
+  "properties": {
+    "results": {
+      "items": {
+        "$ref": "#/components/schemas/v3Object"
+      },
+      "title": "array of object instances",
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

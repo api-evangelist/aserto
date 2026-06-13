@@ -1,0 +1,63 @@
+{
+  "set_object_request": {
+    "summary": "Create or update a user object in the directory",
+    "value": {
+      "object": {
+        "type": "user",
+        "id": "user-123",
+        "display_name": "Jane Doe",
+        "properties": {
+          "email": "jane.doe@example.com",
+          "department": "engineering"
+        }
+      }
+    }
+  },
+  "set_relation_request": {
+    "summary": "Assign a user as a member of a group",
+    "value": {
+      "relation": {
+        "object_type": "group",
+        "object_id": "group-engineers",
+        "relation": "member",
+        "subject_type": "user",
+        "subject_id": "user-123"
+      }
+    }
+  },
+  "check_request": {
+    "summary": "Check if a user has a permission on an object",
+    "value": {
+      "object_type": "resource",
+      "object_id": "resource-456",
+      "relation": "can_read",
+      "subject_type": "user",
+      "subject_id": "user-123",
+      "trace": false
+    }
+  },
+  "check_response": {
+    "summary": "Permission check result",
+    "value": {
+      "check": true,
+      "trace": []
+    }
+  },
+  "get_object_response": {
+    "summary": "Directory object response",
+    "value": {
+      "result": {
+        "type": "user",
+        "id": "user-123",
+        "display_name": "Jane Doe",
+        "properties": {
+          "email": "jane.doe@example.com",
+          "department": "engineering"
+        },
+        "created_at": "2024-01-15T10:30:00Z",
+        "updated_at": "2024-06-01T08:15:00Z",
+        "etag": "\"abc123\""
+      }
+    }
+  }
+}

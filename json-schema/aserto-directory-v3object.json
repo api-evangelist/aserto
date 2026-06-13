@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3Object",
+  "description": "v3Object schema from Aserto directory API",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "readOnly": true,
+      "title": "created at timestamp (UTC)",
+      "type": "string"
+    },
+    "display_name": {
+      "title": "display name object",
+      "type": "string"
+    },
+    "etag": {
+      "title": "object instance etag",
+      "type": "string"
+    },
+    "id": {
+      "title": "external object identifier (cs-string, no spaces or tabs)",
+      "type": "string"
+    },
+    "properties": {
+      "title": "property bag",
+      "type": "object"
+    },
+    "type": {
+      "title": "object type name",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "readOnly": true,
+      "title": "last updated timestamp (UTC)",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "id"
+  ],
+  "type": "object"
+}

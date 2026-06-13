@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3CheckPermissionResponse",
+  "description": "v3CheckPermissionResponse schema from Aserto directory API",
+  "properties": {
+    "check": {
+      "title": "check result",
+      "type": "boolean"
+    },
+    "trace": {
+      "items": {
+        "type": "string"
+      },
+      "title": "trace information",
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

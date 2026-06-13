@@ -1,0 +1,1720 @@
+openapi: 3.0.0
+externalDocs:
+  description: Authorization API 1.0 - draft 03
+  url: https://openid.github.io/authzen/
+info:
+  contact:
+    email: support@aserto.com
+    name: Aserto, Inc.
+    url: https://github.com/aserto-dev/pb-directory
+  license:
+    name: Apache v2
+    url: https://github.com/aserto-dev/pb-directory/blob/main/LICENSE
+  title: OpenID AuthZen Access Service
+  version: 1.0.0-3
+paths:
+  /access/v1/evaluation:
+    post:
+      description: TBD
+      operationId: openid.authzen.access.v1.evaluation.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1EvaluationRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1EvaluationResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      summary: Access Evaluation API
+      tags:
+      - authzen
+  /access/v1/evaluations:
+    post:
+      description: TBD.
+      operationId: openid.authzen.access.v1.evaluations.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1EvaluationsRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1EvaluationsResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      summary: Access Evaluations API
+      tags:
+      - authzen
+  /access/v1/search/action:
+    post:
+      description: TBD.
+      operationId: openid.authzen.access.v1.search.action.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1ActionSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1ActionSearchResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      summary: Action Search API
+      tags:
+      - authzen
+  /access/v1/search/resource:
+    post:
+      description: TBD.
+      operationId: openid.authzen.access.v1.search.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1ResourceSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1ResourceSearchResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      summary: Resource Search API
+      tags:
+      - authzen
+  /access/v1/search/subject:
+    post:
+      description: TBD.
+      operationId: openid.authzen.access.v1.search.subject.post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1SubjectSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1SubjectSearchResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      summary: Subject Search API
+      tags:
+      - authzen
+  /api/v3/directory/assertion:
+    post:
+      description: Set assertion.
+      operationId: directory.assertion.v3.assertion.set
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3SetAssertionRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3SetAssertionResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Set assertion
+      tags:
+      - directory
+  /api/v3/directory/assertion/{id}:
+    delete:
+      description: Delete assertion.
+      operationId: directory.assertion.v3.assertion.delete
+      parameters:
+      - description: assertion identifier
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3DeleteAssertionResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Delete assertion
+      tags:
+      - directory
+    get:
+      description: Returns single assertion instance.
+      operationId: directory.assertion.v3.assertion.get
+      parameters:
+      - description: assertion identifier
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3GetAssertionResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Get assertion instance
+      tags:
+      - directory
+  /api/v3/directory/assertions:
+    get:
+      description: Returns list of assertion instances.
+      operationId: directory.assertion.v3.assertions.list
+      parameters:
+      - description: requested page size, valid value between 1-100 rows (default
+          100)
+        in: query
+        name: page.size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - description: pagination start token, default ""
+        in: query
+        name: page.token
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3ListAssertionsResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: List assertions
+      tags:
+      - directory
+  /api/v3/directory/check:
+    post:
+      description: Returns check outcome.
+      operationId: directory.reader.v3.check
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3CheckRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3CheckResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Check
+      tags:
+      - directory
+  /api/v3/directory/check/permission:
+    post:
+      deprecated: true
+      description: Returns check permission outcome.
+      operationId: directory.reader.v3.check.permission
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3CheckPermissionRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3CheckPermissionResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Check permission
+      tags:
+      - directory
+  /api/v3/directory/check/relation:
+    post:
+      deprecated: true
+      description: Returns check relation outcome.
+      operationId: directory.reader.v3.check.relation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3CheckRelationRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3CheckRelationResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Check relation
+      tags:
+      - directory
+  /api/v3/directory/checks:
+    post:
+      description: Returns multiple check outcomes.
+      operationId: directory.reader.v3.checks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3ChecksRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3ChecksResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Checks
+      tags:
+      - directory
+  /api/v3/directory/graph/{object_type}/{relation}/{subject_type}:
+    get:
+      description: Returns object graph from anchor to subject or object.
+      operationId: directory.reader.v3.graph
+      parameters:
+      - description: object type
+        in: path
+        name: object_type
+        required: true
+        schema:
+          type: string
+      - description: relation name
+        in: path
+        name: relation
+        required: true
+        schema:
+          type: string
+      - description: subject type
+        in: path
+        name: subject_type
+        required: true
+        schema:
+          type: string
+      - description: object identifier
+        in: query
+        name: object_id
+        required: false
+        schema:
+          type: string
+      - description: subject identifier
+        in: query
+        name: subject_id
+        required: false
+        schema:
+          type: string
+      - description: subject relation
+        in: query
+        name: subject_relation
+        required: false
+        schema:
+          type: string
+      - description: return graph paths for each result
+        in: query
+        name: explain
+        required: false
+        schema:
+          type: boolean
+      - description: collect trace information
+        in: query
+        name: trace
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3GetGraphResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Get graph
+      tags:
+      - directory
+  /api/v3/directory/manifest:
+    delete:
+      description: Delete manifest.
+      operationId: directory.model.v3.manifest.delete
+      parameters:
+      - description: empty request
+        in: query
+        name: empty
+        required: false
+        schema:
+          type: object
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3DeleteManifestResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Delete manifest
+      tags:
+      - directory
+  /api/v3/directory/object:
+    post:
+      description: Set object.
+      operationId: directory.writer.v3.object.set
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3SetObjectRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3SetObjectResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Set object
+      tags:
+      - directory
+  /api/v3/directory/object/{object_type}/{object_id}:
+    delete:
+      description: Delete object.
+      operationId: directory.writer.v3.object.delete
+      parameters:
+      - description: object type
+        in: path
+        name: object_type
+        required: true
+        schema:
+          type: string
+      - description: object identifier
+        in: path
+        name: object_id
+        required: true
+        schema:
+          type: string
+      - description: delete object relations, both object and subject relations.
+        in: query
+        name: with_relations
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3DeleteObjectResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Delete object
+      tags:
+      - directory
+    get:
+      description: Returns single object instance, optionally with relations.
+      operationId: directory.reader.v3.object.get
+      parameters:
+      - description: object type name (lc-string)
+        in: path
+        name: object_type
+        required: true
+        schema:
+          type: string
+      - description: object identifier (cs-string)
+        in: path
+        name: object_id
+        required: true
+        schema:
+          type: string
+      - description: materialize the object relations objects
+        in: query
+        name: with_relations
+        required: false
+        schema:
+          type: boolean
+      - description: requested page size, valid value between 1-100 rows (default
+          100)
+        in: query
+        name: page.size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - description: pagination start token, default ""
+        in: query
+        name: page.token
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3GetObjectResponse'
+        '304':
+          description: Object not modified.
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Get object instance
+      tags:
+      - directory
+  /api/v3/directory/objects:
+    get:
+      description: Returns list of object instances.
+      operationId: directory.reader.v3.objects.list
+      parameters:
+      - description: object type name (lc-string)
+        in: query
+        name: object_type
+        required: false
+        schema:
+          type: string
+      - description: requested page size, valid value between 1-100 rows (default
+          100)
+        in: query
+        name: page.size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - description: pagination start token, default ""
+        in: query
+        name: page.token
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3GetObjectsResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: List object instances
+      tags:
+      - directory
+  /api/v3/directory/relation:
+    delete:
+      description: Delete relation.
+      operationId: directory.writer.v3.relation.delete
+      parameters:
+      - description: object type
+        in: query
+        name: object_type
+        required: true
+        schema:
+          type: string
+      - description: object identifier
+        in: query
+        name: object_id
+        required: true
+        schema:
+          type: string
+      - description: object relation name
+        in: query
+        name: relation
+        required: true
+        schema:
+          type: string
+      - description: subject type
+        in: query
+        name: subject_type
+        required: true
+        schema:
+          type: string
+      - description: subject identifier
+        in: query
+        name: subject_id
+        required: true
+        schema:
+          type: string
+      - description: optional subject relation name
+        in: query
+        name: subject_relation
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3DeleteRelationResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Delete relation
+      tags:
+      - directory
+    get:
+      description: Returns single relation instance, optionally with objects.
+      operationId: directory.reader.v3.relation.get
+      parameters:
+      - description: object type
+        in: query
+        name: object_type
+        required: true
+        schema:
+          type: string
+      - description: object identifier
+        in: query
+        name: object_id
+        required: true
+        schema:
+          type: string
+      - description: relation name
+        in: query
+        name: relation
+        required: true
+        schema:
+          type: string
+      - description: subject type
+        in: query
+        name: subject_type
+        required: true
+        schema:
+          type: string
+      - description: subject identifier
+        in: query
+        name: subject_id
+        required: true
+        schema:
+          type: string
+      - description: optional subject relation name
+        in: query
+        name: subject_relation
+        required: false
+        schema:
+          type: string
+      - description: materialize relation objects
+        in: query
+        name: with_objects
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3GetRelationResponse'
+        '304':
+          description: Relation not modified.
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Get relation instance
+      tags:
+      - directory
+    post:
+      description: Set relation.
+      operationId: directory.writer.v3.relation.set
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v3SetRelationRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3SetRelationResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: Set relation
+      tags:
+      - directory
+  /api/v3/directory/relations:
+    get:
+      description: Returns list of relation instances.
+      operationId: directory.reader.v3.relations.list
+      parameters:
+      - description: object type
+        in: query
+        name: object_type
+        required: false
+        schema:
+          type: string
+      - description: object identifier
+        in: query
+        name: object_id
+        required: false
+        schema:
+          type: string
+      - description: relation name
+        in: query
+        name: relation
+        required: false
+        schema:
+          type: string
+      - description: subject type
+        in: query
+        name: subject_type
+        required: false
+        schema:
+          type: string
+      - description: subject identifier
+        in: query
+        name: subject_id
+        required: false
+        schema:
+          type: string
+      - description: optional subject relation name
+        in: query
+        name: subject_relation
+        required: false
+        schema:
+          type: string
+      - description: materialize relation objects
+        in: query
+        name: with_objects
+        required: false
+        schema:
+          type: boolean
+      - description: only return relations that do not have a subject relation.
+        in: query
+        name: with_empty_subject_relation
+        required: false
+        schema:
+          type: boolean
+      - description: requested page size, valid value between 1-100 rows (default
+          100)
+        in: query
+        name: page.size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - description: pagination start token, default ""
+        in: query
+        name: page.token
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v3GetRelationsResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DirectoryAPIKey: []
+        TenantID: []
+      summary: List relations instances
+      tags:
+      - directory
+security:
+- DirectoryAPIKey: []
+  TenantID: []
+tags:
+- name: Access
+components:
+  securitySchemes:
+    DirectoryAPIKey:
+      in: header
+      name: authorization
+      type: apiKey
+    TenantID:
+      in: header
+      name: aserto-tenant-id
+      type: apiKey
+  schemas:
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    protobufNullValue:
+      default: NULL_VALUE
+      description: "`NullValue` is a singleton enumeration to represent the null value\
+        \ for the\n`Value` type union.\n\nThe JSON representation for `NullValue`\
+        \ is JSON `null`.\n\n - NULL_VALUE: Null value."
+      enum:
+      - NULL_VALUE
+      type: string
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
+    v1Action:
+      properties:
+        name:
+          type: string
+        properties:
+          type: object
+      title: https://openid.github.io/authzen/#name-action
+      type: object
+    v1ActionSearchRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        page:
+          $ref: '#/components/schemas/v1Page'
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-action-search-api-reque
+      type: object
+    v1ActionSearchResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v1Page'
+        results:
+          items:
+            $ref: '#/components/schemas/v1Action'
+          type: array
+      title: https://openid.github.io/authzen/#name-the-action-search-api-respo
+      type: object
+    v1EvaluationRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-access-evaluation-api-r
+      type: object
+    v1EvaluationResponse:
+      properties:
+        context:
+          type: object
+        decision:
+          type: boolean
+      title: https://openid.github.io/authzen/#name-the-access-evaluation-api-re
+      type: object
+    v1EvaluationsRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        evaluations:
+          items:
+            $ref: '#/components/schemas/v1EvaluationRequest'
+          type: array
+        options:
+          type: object
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-access-evaluations-api-
+      type: object
+    v1EvaluationsResponse:
+      properties:
+        decisions:
+          items:
+            $ref: '#/components/schemas/v1EvaluationResponse'
+          type: array
+      title: https://openid.github.io/authzen/#name-access-evaluations-api-resp
+      type: object
+    v1Page:
+      properties:
+        next_token:
+          type: string
+      type: object
+    v1Resource:
+      properties:
+        id:
+          type: string
+        properties:
+          type: object
+        type:
+          type: string
+      title: https://openid.github.io/authzen/#name-resource
+      type: object
+    v1ResourceSearchRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        page:
+          $ref: '#/components/schemas/v1Page'
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-resource-search-api-req
+      type: object
+    v1ResourceSearchResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v1Page'
+        results:
+          items:
+            $ref: '#/components/schemas/v1Resource'
+          type: array
+      title: https://openid.github.io/authzen/#name-the-resource-search-api-res
+      type: object
+    v1Subject:
+      properties:
+        id:
+          type: string
+        properties:
+          type: object
+        type:
+          type: string
+      title: https://openid.github.io/authzen/#name-subject
+      type: object
+    v1SubjectSearchRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        page:
+          $ref: '#/components/schemas/v1Page'
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-subject-search-api-requ
+      type: object
+    v1SubjectSearchResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v1Page'
+        results:
+          items:
+            $ref: '#/components/schemas/v1Subject'
+          type: array
+      title: https://openid.github.io/authzen/#name-the-subject-search-api-resp
+      type: object
+    v3Assert:
+      properties:
+        check:
+          $ref: '#/components/schemas/v3CheckRequest'
+        check_permission:
+          $ref: '#/components/schemas/v3CheckPermissionRequest'
+        check_relation:
+          $ref: '#/components/schemas/v3CheckRelationRequest'
+        description:
+          title: description
+          type: string
+        expected:
+          title: expected outcome of assertion
+          type: boolean
+        id:
+          format: int64
+          title: assertion identifier
+          type: integer
+      required:
+      - expected
+      type: object
+    v3Body:
+      properties:
+        data:
+          format: byte
+          title: manifest content
+          type: string
+      type: object
+    v3CheckPermissionRequest:
+      properties:
+        object_id:
+          title: object identifier
+          type: string
+        object_type:
+          title: object type
+          type: string
+        permission:
+          title: permission name
+          type: string
+        subject_id:
+          title: subject identifier
+          type: string
+        subject_type:
+          title: subject type
+          type: string
+        trace:
+          title: collect trace information
+          type: boolean
+      required:
+      - object_type
+      - object_id
+      - permission
+      - subject_type
+      - subject_id
+      type: object
+    v3CheckPermissionResponse:
+      properties:
+        check:
+          title: check result
+          type: boolean
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3CheckRelationRequest:
+      properties:
+        object_id:
+          title: object identifier
+          type: string
+        object_type:
+          title: object type
+          type: string
+        relation:
+          title: relation name
+          type: string
+        subject_id:
+          title: subject identifier
+          type: string
+        subject_type:
+          title: subject type
+          type: string
+        trace:
+          title: collect trace information
+          type: boolean
+      required:
+      - object_type
+      - object_id
+      - relation
+      - subject_type
+      - subject_id
+      type: object
+    v3CheckRelationResponse:
+      properties:
+        check:
+          title: check result
+          type: boolean
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3CheckRequest:
+      properties:
+        object_id:
+          title: object identifier
+          type: string
+        object_type:
+          title: object type
+          type: string
+        relation:
+          title: relation name
+          type: string
+        subject_id:
+          title: subject identifier
+          type: string
+        subject_type:
+          title: subject type
+          type: string
+        trace:
+          title: collect trace information
+          type: boolean
+      required:
+      - object_type
+      - object_id
+      - relation
+      - subject_type
+      - subject_id
+      type: object
+    v3CheckResponse:
+      properties:
+        check:
+          title: check result
+          type: boolean
+        context:
+          title: context
+          type: object
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3ChecksRequest:
+      properties:
+        checks:
+          items:
+            $ref: '#/components/schemas/v3CheckRequest'
+          type: array
+        default:
+          $ref: '#/components/schemas/v3CheckRequest'
+      title: EXPERIMENTAL
+      type: object
+    v3ChecksResponse:
+      properties:
+        checks:
+          items:
+            $ref: '#/components/schemas/v3CheckResponse'
+          type: array
+      title: EXPERIMENTAL
+      type: object
+    v3DeleteAssertionResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3DeleteManifestResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3DeleteObjectResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3DeleteRelationResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3ExportResponse:
+      properties:
+        object:
+          $ref: '#/components/schemas/v3Object'
+        relation:
+          $ref: '#/components/schemas/v3Relation'
+        stats:
+          title: object and/or relation stats (no data)
+          type: object
+      type: object
+    v3GetAssertionResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Assert'
+      type: object
+    v3GetGraphResponse:
+      properties:
+        explanation:
+          title: explanation of results
+          type: object
+        results:
+          items:
+            $ref: '#/components/schemas/v3ObjectIdentifier'
+          title: matching object identifiers
+          type: array
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3GetManifestResponse:
+      properties:
+        body:
+          $ref: '#/components/schemas/v3Body'
+        metadata:
+          $ref: '#/components/schemas/v3Metadata'
+        model:
+          title: Model
+          type: object
+      type: object
+    v3GetObjectManyResponse:
+      properties:
+        results:
+          items:
+            $ref: '#/components/schemas/v3Object'
+          title: array of object instances
+          type: array
+      type: object
+    v3GetObjectResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        relations:
+          items:
+            $ref: '#/components/schemas/v3Relation'
+          title: object relations
+          type: array
+        result:
+          $ref: '#/components/schemas/v3Object'
+      type: object
+    v3GetObjectsResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Object'
+          title: array of object instances
+          type: array
+      type: object
+    v3GetRelationResponse:
+      properties:
+        objects:
+          additionalProperties:
+            $ref: '#/components/schemas/v3Object'
+          title: map of materialized relation objects
+          type: object
+        result:
+          $ref: '#/components/schemas/v3Relation'
+      type: object
+    v3GetRelationsResponse:
+      properties:
+        objects:
+          additionalProperties:
+            $ref: '#/components/schemas/v3Object'
+          title: map of materialized relation objects
+          type: object
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Relation'
+          title: array of relation instances
+          type: array
+      type: object
+    v3ImportCounter:
+      properties:
+        delete:
+          format: uint64
+          title: number of messages with OPCODE_DELETE
+          type: string
+        error:
+          format: uint64
+          title: number of messages resulting in error
+          type: string
+        recv:
+          format: uint64
+          title: number of messages received
+          type: string
+        set:
+          format: uint64
+          title: number of messages with OPCODE_SET
+          type: string
+        type:
+          title: counter of type (object|relation)
+          type: string
+      type: object
+    v3ImportRequest:
+      properties:
+        object:
+          $ref: '#/components/schemas/v3Object'
+        op_code:
+          $ref: '#/components/schemas/v3Opcode'
+        relation:
+          $ref: '#/components/schemas/v3Relation'
+      type: object
+    v3ImportResponse:
+      properties:
+        counter:
+          $ref: '#/components/schemas/v3ImportCounter'
+        object:
+          $ref: '#/components/schemas/v3ImportCounter'
+        relation:
+          $ref: '#/components/schemas/v3ImportCounter'
+        status:
+          $ref: '#/components/schemas/v3ImportStatus'
+      type: object
+    v3ImportStatus:
+      properties:
+        code:
+          format: int64
+          title: gRPC status code (google.golang.org/grpc/codes)
+          type: integer
+        msg:
+          title: gRPC status message (google.golang.org/grpc/status)
+          type: string
+        req:
+          $ref: '#/components/schemas/v3ImportRequest'
+      type: object
+    v3ListAssertionsResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Assert'
+          type: array
+      type: object
+    v3Metadata:
+      properties:
+        etag:
+          title: object instance etag
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: last updated timestamp (UTC)
+          type: string
+      type: object
+    v3Object:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: created at timestamp (UTC)
+          type: string
+        display_name:
+          title: display name object
+          type: string
+        etag:
+          title: object instance etag
+          type: string
+        id:
+          title: external object identifier (cs-string, no spaces or tabs)
+          type: string
+        properties:
+          title: property bag
+          type: object
+        type:
+          title: object type name
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: last updated timestamp (UTC)
+          type: string
+      required:
+      - type
+      - id
+      type: object
+    v3ObjectIdentifier:
+      properties:
+        object_id:
+          title: object identifier (cs-string)
+          type: string
+        object_type:
+          title: object type (lc-string)
+          type: string
+      required:
+      - object_type
+      - object_id
+      title: Object identifier
+      type: object
+    v3Opcode:
+      default: OPCODE_UNKNOWN
+      enum:
+      - OPCODE_UNKNOWN
+      - OPCODE_SET
+      - OPCODE_DELETE
+      - OPCODE_DELETE_WITH_RELATIONS
+      type: string
+    v3PaginationRequest:
+      properties:
+        size:
+          format: int32
+          title: requested page size, valid value between 1-100 rows (default 100)
+          type: integer
+        token:
+          title: pagination start token, default ""
+          type: string
+      title: Pagination request
+      type: object
+    v3PaginationResponse:
+      properties:
+        next_token:
+          readOnly: true
+          title: next page token, when empty there are no more pages to fetch
+          type: string
+      title: Pagination response
+      type: object
+    v3Relation:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: created at timestamp (UTC)
+          type: string
+        etag:
+          title: object instance etag
+          type: string
+        object_id:
+          title: object identifier
+          type: string
+        object_type:
+          title: object type
+          type: string
+        relation:
+          title: object relation name
+          type: string
+        subject_id:
+          title: subject identifier
+          type: string
+        subject_relation:
+          title: optional subject relation name
+          type: string
+        subject_type:
+          title: subject type
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: last updated timestamp (UTC)
+          type: string
+      required:
+      - object_type
+      - object_id
+      - relation
+      - subject_type
+      - subject_id
+      type: object
+    v3SetAssertionRequest:
+      properties:
+        assert:
+          $ref: '#/components/schemas/v3Assert'
+      required:
+      - assert
+      type: object
+    v3SetAssertionResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Assert'
+      type: object
+    v3SetManifestResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3SetObjectRequest:
+      properties:
+        object:
+          $ref: '#/components/schemas/v3Object'
+      required:
+      - object
+      type: object
+    v3SetObjectResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Object'
+      type: object
+    v3SetRelationRequest:
+      properties:
+        relation:
+          $ref: '#/components/schemas/v3Relation'
+      required:
+      - relation
+      type: object
+    v3SetRelationResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Relation'
+      type: object

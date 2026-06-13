@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "apiPolicyInstance",
+  "description": "apiPolicyInstance schema from Aserto authorizer API",
+  "properties": {
+    "instance_label": {
+      "title": "label identifying the instance of the policy",
+      "type": "string"
+    },
+    "name": {
+      "title": "policy name",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,456 @@
+openapi: 3.0.0
+info:
+  title: aserto/decision-logs/v2/decision_logs.proto
+  version: version not set
+paths:
+  /api/v2/decision_logs/decision_logs:
+    get:
+      description: Returns a collection of decision logs.
+      operationId: decision_logs.list_decision_logs
+      parameters:
+      - in: query
+        name: page.size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: page.token
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: policies
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2ListDecisionLogsResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DecisionLogsAPIKey: []
+        TenantID: []
+      summary: List available decision logs
+      tags:
+      - decision_logs
+  /api/v2/decision_logs/decision_logs/{name}:
+    get:
+      description: Returns the location of a single decison log instance.
+      operationId: decision_logs.get_decision_log
+      parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2GetDecisionLogResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DecisionLogsAPIKey: []
+        TenantID: []
+      summary: Get a decision log
+      tags:
+      - decision_logs
+  /api/v2/decision_logs/decisions/policy/{policy_name}/{instance_label}:
+    get:
+      description: Returns a stream of decisions
+      operationId: decision_logs.decisions
+      parameters:
+      - in: path
+        name: policy_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: instance_label
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: since
+        required: false
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: A successful response.(streaming responses)
+          content:
+            application/json:
+              schema:
+                properties:
+                  error:
+                    $ref: '#/components/schemas/rpcStatus'
+                  result:
+                    $ref: '#/components/schemas/v2GetDecisionsResponse'
+                title: Stream result of v2GetDecisionsResponse
+                type: object
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DecisionLogsAPIKey: []
+        TenantID: []
+      summary: decision event stream
+      tags:
+      - decision_logs
+  /api/v2/decision_logs/query:
+    post:
+      description: Returns a collection of raw decision logs strings matching the
+        query specification.
+      operationId: decision_logs.query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v2ExecuteQueryRequest'
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2ExecuteQueryResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DecisionLogsAPIKey: []
+        TenantID: []
+      summary: query decision logs
+      tags:
+      - decision_logs
+  /api/v2/decision_logs/users:
+    get:
+      description: Returns a collection of users that may be referenced by decision
+        logs.
+      operationId: decision_logs.list_users
+      parameters:
+      - in: query
+        name: page.size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: page.token
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2ListUsersResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DecisionLogsAPIKey: []
+        TenantID: []
+      summary: List users referenced by decision logs
+      tags:
+      - decision_logs
+  /api/v2/decision_logs/users/{id}:
+    get:
+      description: Returns the location of a single user that may be referenced by
+        decision logs.
+      operationId: decision_logs.get_user
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2GetUserResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - DecisionLogsAPIKey: []
+        TenantID: []
+      summary: Get a user referenced by decision logs
+      tags:
+      - decision_logs
+security:
+- DecisionLogsAPIKey: []
+  TenantID: []
+tags:
+- name: DecisionLogs
+components:
+  securitySchemes:
+    DecisionLogsAPIKey:
+      in: header
+      name: authorization
+      type: apiKey
+    TenantID:
+      in: header
+      name: aserto-tenant-id
+      type: apiKey
+  schemas:
+    protobufAny:
+      properties:
+        type_url:
+          type: string
+        value:
+          format: byte
+          type: string
+      type: object
+    protobufNullValue:
+      default: NULL_VALUE
+      description: "`NullValue` is a singleton enumeration to represent the null value\
+        \ for the\n`Value` type union.\n\n The JSON representation for `NullValue`\
+        \ is JSON `null`.\n\n - NULL_VALUE: Null value."
+      enum:
+      - NULL_VALUE
+      type: string
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
+    v2Decision:
+      properties:
+        annotations:
+          additionalProperties:
+            type: string
+          type: object
+        id:
+          type: string
+        outcomes:
+          additionalProperties:
+            type: boolean
+          type: object
+        path:
+          type: string
+        policy:
+          $ref: '#/components/schemas/v2DecisionPolicy'
+        resource:
+          type: object
+        tenant_id:
+          type: string
+        timestamp:
+          format: date-time
+          type: string
+        user:
+          $ref: '#/components/schemas/v2DecisionUser'
+      title: represents a decision that an authorizer performed in the past
+      type: object
+    v2DecisionLog:
+      properties:
+        url:
+          type: string
+      type: object
+    v2DecisionLogItem:
+      properties:
+        name:
+          type: string
+      type: object
+    v2DecisionPolicy:
+      properties:
+        context:
+          $ref: '#/components/schemas/v2PolicyContext'
+        policy_instance:
+          $ref: '#/components/schemas/v2PolicyInstance'
+        registry_digest:
+          type: string
+        registry_image:
+          type: string
+        registry_service:
+          type: string
+        registry_tag:
+          type: string
+      title: information about a policy used in a decision
+      type: object
+    v2DecisionUser:
+      properties:
+        context:
+          $ref: '#/components/schemas/v2IdentityContext'
+        email:
+          type: string
+        id:
+          type: string
+      title: information about a user on behalf of whom a decision was made
+      type: object
+    v2ExecuteQueryRequest:
+      properties:
+        instance_label:
+          type: string
+        page:
+          $ref: '#/components/schemas/v2PaginationRequest'
+        policy_name:
+          type: string
+        top_n:
+          format: int64
+          type: string
+      type: object
+    v2ExecuteQueryResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v2PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v2Result'
+          type: array
+      type: object
+    v2GetDecisionLogResponse:
+      properties:
+        log:
+          $ref: '#/components/schemas/v2DecisionLog'
+      type: object
+    v2GetDecisionsResponse:
+      properties:
+        decision:
+          $ref: '#/components/schemas/v2Decision'
+      type: object
+    v2GetUserResponse:
+      properties:
+        user:
+          $ref: '#/components/schemas/v2User'
+      type: object
+    v2IdentityContext:
+      properties:
+        identity:
+          type: string
+        type:
+          $ref: '#/components/schemas/v2IdentityType'
+      type: object
+    v2IdentityType:
+      default: IDENTITY_TYPE_UNKNOWN
+      description: "Identity types, describes the payload type of the identity field\
+        \ inside the IdentityContext message.\n\n - IDENTITY_TYPE_UNKNOWN: Unknown,\
+        \ value not set, requests will fail with identity type not set error.\n -\
+        \ IDENTITY_TYPE_NONE: None, no explicit identity context set, equals anonymous.\n\
+        \ - IDENTITY_TYPE_SUB: Sub(ject), identity field contains an oAUTH subject.\n\
+        \ - IDENTITY_TYPE_JWT: JWT, identity field contains a JWT access token."
+      enum:
+      - IDENTITY_TYPE_UNKNOWN
+      - IDENTITY_TYPE_NONE
+      - IDENTITY_TYPE_SUB
+      - IDENTITY_TYPE_JWT
+      type: string
+    v2ListDecisionLogsResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v2PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v2DecisionLogItem'
+          type: array
+      type: object
+    v2ListUsersResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v2PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v2UserItem'
+          type: array
+      type: object
+    v2PaginationRequest:
+      properties:
+        size:
+          format: int32
+          type: integer
+        token:
+          type: string
+      type: object
+    v2PaginationResponse:
+      properties:
+        next_token:
+          type: string
+        result_size:
+          format: int32
+          type: integer
+        total_size:
+          format: int32
+          type: integer
+      type: object
+    v2PolicyContext:
+      properties:
+        decisions:
+          items:
+            type: string
+          type: array
+        path:
+          type: string
+      type: object
+    v2PolicyInstance:
+      properties:
+        instance_label:
+          type: string
+        name:
+          type: string
+      type: object
+    v2Result:
+      properties:
+        event:
+          $ref: '#/components/schemas/v2Decision'
+        log:
+          type: string
+      type: object
+    v2User:
+      properties:
+        url:
+          type: string
+      type: object
+    v2UserItem:
+      properties:
+        id:
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+      type: object

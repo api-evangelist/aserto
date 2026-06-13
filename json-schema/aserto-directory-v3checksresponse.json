@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EXPERIMENTAL",
+  "description": "v3ChecksResponse schema from Aserto directory API",
+  "properties": {
+    "checks": {
+      "items": {
+        "$ref": "#/components/schemas/v3CheckResponse"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

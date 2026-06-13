@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3Opcode",
+  "description": "v3Opcode schema from Aserto directory API",
+  "default": "OPCODE_UNKNOWN",
+  "enum": [
+    "OPCODE_UNKNOWN",
+    "OPCODE_SET",
+    "OPCODE_DELETE",
+    "OPCODE_DELETE_WITH_RELATIONS"
+  ],
+  "type": "string"
+}

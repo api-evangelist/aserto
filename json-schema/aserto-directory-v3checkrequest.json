@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3CheckRequest",
+  "description": "v3CheckRequest schema from Aserto directory API",
+  "properties": {
+    "object_id": {
+      "title": "object identifier",
+      "type": "string"
+    },
+    "object_type": {
+      "title": "object type",
+      "type": "string"
+    },
+    "relation": {
+      "title": "relation name",
+      "type": "string"
+    },
+    "subject_id": {
+      "title": "subject identifier",
+      "type": "string"
+    },
+    "subject_type": {
+      "title": "subject type",
+      "type": "string"
+    },
+    "trace": {
+      "title": "collect trace information",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "object_type",
+    "object_id",
+    "relation",
+    "subject_type",
+    "subject_id"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "- TRACE_LEVEL_UNKNOWN: Value not set.\n - TRACE_LEVEL_OFF: ExplainOffV1   ExplainModeV1 = \"off\"\n - TRACE_LEVEL_FULL: ExplainFullV1  ExplainModeV1 = \"full\"\n - TRACE_LEVEL_NOTES: ExplainNotesV1 ExplainModeV1 = \"notes\"\n - TRACE_LEVEL_FAILS: ExplainFailsV1 ExplainModeV1 = \"fails\"",
+  "description": "v2TraceLevel schema from Aserto authorizer API",
+  "default": "TRACE_LEVEL_UNKNOWN",
+  "enum": [
+    "TRACE_LEVEL_UNKNOWN",
+    "TRACE_LEVEL_OFF",
+    "TRACE_LEVEL_FULL",
+    "TRACE_LEVEL_NOTES",
+    "TRACE_LEVEL_FAILS"
+  ],
+  "type": "string"
+}

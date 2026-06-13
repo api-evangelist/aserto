@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3ImportResponse",
+  "description": "v3ImportResponse schema from Aserto directory API",
+  "properties": {
+    "counter": {
+      "$ref": "#/components/schemas/v3ImportCounter"
+    },
+    "object": {
+      "$ref": "#/components/schemas/v3ImportCounter"
+    },
+    "relation": {
+      "$ref": "#/components/schemas/v3ImportCounter"
+    },
+    "status": {
+      "$ref": "#/components/schemas/v3ImportStatus"
+    }
+  },
+  "type": "object"
+}

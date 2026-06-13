@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3GetManifestResponse",
+  "description": "v3GetManifestResponse schema from Aserto directory API",
+  "properties": {
+    "body": {
+      "$ref": "#/components/schemas/v3Body"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/v3Metadata"
+    },
+    "model": {
+      "title": "Model",
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,205 @@
+vocabulary:
+  name: Aserto API Vocabulary
+  description: >
+    Core terms, concepts, and operations across the Aserto authorization
+    platform APIs — Authorizer, Directory, and Decision Logs.
+  version: "1.0"
+  created: "2026-06-13"
+  source:
+    - https://github.com/aserto-dev/openapi-authorizer
+    - https://github.com/aserto-dev/openapi-directory
+    - https://github.com/aserto-dev/openapi-decision-logs
+
+domains:
+  - name: Authorization
+    description: >
+      Core authorization decision concepts used by the Authorizer API.
+    terms:
+      - term: IdentityContext
+        definition: >
+          Represents the identity of the caller requesting an authorization
+          decision. Includes an identity string (e.g. email, subject) and
+          an IdentityType that indicates how to resolve the identity.
+        schema_ref: apiIdentityContext
+
+      - term: IdentityType
+        definition: >
+          Enum that classifies the identity string — IDENTITY_TYPE_NONE,
+          IDENTITY_TYPE_SUB (JWT subject), IDENTITY_TYPE_JWT (full JWT token),
+          or IDENTITY_TYPE_MANUAL (custom identity resolution).
+        schema_ref: apiIdentityType
+
+      - term: PolicyContext
+        definition: >
+          Identifies the OPA policy package and the named decisions (rules)
+          to evaluate for an authorization request.
+        schema_ref: apiPolicyContext
+
+      - term: PolicyInstance
+        definition: >
+          References a named policy instance (by name and instance_label)
+          deployed on the Authorizer, allowing multi-tenancy of policies.
+        schema_ref: apiPolicyInstance
+
+      - term: Decision
+        definition: >
+          The result of evaluating a single named rule in an OPA policy.
+          Contains the rule name and the boolean outcome (is: true/false).
+        schema_ref: authorizerv2Decision
+
+      - term: IsRequest
+        definition: >
+          Input payload for the /is endpoint. Bundles IdentityContext,
+          PolicyContext, PolicyInstance, and optional ResourceContext to
+          request one or more authorization decisions.
+        schema_ref: v2IsRequest
+
+      - term: ResourceContext
+        definition: >
+          Arbitrary JSON object attached to an authorization request that
+          provides resource-level attributes for policy evaluation.
+
+  - name: Directory
+    description: >
+      Relationship-based access control (ReBAC) data model concepts used
+      by the Directory API (Google Zanzibar-inspired).
+    terms:
+      - term: Object
+        definition: >
+          A typed entity in the Aserto directory (e.g. user, group,
+          resource, service-account). Objects are identified by type and id
+          and carry arbitrary property bags.
+        schema_ref: v3Object
+
+      - term: Relation
+        definition: >
+          A typed edge between two directory objects (subject → object)
+          that encodes membership, ownership, or access relationships
+          (e.g. user:alice member group:engineers).
+        schema_ref: v3Relation
+
+      - term: Permission
+        definition: >
+          A named capability attached to an object type that may be granted
+          via relations. Permissions are evaluated by the check endpoint to
+          determine effective access.
+        schema_ref: v1Permission
+
+      - term: Check
+        definition: >
+          A ReBAC permission check that traverses the relation graph to
+          determine whether a subject has a given relation or permission
+          on a target object.
+        schema_ref: v3CheckResponse
+
+      - term: ObjectType
+        definition: >
+          Defines the schema and metadata for a category of directory
+          objects (e.g. "user", "group", "document").
+        schema_ref: v1ObjectType
+
+      - term: RelationType
+        definition: >
+          Defines the allowed relations between object types and their
+          semantics (e.g. "member", "owner", "viewer").
+        schema_ref: v1RelationType
+
+  - name: Decision Logs
+    description: >
+      Audit and analytics concepts for the Aserto Decision Logs API.
+    terms:
+      - term: DecisionLog
+        definition: >
+          A time-bounded log file produced by an Authorizer instance
+          capturing all authorization decisions made during that window.
+        schema_ref: v2DecisionLog
+
+      - term: DecisionEntry
+        definition: >
+          A single recorded authorization decision including the identity,
+          policy path, resource context, decisions, and timestamp.
+        schema_ref: v2Decision
+
+      - term: PolicyName
+        definition: >
+          The name of the policy whose decisions are captured in a log,
+          used to filter decision log queries.
+
+operations:
+  authorizer:
+    - id: authorizer.is
+      method: POST
+      path: /api/v2/authz/is
+      description: >
+        Evaluate one or more named policy decisions for a given identity,
+        resource, and policy context. Returns allow/deny per decision name.
+
+    - id: authorizer.query
+      method: POST
+      path: /api/v2/authz/query
+      description: >
+        Execute an arbitrary Rego query against the loaded policy with
+        the supplied identity and resource context.
+
+    - id: authorizer.decision_tree
+      method: POST
+      path: /api/v2/authz/decisiontree
+      description: >
+        Return a decision tree mapping all policy paths to their current
+        decision values for a given identity and resource context.
+
+    - id: authorizer.compile
+      method: POST
+      path: /api/v2/authz/compile
+      description: >
+        Compile a Rego query to a partial evaluation result (set of
+        conditions) for use in database or API query filtering.
+
+  directory:
+    - id: directory.object.get
+      method: GET
+      path: /api/v3/directory/object/{object_type}/{object_id}
+      description: Retrieve a single directory object by type and id.
+
+    - id: directory.object.set
+      method: POST
+      path: /api/v3/directory/object
+      description: Create or update a directory object.
+
+    - id: directory.object.delete
+      method: DELETE
+      path: /api/v3/directory/object/{object_type}/{object_id}
+      description: Delete a directory object and optionally its relations.
+
+    - id: directory.relation.set
+      method: POST
+      path: /api/v3/directory/relation
+      description: Create or update a relation between two directory objects.
+
+    - id: directory.check
+      method: POST
+      path: /api/v3/directory/check
+      description: >
+        Check whether a subject has a given relation or permission on an
+        object by traversing the relation graph.
+
+  decision-logs:
+    - id: decision_logs.list_decision_logs
+      method: GET
+      path: /api/v2/decision_logs/decision_logs
+      description: List available decision log files for the tenant.
+
+    - id: decision_logs.get_decision_log
+      method: GET
+      path: /api/v2/decision_logs/decision_logs/{name}
+      description: Retrieve a specific decision log file by name.
+
+    - id: decision_logs.query
+      method: GET
+      path: /api/v2/decision_logs/decisions/policy/{policy_name}/{instance_label}
+      description: Query decisions filtered by policy name and instance label.
+
+    - id: decision_logs.list_users
+      method: GET
+      path: /api/v2/decision_logs/users
+      description: List users who appear in decision log records.

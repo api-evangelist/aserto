@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2DecisionTreeOptions",
+  "description": "v2DecisionTreeOptions schema from Aserto authorizer API",
+  "properties": {
+    "path_separator": {
+      "$ref": "#/components/schemas/v2PathSeparator"
+    }
+  },
+  "type": "object"
+}

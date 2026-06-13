@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3Body",
+  "description": "v3Body schema from Aserto directory API",
+  "properties": {
+    "data": {
+      "format": "byte",
+      "title": "manifest content",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

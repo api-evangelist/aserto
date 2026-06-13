@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2DecisionTreeResponse",
+  "description": "v2DecisionTreeResponse schema from Aserto authorizer API",
+  "properties": {
+    "path": {
+      "type": "object"
+    },
+    "path_root": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "apiPolicyContext",
+  "description": "apiPolicyContext schema from Aserto authorizer API",
+  "properties": {
+    "decisions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "list (1..N) of policy decisions (aka rules)",
+      "type": "array"
+    },
+    "path": {
+      "title": "policy path aka package name",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,62 @@
+{
+  "list_decision_logs_response": {
+    "summary": "List available decision log files",
+    "value": {
+      "results": [
+        {
+          "name": "decisions/2024/06/12/authorizer-001.log",
+          "size": "1048576",
+          "url": "https://console.aserto.com/api/v2/decision_logs/decision_logs/decisions%2F2024%2F06%2F12%2Fauthorizer-001.log"
+        }
+      ]
+    }
+  },
+  "query_decisions_request": {
+    "summary": "Query authorization decisions by policy and time range",
+    "value": {
+      "policy_name": "peoplefinder",
+      "instance_label": "peoplefinder",
+      "page": {
+        "size": 25,
+        "token": ""
+      }
+    }
+  },
+  "decision_log_entry": {
+    "summary": "A single decision log entry",
+    "value": {
+      "id": "01H9XYZABC123456789",
+      "timestamp": "2024-06-12T14:30:00Z",
+      "path": "peoplefinder.GET.api.users.__id",
+      "decisions": [
+        {
+          "decision": "allowed",
+          "is": true
+        }
+      ],
+      "identity": {
+        "identity": "user@example.com",
+        "type": "IDENTITY_TYPE_SUB"
+      },
+      "policy": {
+        "name": "peoplefinder",
+        "instance_label": "peoplefinder"
+      }
+    }
+  },
+  "list_users_response": {
+    "summary": "List users with decision log activity",
+    "value": {
+      "results": [
+        {
+          "id": "user-123",
+          "display_name": "Jane Doe",
+          "email": "jane.doe@example.com"
+        }
+      ],
+      "page": {
+        "next_token": ""
+      }
+    }
+  }
+}

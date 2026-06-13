@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2ListUsersResponse",
+  "description": "v2ListUsersResponse schema from Aserto decision-logs API",
+  "properties": {
+    "page": {
+      "$ref": "#/components/schemas/v2PaginationResponse"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/components/schemas/v2UserItem"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

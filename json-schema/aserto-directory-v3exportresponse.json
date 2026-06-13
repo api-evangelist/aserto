@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3ExportResponse",
+  "description": "v3ExportResponse schema from Aserto directory API",
+  "properties": {
+    "object": {
+      "$ref": "#/components/schemas/v3Object"
+    },
+    "relation": {
+      "$ref": "#/components/schemas/v3Relation"
+    },
+    "stats": {
+      "title": "object and/or relation stats (no data)",
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

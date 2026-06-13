@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3DeleteManifestResponse",
+  "description": "v3DeleteManifestResponse schema from Aserto directory API",
+  "properties": {
+    "result": {
+      "properties": {},
+      "title": "empty result",
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

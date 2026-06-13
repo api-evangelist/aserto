@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2InfoResponse",
+  "description": "v2InfoResponse schema from Aserto authorizer API",
+  "properties": {
+    "arch": {
+      "type": "string"
+    },
+    "commit": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

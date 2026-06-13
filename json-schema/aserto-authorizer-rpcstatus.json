@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "rpcStatus",
+  "description": "rpcStatus schema from Aserto authorizer API",
+  "properties": {
+    "code": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "details": {
+      "items": {
+        "$ref": "#/components/schemas/protobufAny"
+      },
+      "type": "array"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

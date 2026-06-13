@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3SetRelationRequest",
+  "description": "v3SetRelationRequest schema from Aserto directory API",
+  "properties": {
+    "relation": {
+      "$ref": "#/components/schemas/v3Relation"
+    }
+  },
+  "required": [
+    "relation"
+  ],
+  "type": "object"
+}

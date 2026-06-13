@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "protobufAny",
+  "description": "protobufAny schema from Aserto directory API",
+  "additionalProperties": {},
+  "properties": {
+    "@type": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

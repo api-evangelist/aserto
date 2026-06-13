@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "https://openid.github.io/authzen/#name-the-access-evaluation-api-r",
+  "description": "v1EvaluationRequest schema from Aserto directory API",
+  "properties": {
+    "action": {
+      "$ref": "#/components/schemas/v1Action"
+    },
+    "context": {
+      "type": "object"
+    },
+    "resource": {
+      "$ref": "#/components/schemas/v1Resource"
+    },
+    "subject": {
+      "$ref": "#/components/schemas/v1Subject"
+    }
+  },
+  "type": "object"
+}

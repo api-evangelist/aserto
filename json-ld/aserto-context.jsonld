@@ -1,0 +1,154 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "aserto": "https://www.aserto.com/vocab#",
+    "opa": "https://www.openpolicyagent.org/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "identifier": "schema:identifier",
+    "dateCreated": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "dateModified": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+
+    "AuthorizationService": "aserto:AuthorizationService",
+    "DirectoryService": "aserto:DirectoryService",
+    "DecisionLogsService": "aserto:DecisionLogsService",
+
+    "IdentityContext": "aserto:IdentityContext",
+    "identity": "aserto:identity",
+    "identityType": "aserto:identityType",
+
+    "PolicyContext": "aserto:PolicyContext",
+    "policyPath": "aserto:policyPath",
+    "policyDecisions": "aserto:policyDecisions",
+
+    "PolicyInstance": "aserto:PolicyInstance",
+    "policyName": "aserto:policyName",
+    "instanceLabel": "aserto:instanceLabel",
+
+    "ResourceContext": "aserto:ResourceContext",
+
+    "Decision": "aserto:Decision",
+    "decisionName": "aserto:decisionName",
+    "decisionResult": "aserto:decisionResult",
+
+    "DirectoryObject": "aserto:DirectoryObject",
+    "objectType": "aserto:objectType",
+    "objectId": "aserto:objectId",
+    "displayName": "aserto:displayName",
+    "properties": "aserto:properties",
+    "etag": "aserto:etag",
+
+    "Relation": "aserto:Relation",
+    "subjectType": "aserto:subjectType",
+    "subjectId": "aserto:subjectId",
+    "relation": "aserto:relation",
+
+    "Permission": "aserto:Permission",
+    "permissionName": "aserto:permissionName",
+
+    "ObjectType": "aserto:ObjectType",
+    "RelationType": "aserto:RelationType",
+
+    "DecisionLog": "aserto:DecisionLog",
+    "DecisionEntry": "aserto:DecisionEntry",
+    "logName": "aserto:logName",
+    "logSize": "aserto:logSize",
+    "logUrl": "aserto:logUrl",
+
+    "Policy": {
+      "@id": "opa:Policy",
+      "@type": "@id"
+    },
+    "policyPackage": "opa:policyPackage",
+    "regoQuery": "opa:regoQuery",
+
+    "ReBAC": "aserto:ReBAC",
+    "zanzibarModel": "aserto:zanzibarModel",
+    "checkResult": "aserto:checkResult",
+    "traceInfo": "aserto:traceInfo",
+
+    "APIEndpoint": "schema:EntryPoint",
+    "httpMethod": "schema:httpMethod",
+    "urlTemplate": "schema:urlTemplate",
+
+    "isOperation": "aserto:isOperation",
+    "queryOperation": "aserto:queryOperation",
+    "decisionTreeOperation": "aserto:decisionTreeOperation",
+    "compileOperation": "aserto:compileOperation"
+  },
+
+  "@graph": [
+    {
+      "@id": "aserto:AuthorizationService",
+      "@type": "schema:WebAPI",
+      "name": "Aserto Authorizer API",
+      "description": "Real-time authorization decision engine powered by Open Policy Agent. Evaluates Rego policies against identity, resource, and policy context.",
+      "url": "https://authorizer.prod.aserto.com",
+      "schema:documentation": "https://docs.aserto.com/docs/authorizer-guide/overview",
+      "schema:provider": {
+        "@type": "schema:Organization",
+        "name": "Aserto",
+        "url": "https://www.aserto.com"
+      }
+    },
+    {
+      "@id": "aserto:DirectoryService",
+      "@type": "schema:WebAPI",
+      "name": "Aserto Directory API",
+      "description": "Google Zanzibar-inspired relationship-based access control (ReBAC) directory for managing users, groups, objects, relations, and permissions.",
+      "url": "https://directory.prod.aserto.com",
+      "schema:documentation": "https://docs.aserto.com/docs/api-reference"
+    },
+    {
+      "@id": "aserto:DecisionLogsService",
+      "@type": "schema:WebAPI",
+      "name": "Aserto Decision Logs API",
+      "description": "Audit trail of authorization decisions made by connected Authorizer instances, supporting compliance and analytics use cases.",
+      "url": "https://console.aserto.com",
+      "schema:documentation": "https://docs.aserto.com/docs/api-reference"
+    },
+    {
+      "@id": "aserto:isOperation",
+      "@type": "schema:EntryPoint",
+      "name": "Is (Authorization Check)",
+      "description": "POST /api/v2/authz/is — Evaluate policy decisions for a given identity and resource context.",
+      "httpMethod": "POST",
+      "urlTemplate": "https://authorizer.prod.aserto.com/api/v2/authz/is",
+      "schema:encodingType": "application/json"
+    },
+    {
+      "@id": "aserto:queryOperation",
+      "@type": "schema:EntryPoint",
+      "name": "Query (OPA Query)",
+      "description": "POST /api/v2/authz/query — Execute an arbitrary Rego query against the loaded policy.",
+      "httpMethod": "POST",
+      "urlTemplate": "https://authorizer.prod.aserto.com/api/v2/authz/query"
+    },
+    {
+      "@id": "aserto:decisionTreeOperation",
+      "@type": "schema:EntryPoint",
+      "name": "Decision Tree",
+      "description": "POST /api/v2/authz/decisiontree — Return decision values for all policy paths for a given identity.",
+      "httpMethod": "POST",
+      "urlTemplate": "https://authorizer.prod.aserto.com/api/v2/authz/decisiontree"
+    },
+    {
+      "@id": "aserto:compileOperation",
+      "@type": "schema:EntryPoint",
+      "name": "Compile (Partial Evaluation)",
+      "description": "POST /api/v2/authz/compile — Compile a Rego query to partial evaluation conditions for query filtering.",
+      "httpMethod": "POST",
+      "urlTemplate": "https://authorizer.prod.aserto.com/api/v2/authz/compile"
+    }
+  ]
+}

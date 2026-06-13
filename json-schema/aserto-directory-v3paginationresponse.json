@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pagination response",
+  "description": "v3PaginationResponse schema from Aserto directory API",
+  "properties": {
+    "next_token": {
+      "readOnly": true,
+      "title": "next page token, when empty there are no more pages to fetch",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

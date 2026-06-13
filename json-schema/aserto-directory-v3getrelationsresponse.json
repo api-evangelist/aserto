@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3GetRelationsResponse",
+  "description": "v3GetRelationsResponse schema from Aserto directory API",
+  "properties": {
+    "objects": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/v3Object"
+      },
+      "title": "map of materialized relation objects",
+      "type": "object"
+    },
+    "page": {
+      "$ref": "#/components/schemas/v3PaginationResponse"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/components/schemas/v3Relation"
+      },
+      "title": "array of relation instances",
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

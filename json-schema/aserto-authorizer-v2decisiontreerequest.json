@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2DecisionTreeRequest",
+  "description": "v2DecisionTreeRequest schema from Aserto authorizer API",
+  "properties": {
+    "identity_context": {
+      "$ref": "#/components/schemas/apiIdentityContext"
+    },
+    "options": {
+      "$ref": "#/components/schemas/v2DecisionTreeOptions"
+    },
+    "policy_context": {
+      "$ref": "#/components/schemas/apiPolicyContext"
+    },
+    "policy_instance": {
+      "$ref": "#/components/schemas/apiPolicyInstance"
+    },
+    "resource_context": {
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

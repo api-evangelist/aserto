@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "https://openid.github.io/authzen/#name-action",
+  "description": "v1Action schema from Aserto directory API",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "properties": {
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

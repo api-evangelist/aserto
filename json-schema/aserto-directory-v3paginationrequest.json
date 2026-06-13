@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pagination request",
+  "description": "v3PaginationRequest schema from Aserto directory API",
+  "properties": {
+    "size": {
+      "format": "int32",
+      "title": "requested page size, valid value between 1-100 rows (default 100)",
+      "type": "integer"
+    },
+    "token": {
+      "title": "pagination start token, default \"\"",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

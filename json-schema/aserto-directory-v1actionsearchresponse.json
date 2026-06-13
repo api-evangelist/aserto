@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "https://openid.github.io/authzen/#name-the-action-search-api-respo",
+  "description": "v1ActionSearchResponse schema from Aserto directory API",
+  "properties": {
+    "page": {
+      "$ref": "#/components/schemas/v1Page"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/components/schemas/v1Action"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

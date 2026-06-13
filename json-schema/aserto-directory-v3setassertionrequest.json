@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3SetAssertionRequest",
+  "description": "v3SetAssertionRequest schema from Aserto directory API",
+  "properties": {
+    "assert": {
+      "$ref": "#/components/schemas/v3Assert"
+    }
+  },
+  "required": [
+    "assert"
+  ],
+  "type": "object"
+}

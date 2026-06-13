@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3Relation",
+  "description": "v3Relation schema from Aserto directory API",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "readOnly": true,
+      "title": "created at timestamp (UTC)",
+      "type": "string"
+    },
+    "etag": {
+      "title": "object instance etag",
+      "type": "string"
+    },
+    "object_id": {
+      "title": "object identifier",
+      "type": "string"
+    },
+    "object_type": {
+      "title": "object type",
+      "type": "string"
+    },
+    "relation": {
+      "title": "object relation name",
+      "type": "string"
+    },
+    "subject_id": {
+      "title": "subject identifier",
+      "type": "string"
+    },
+    "subject_relation": {
+      "title": "optional subject relation name",
+      "type": "string"
+    },
+    "subject_type": {
+      "title": "subject type",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "readOnly": true,
+      "title": "last updated timestamp (UTC)",
+      "type": "string"
+    }
+  },
+  "required": [
+    "object_type",
+    "object_id",
+    "relation",
+    "subject_type",
+    "subject_id"
+  ],
+  "type": "object"
+}

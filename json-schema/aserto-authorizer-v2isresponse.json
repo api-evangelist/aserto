@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2IsResponse",
+  "description": "v2IsResponse schema from Aserto authorizer API",
+  "properties": {
+    "decisions": {
+      "items": {
+        "$ref": "#/components/schemas/authorizerv2Decision"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

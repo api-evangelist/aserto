@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3Assert",
+  "description": "v3Assert schema from Aserto directory API",
+  "properties": {
+    "check": {
+      "$ref": "#/components/schemas/v3CheckRequest"
+    },
+    "check_permission": {
+      "$ref": "#/components/schemas/v3CheckPermissionRequest"
+    },
+    "check_relation": {
+      "$ref": "#/components/schemas/v3CheckRelationRequest"
+    },
+    "description": {
+      "title": "description",
+      "type": "string"
+    },
+    "expected": {
+      "title": "expected outcome of assertion",
+      "type": "boolean"
+    },
+    "id": {
+      "format": "int64",
+      "title": "assertion identifier",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "expected"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "- PATH_SEPARATOR_UNKNOWN: Value not set.\n - PATH_SEPARATOR_DOT: Dot \".\" path separator\n - PATH_SEPARATOR_SLASH: Slash \"/\" path separtor",
+  "description": "v2PathSeparator schema from Aserto authorizer API",
+  "default": "PATH_SEPARATOR_UNKNOWN",
+  "enum": [
+    "PATH_SEPARATOR_UNKNOWN",
+    "PATH_SEPARATOR_DOT",
+    "PATH_SEPARATOR_SLASH"
+  ],
+  "type": "string"
+}

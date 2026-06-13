@@ -1,0 +1,62 @@
+{
+  "is_request": {
+    "summary": "Check if a user is allowed to perform an action",
+    "value": {
+      "identity_context": {
+        "identity": "user@example.com",
+        "type": "IDENTITY_TYPE_SUB"
+      },
+      "policy_context": {
+        "path": "peoplefinder.GET.api.users.__id",
+        "decisions": ["allowed"]
+      },
+      "policy_instance": {
+        "name": "peoplefinder",
+        "instance_label": "peoplefinder"
+      },
+      "resource_context": {
+        "id": "user-123"
+      }
+    }
+  },
+  "is_response": {
+    "summary": "Authorization decision response",
+    "value": {
+      "decisions": [
+        {
+          "decision": "allowed",
+          "is": true
+        }
+      ]
+    }
+  },
+  "query_request": {
+    "summary": "Execute an arbitrary OPA query",
+    "value": {
+      "identity_context": {
+        "identity": "user@example.com",
+        "type": "IDENTITY_TYPE_SUB"
+      },
+      "policy_context": {
+        "path": "peoplefinder",
+        "decisions": ["allowed"]
+      },
+      "query": "x = data.peoplefinder.allowed",
+      "input": "{\"resource\":{\"id\":\"user-123\"}}"
+    }
+  },
+  "decisiontree_request": {
+    "summary": "Get all decisions for a policy package",
+    "value": {
+      "identity_context": {
+        "identity": "user@example.com",
+        "type": "IDENTITY_TYPE_SUB"
+      },
+      "policy_context": {
+        "path": "peoplefinder",
+        "decisions": ["allowed", "visible"]
+      },
+      "resource_context": {}
+    }
+  }
+}

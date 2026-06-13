@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "authorizerv2Decision",
+  "description": "authorizerv2Decision schema from Aserto authorizer API",
+  "properties": {
+    "decision": {
+      "type": "string"
+    },
+    "is": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

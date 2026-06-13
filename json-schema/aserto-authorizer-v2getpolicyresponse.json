@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v2GetPolicyResponse",
+  "description": "v2GetPolicyResponse schema from Aserto authorizer API",
+  "properties": {
+    "result": {
+      "$ref": "#/components/schemas/apiModule"
+    }
+  },
+  "type": "object"
+}

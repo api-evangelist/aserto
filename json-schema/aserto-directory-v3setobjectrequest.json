@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v3SetObjectRequest",
+  "description": "v3SetObjectRequest schema from Aserto directory API",
+  "properties": {
+    "object": {
+      "$ref": "#/components/schemas/v3Object"
+    }
+  },
+  "required": [
+    "object"
+  ],
+  "type": "object"
+}
