@@ -101,6 +101,10 @@ apis:
       - type: Documentation
         url: https://docs.aserto.com/docs/api-reference
 common:
+  - type: DomainSecurity
+    url: security/aserto-domain-security.yml
+  - type: Authentication
+    url: authentication/aserto-authentication.yml
   - type: Website
     url: https://www.aserto.com/
   - type: Documentation

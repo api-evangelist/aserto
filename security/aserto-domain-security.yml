@@ -1,0 +1,25 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.aserto.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 05:53:41 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.aserto.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 10 18:53:51 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: authorizer.prod.aserto.com
+  https: false
+domains:
+- domain: aserto.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

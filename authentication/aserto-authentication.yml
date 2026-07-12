@@ -1,0 +1,25 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/aserto-authorizer-openapi.yml, openapi/aserto-decision-logs-openapi.yml, openapi/aserto-directory-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: AuthorizerAPIKey
+  type: apiKey
+  in: header
+  parameter: authorization
+  sources:
+  - openapi/aserto-authorizer-openapi.yml
+  - openapi/aserto-decision-logs-openapi.yml
+  - openapi/aserto-directory-openapi.yml
+- name: TenantID
+  type: apiKey
+  in: header
+  parameter: aserto-tenant-id
+  sources:
+  - openapi/aserto-authorizer-openapi.yml
+  - openapi/aserto-decision-logs-openapi.yml
+  - openapi/aserto-directory-openapi.yml
