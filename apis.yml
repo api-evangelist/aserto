@@ -101,6 +101,8 @@ apis:
       - type: Documentation
         url: https://docs.aserto.com/docs/api-reference
 common:
+  - type: AgenticAccess
+    url: agentic-access/aserto-agentic-access.yml
   - type: DomainSecurity
     url: security/aserto-domain-security.yml
   - type: Authentication
