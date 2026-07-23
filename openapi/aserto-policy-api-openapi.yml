@@ -1,0 +1,151 @@
+openapi: 3.0.0
+info:
+  title: aserto//v2/.proto Authorizer Policy API
+  version: version not set
+security:
+- AuthorizerAPIKey: []
+  TenantID: []
+tags:
+- name: Policy
+paths:
+  /api/v2/policies:
+    get:
+      description: Lists the policy modules for the policy bundle.
+      operationId: policies.list
+      parameters:
+      - in: query
+        name: field_mask
+        required: false
+        schema:
+          type: string
+      - description: policy name
+        in: query
+        name: policy_instance.name
+        required: false
+        schema:
+          type: string
+      - description: label identifying the instance of the policy
+        in: query
+        name: policy_instance.instance_label
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2ListPoliciesResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - AuthorizerAPIKey: []
+        TenantID: []
+      summary: List Policies
+      tags:
+      - Policy
+  /api/v2/policies/{id}:
+    get:
+      description: Gets the policy modules for the given module Id.
+      operationId: policies.get
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          pattern: '[^/]+/.+'
+      - in: query
+        name: field_mask
+        required: false
+        schema:
+          type: string
+      - description: policy name
+        in: query
+        name: policy_instance.name
+        required: false
+        schema:
+          type: string
+      - description: label identifying the instance of the policy
+        in: query
+        name: policy_instance.instance_label
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2GetPolicyResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security:
+      - AuthorizerAPIKey: []
+        TenantID: []
+      summary: Get Policy
+      tags:
+      - Policy
+components:
+  schemas:
+    v2ListPoliciesResponse:
+      properties:
+        result:
+          items:
+            $ref: '#/components/schemas/apiModule'
+          type: array
+      type: object
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    v2GetPolicyResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/apiModule'
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
+    apiModule:
+      properties:
+        ast: {}
+        id:
+          type: string
+        package_path:
+          type: string
+        package_root:
+          type: string
+        raw:
+          type: string
+      type: object
+  securitySchemes:
+    AuthorizerAPIKey:
+      in: header
+      name: authorization
+      type: apiKey
+    TenantID:
+      in: header
+      name: aserto-tenant-id
+      type: apiKey

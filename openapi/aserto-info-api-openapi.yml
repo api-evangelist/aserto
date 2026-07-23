@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: aserto//v2/.proto Authorizer Info API
+  version: version not set
+security:
+- AuthorizerAPIKey: []
+  TenantID: []
+tags:
+- name: Info
+paths:
+  /api/v2/info:
+    get:
+      description: Return version information.
+      operationId: info.get
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v2InfoResponse'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      security: []
+      summary: Info
+      tags:
+      - Info
+components:
+  schemas:
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
+    v2InfoResponse:
+      properties:
+        arch:
+          type: string
+        commit:
+          type: string
+        date:
+          type: string
+        os:
+          type: string
+        version:
+          type: string
+      type: object
+  securitySchemes:
+    AuthorizerAPIKey:
+      in: header
+      name: authorization
+      type: apiKey
+    TenantID:
+      in: header
+      name: aserto-tenant-id
+      type: apiKey
