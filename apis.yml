@@ -10,7 +10,20 @@ description: >
   the technology forward after the commercial SaaS control plane was wound down
   in May 2025.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/aserto.png
 url: https://raw.githubusercontent.com/api-evangelist/aserto/refs/heads/main/apis.yml
 created: "2026-06-13"
 modified: "2026-06-13"
@@ -27,79 +40,121 @@ tags:
   - Cloud-Native
   - Security
 apis:
-  - name: Aserto Authorizer API
-    description: >
-      Real-time authorization decision engine powered by Open Policy Agent.
-      Exposes /is, /query, and /decisiontree endpoints that evaluate a policy
-      against identity context, resource context, and policy context to return
-      allow/deny decisions with sub-millisecond latency. Supports both gRPC and
-      HTTPS REST transports.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
-    baseURL: https://authorizer.prod.aserto.com
-    tags:
-      - Authorization
-      - Policy Enforcement
-      - OPA
-    properties:
-      - type: Documentation
-        url: https://docs.aserto.com/docs/authorizer-guide/overview
-      - type: OpenAPI
-        url: https://github.com/aserto-dev/openapi-directory
-  - name: Aserto Directory API
-    description: >
-      Manages the authorization data store — users, groups, objects, relations,
-      and permissions — modelled after the Google Zanzibar relationship-based
-      access control (ReBAC) system. Provides read and write operations over
-      directory objects and relations used to evaluate fine-grained authorization
-      decisions at runtime.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.aserto.com/docs/api-reference
-    baseURL: https://directory.prod.aserto.com
-    tags:
-      - Directory
-      - ReBAC
-      - Objects
-      - Relations
-    properties:
-      - type: Documentation
-        url: https://docs.aserto.com/docs/api-reference
-      - type: OpenAPI
-        url: https://github.com/aserto-dev/openapi-directory
-  - name: Aserto Decision Logs API
-    description: >
-      Collects and surfaces a complete audit trail of authorization decisions
-      made by connected Authorizer instances. Supports compliance, debugging,
-      and analytics use cases by recording who was authorized (or denied),
-      which policy evaluated the decision, and the context at decision time.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.aserto.com/docs/api-reference
-    baseURL: https://console.aserto.com
-    tags:
-      - Decision Logs
-      - Audit
-      - Compliance
-    properties:
-      - type: Documentation
-        url: https://docs.aserto.com/docs/api-reference
-  - name: Aserto Control Plane API
-    description: >
-      Management API for the Aserto SaaS control plane (wound down May 2025,
-      succeeded by the open-source Topaz project). Provided lifecycle management
-      of policies, Edge Authorizer instances, tenants, and connection
-      configurations. Referenced here for historical completeness; the
-      open-source Topaz project at github.com/aserto-dev/topaz carries forward
-      the self-hosted control-plane functionality.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.aserto.com/docs/api-reference
-    baseURL: https://console.aserto.com
-    tags:
-      - Control Plane
-      - Management
-      - Policies
-    properties:
-      - type: Documentation
-        url: https://docs.aserto.com/docs/api-reference
+- name: Aserto Decision Logs API
+  description: >
+    Collects and surfaces a complete audit trail of authorization decisions made by connected Authorizer
+    instances. Supports compliance, debugging, and analytics use cases by recording who was authorized
+    (or denied), which policy evaluated the decision, and the context at decision time.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.aserto.com/docs/api-reference
+  baseURL: https://console.aserto.com
+  tags:
+  - Decision Logs
+  - Audit
+  - Compliance
+  properties:
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- name: Aserto Control Plane API
+  description: >
+    Management API for the Aserto SaaS control plane (wound down May 2025, succeeded by the open-source
+    Topaz project). Provided lifecycle management of policies, Edge Authorizer instances, tenants, and
+    connection configurations. Referenced here for historical completeness; the open-source Topaz project
+    at github.com/aserto-dev/topaz carries forward the self-hosted control-plane functionality.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.aserto.com/docs/api-reference
+  baseURL: https://console.aserto.com
+  tags:
+  - Control Plane
+  - Management
+  - Policies
+  properties:
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-authorizer-api
+  name: Aserto Authorizer API
+  description: The Authorizer API from Aserto — 4 operation(s) for authorizer.
+  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+  baseURL: https://authorizer.prod.aserto.com
+  tags:
+  - Authorizer
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-authorizer-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-authzen-api
+  name: Aserto authzen API
+  description: The authzen API from Aserto — 5 operation(s) for authzen.
+  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+  baseURL: https://authorizer.prod.aserto.com
+  tags:
+  - authzen
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-authzen-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-decision-logs-api
+  name: Aserto decision_logs API
+  description: The decision_logs API from Aserto — 6 operation(s) for decision_logs.
+  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+  baseURL: https://authorizer.prod.aserto.com
+  tags:
+  - decision_logs
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-decision-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-directory-api
+  name: Aserto directory API
+  description: The directory API from Aserto — 14 operation(s) for directory.
+  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+  baseURL: https://authorizer.prod.aserto.com
+  tags:
+  - directory
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-directory-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-info-api
+  name: Aserto Info API
+  description: The Info API from Aserto — 1 operation(s) for info.
+  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+  baseURL: https://authorizer.prod.aserto.com
+  tags:
+  - Info
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-info-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-policy-api
+  name: Aserto Policy API
+  description: The Policy API from Aserto — 2 operation(s) for policy.
+  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
+  baseURL: https://authorizer.prod.aserto.com
+  tags:
+  - Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-policy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
 common:
   - type: AgenticAccess
     url: agentic-access/aserto-agentic-access.yml
