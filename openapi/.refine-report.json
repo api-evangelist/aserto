@@ -1,0 +1,24 @@
+{
+  "provider": "aserto",
+  "sources": [
+    "aserto-authorizer-api-openapi.yml",
+    "aserto-authzen-api-openapi.yml",
+    "aserto-decision-logs-api-openapi.yml",
+    "aserto-directory-api-openapi.yml",
+    "aserto-info-api-openapi.yml",
+    "aserto-policy-api-openapi.yml"
+  ],
+  "outputs": [
+    "aserto-authorizer-api-openapi.yml",
+    "aserto-authzen-api-openapi.yml",
+    "aserto-decision-logs-api-openapi.yml",
+    "aserto-directory-api-openapi.yml",
+    "aserto-info-api-openapi.yml",
+    "aserto-policy-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
