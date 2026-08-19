@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "aserto//v2/.proto Authorizer Policy API",
+    "version": "version not set"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "authorization",
+      "value": "{{authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Policy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/policies",
+            "params": [
+              {
+                "name": "field_mask",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policy_instance.name",
+                "value": "",
+                "type": "query",
+                "description": "policy name"
+              },
+              {
+                "name": "policy_instance.instance_label",
+                "value": "",
+                "type": "query",
+                "description": "label identifying the instance of the policy"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "authorization",
+              "value": "{{authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Lists the policy modules for the policy bundle."
+        },
+        {
+          "info": {
+            "name": "Get Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/policies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "field_mask",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policy_instance.name",
+                "value": "",
+                "type": "query",
+                "description": "policy name"
+              },
+              {
+                "name": "policy_instance.instance_label",
+                "value": "",
+                "type": "query",
+                "description": "label identifying the instance of the policy"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "authorization",
+              "value": "{{authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Gets the policy modules for the given module Id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

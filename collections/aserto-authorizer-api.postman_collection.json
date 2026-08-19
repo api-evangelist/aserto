@@ -1,0 +1,749 @@
+{
+  "item": [
+    {
+      "id": "4860aa4f-24bc-4902-b84a-8da8b26f6c10",
+      "name": "Authorizer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "14dec249-9735-48d8-bda2-cd18ccefc01f",
+          "name": "Compile",
+          "request": {
+            "name": "Compile",
+            "description": {
+              "content": "Executes a partial query on the loaded policy runtime.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "authz",
+                "compile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disable_inlining\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"input\": \"<string>\",\n  \"options\": {\n    \"instrument\": \"<boolean>\",\n    \"metrics\": \"<boolean>\",\n    \"trace\": \"TRACE_LEVEL_UNKNOWN\",\n    \"trace_summary\": \"<boolean>\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"resource_context\": \"<object>\",\n  \"unknowns\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d611b71b-7ada-4b81-b8b4-a3cadbddeea5",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "compile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"disable_inlining\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"input\": \"<string>\",\n  \"options\": {\n    \"instrument\": \"<boolean>\",\n    \"metrics\": \"<boolean>\",\n    \"trace\": \"TRACE_LEVEL_UNKNOWN\",\n    \"trace_summary\": \"<boolean>\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"resource_context\": \"<object>\",\n  \"unknowns\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metrics\": {},\n  \"result\": {},\n  \"trace_summary\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92e77f45-c10f-4c7e-a230-02a08aaab0ee",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "compile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"disable_inlining\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"input\": \"<string>\",\n  \"options\": {\n    \"instrument\": \"<boolean>\",\n    \"metrics\": \"<boolean>\",\n    \"trace\": \"TRACE_LEVEL_UNKNOWN\",\n    \"trace_summary\": \"<boolean>\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"resource_context\": \"<object>\",\n  \"unknowns\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1858,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "590dcd4c-0128-4086-b371-7387e2baab21",
+          "name": "Decision tree",
+          "request": {
+            "name": "Decision tree",
+            "description": {
+              "content": "Returns decision tree for given identity context.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "authz",
+                "decisiontree"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"options\": {\n    \"path_separator\": \"PATH_SEPARATOR_UNKNOWN\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"resource_context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "577b41c4-71e4-48aa-a34d-b8985ff1697f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "decisiontree"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"options\": {\n    \"path_separator\": \"PATH_SEPARATOR_UNKNOWN\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"resource_context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"path\": {},\n  \"path_root\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ebcf13f-62e4-403e-9280-96b6fbf29ef5",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "decisiontree"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"options\": {\n    \"path_separator\": \"PATH_SEPARATOR_UNKNOWN\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"resource_context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7902,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29a28e63-94f7-4ba2-bf6c-1d822eec36fd",
+          "name": "Is (authorized)",
+          "request": {
+            "name": "Is (authorized)",
+            "description": {
+              "content": "Determines if identity context is authorized to access the resource guarded by the given policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "authz",
+                "is"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"resource_context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e5b9cd86-6899-4bef-88c2-d0666d38edd4",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "is"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"resource_context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"decisions\": [\n    {\n      \"decision\": \"string\",\n      \"is\": false\n    },\n    {\n      \"decision\": \"string\",\n      \"is\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92ba7a4f-81f5-43d6-96dc-2af54032488a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "is"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"resource_context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7902,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4246b61f-c41f-4cf9-a71f-211fe2d3f574",
+          "name": "Query",
+          "request": {
+            "name": "Query",
+            "description": {
+              "content": "Executes a rego query on the loaded policy runtime.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "authz",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"input\": \"<string>\",\n  \"options\": {\n    \"instrument\": \"<boolean>\",\n    \"metrics\": \"<boolean>\",\n    \"trace\": \"TRACE_LEVEL_UNKNOWN\",\n    \"trace_summary\": \"<boolean>\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"resource_context\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00a019bd-1b8d-41ea-84ad-a3fca698b1bc",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"input\": \"<string>\",\n  \"options\": {\n    \"instrument\": \"<boolean>\",\n    \"metrics\": \"<boolean>\",\n    \"trace\": \"TRACE_LEVEL_UNKNOWN\",\n    \"trace_summary\": \"<boolean>\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"resource_context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metrics\": {},\n  \"response\": {},\n  \"trace_summary\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f0da224-7e22-407b-8173-2a51883fc12b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "authz",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity_context\": {\n    \"identity\": \"<string>\",\n    \"type\": \"IDENTITY_TYPE_UNKNOWN\"\n  },\n  \"input\": \"<string>\",\n  \"options\": {\n    \"instrument\": \"<boolean>\",\n    \"metrics\": \"<boolean>\",\n    \"trace\": \"TRACE_LEVEL_UNKNOWN\",\n    \"trace_summary\": \"<boolean>\"\n  },\n  \"policy_context\": {\n    \"decisions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"path\": \"<string>\"\n  },\n  \"policy_instance\": {\n    \"instance_label\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"resource_context\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7902,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dfdfaf51-6d59-4b98-be35-f60e5731ceea",
+    "name": "aserto//v2/.proto Authorizer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "aserto//v2/.proto Authorizer authzen API",
+    "version": "version not set"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "authorization",
+      "value": "{{authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "authzen",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Access Evaluation API",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/access/v1/evaluation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TBD"
+        },
+        {
+          "info": {
+            "name": "Access Evaluations API",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/access/v1/evaluations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TBD."
+        },
+        {
+          "info": {
+            "name": "Action Search API",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/access/v1/search/action",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TBD."
+        },
+        {
+          "info": {
+            "name": "Resource Search API",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/access/v1/search/resource",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TBD."
+        },
+        {
+          "info": {
+            "name": "Subject Search API",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/access/v1/search/subject",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "TBD."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

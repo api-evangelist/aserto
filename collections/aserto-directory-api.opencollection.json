@@ -1,0 +1,556 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "aserto//v2/.proto Authorizer directory API",
+    "version": "version not set"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "authorization",
+      "value": "{{authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "directory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set assertion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/assertion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set assertion."
+        },
+        {
+          "info": {
+            "name": "Get assertion instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/assertion/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "assertion identifier"
+              }
+            ]
+          },
+          "docs": "Returns single assertion instance."
+        },
+        {
+          "info": {
+            "name": "Delete assertion",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v3/directory/assertion/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "assertion identifier"
+              }
+            ]
+          },
+          "docs": "Delete assertion."
+        },
+        {
+          "info": {
+            "name": "List assertions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/assertions",
+            "params": [
+              {
+                "name": "page.size",
+                "value": "",
+                "type": "query",
+                "description": "requested page size, valid value between 1-100 rows (default 100)"
+              },
+              {
+                "name": "page.token",
+                "value": "",
+                "type": "query",
+                "description": "pagination start token, default \"\""
+              }
+            ]
+          },
+          "docs": "Returns list of assertion instances."
+        },
+        {
+          "info": {
+            "name": "Check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/check",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns check outcome."
+        },
+        {
+          "info": {
+            "name": "Check permission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/check/permission",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns check permission outcome."
+        },
+        {
+          "info": {
+            "name": "Check relation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/check/relation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns check relation outcome."
+        },
+        {
+          "info": {
+            "name": "Checks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/checks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns multiple check outcomes."
+        },
+        {
+          "info": {
+            "name": "Get graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/graph/:object_type/:relation/:subject_type",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "path",
+                "description": "object type"
+              },
+              {
+                "name": "relation",
+                "value": "",
+                "type": "path",
+                "description": "relation name"
+              },
+              {
+                "name": "subject_type",
+                "value": "",
+                "type": "path",
+                "description": "subject type"
+              },
+              {
+                "name": "object_id",
+                "value": "",
+                "type": "query",
+                "description": "object identifier"
+              },
+              {
+                "name": "subject_id",
+                "value": "",
+                "type": "query",
+                "description": "subject identifier"
+              },
+              {
+                "name": "subject_relation",
+                "value": "",
+                "type": "query",
+                "description": "subject relation"
+              },
+              {
+                "name": "explain",
+                "value": "",
+                "type": "query",
+                "description": "return graph paths for each result"
+              },
+              {
+                "name": "trace",
+                "value": "",
+                "type": "query",
+                "description": "collect trace information"
+              }
+            ]
+          },
+          "docs": "Returns object graph from anchor to subject or object."
+        },
+        {
+          "info": {
+            "name": "Delete manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v3/directory/manifest",
+            "params": [
+              {
+                "name": "empty",
+                "value": "",
+                "type": "query",
+                "description": "empty request"
+              }
+            ]
+          },
+          "docs": "Delete manifest."
+        },
+        {
+          "info": {
+            "name": "Set object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/object",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set object."
+        },
+        {
+          "info": {
+            "name": "Get object instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/object/:object_type/:object_id",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "path",
+                "description": "object type name (lc-string)"
+              },
+              {
+                "name": "object_id",
+                "value": "",
+                "type": "path",
+                "description": "object identifier (cs-string)"
+              },
+              {
+                "name": "with_relations",
+                "value": "",
+                "type": "query",
+                "description": "materialize the object relations objects"
+              },
+              {
+                "name": "page.size",
+                "value": "",
+                "type": "query",
+                "description": "requested page size, valid value between 1-100 rows (default 100)"
+              },
+              {
+                "name": "page.token",
+                "value": "",
+                "type": "query",
+                "description": "pagination start token, default \"\""
+              }
+            ]
+          },
+          "docs": "Returns single object instance, optionally with relations."
+        },
+        {
+          "info": {
+            "name": "Delete object",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v3/directory/object/:object_type/:object_id",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "path",
+                "description": "object type"
+              },
+              {
+                "name": "object_id",
+                "value": "",
+                "type": "path",
+                "description": "object identifier"
+              },
+              {
+                "name": "with_relations",
+                "value": "",
+                "type": "query",
+                "description": "delete object relations, both object and subject relations."
+              }
+            ]
+          },
+          "docs": "Delete object."
+        },
+        {
+          "info": {
+            "name": "List object instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/objects",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "query",
+                "description": "object type name (lc-string)"
+              },
+              {
+                "name": "page.size",
+                "value": "",
+                "type": "query",
+                "description": "requested page size, valid value between 1-100 rows (default 100)"
+              },
+              {
+                "name": "page.token",
+                "value": "",
+                "type": "query",
+                "description": "pagination start token, default \"\""
+              }
+            ]
+          },
+          "docs": "Returns list of object instances."
+        },
+        {
+          "info": {
+            "name": "Get relation instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/relation",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "query",
+                "description": "object type"
+              },
+              {
+                "name": "object_id",
+                "value": "",
+                "type": "query",
+                "description": "object identifier"
+              },
+              {
+                "name": "relation",
+                "value": "",
+                "type": "query",
+                "description": "relation name"
+              },
+              {
+                "name": "subject_type",
+                "value": "",
+                "type": "query",
+                "description": "subject type"
+              },
+              {
+                "name": "subject_id",
+                "value": "",
+                "type": "query",
+                "description": "subject identifier"
+              },
+              {
+                "name": "subject_relation",
+                "value": "",
+                "type": "query",
+                "description": "optional subject relation name"
+              },
+              {
+                "name": "with_objects",
+                "value": "",
+                "type": "query",
+                "description": "materialize relation objects"
+              }
+            ]
+          },
+          "docs": "Returns single relation instance, optionally with objects."
+        },
+        {
+          "info": {
+            "name": "Set relation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v3/directory/relation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set relation."
+        },
+        {
+          "info": {
+            "name": "Delete relation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v3/directory/relation",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "query",
+                "description": "object type"
+              },
+              {
+                "name": "object_id",
+                "value": "",
+                "type": "query",
+                "description": "object identifier"
+              },
+              {
+                "name": "relation",
+                "value": "",
+                "type": "query",
+                "description": "object relation name"
+              },
+              {
+                "name": "subject_type",
+                "value": "",
+                "type": "query",
+                "description": "subject type"
+              },
+              {
+                "name": "subject_id",
+                "value": "",
+                "type": "query",
+                "description": "subject identifier"
+              },
+              {
+                "name": "subject_relation",
+                "value": "",
+                "type": "query",
+                "description": "optional subject relation name"
+              }
+            ]
+          },
+          "docs": "Delete relation."
+        },
+        {
+          "info": {
+            "name": "List relations instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v3/directory/relations",
+            "params": [
+              {
+                "name": "object_type",
+                "value": "",
+                "type": "query",
+                "description": "object type"
+              },
+              {
+                "name": "object_id",
+                "value": "",
+                "type": "query",
+                "description": "object identifier"
+              },
+              {
+                "name": "relation",
+                "value": "",
+                "type": "query",
+                "description": "relation name"
+              },
+              {
+                "name": "subject_type",
+                "value": "",
+                "type": "query",
+                "description": "subject type"
+              },
+              {
+                "name": "subject_id",
+                "value": "",
+                "type": "query",
+                "description": "subject identifier"
+              },
+              {
+                "name": "subject_relation",
+                "value": "",
+                "type": "query",
+                "description": "optional subject relation name"
+              },
+              {
+                "name": "with_objects",
+                "value": "",
+                "type": "query",
+                "description": "materialize relation objects"
+              },
+              {
+                "name": "with_empty_subject_relation",
+                "value": "",
+                "type": "query",
+                "description": "only return relations that do not have a subject relation."
+              },
+              {
+                "name": "page.size",
+                "value": "",
+                "type": "query",
+                "description": "requested page size, valid value between 1-100 rows (default 100)"
+              },
+              {
+                "name": "page.token",
+                "value": "",
+                "type": "query",
+                "description": "pagination start token, default \"\""
+              }
+            ]
+          },
+          "docs": "Returns list of relation instances."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

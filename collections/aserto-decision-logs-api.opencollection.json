@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "aserto//v2/.proto Authorizer decision_logs API",
+    "version": "version not set"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "authorization",
+      "value": "{{authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "decision_logs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available decision logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/decision_logs/decision_logs",
+            "params": [
+              {
+                "name": "page.size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page.token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policies",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a collection of decision logs."
+        },
+        {
+          "info": {
+            "name": "Get a decision log",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/decision_logs/decision_logs/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the location of a single decison log instance."
+        },
+        {
+          "info": {
+            "name": "decision event stream",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/decision_logs/decisions/policy/:policy_name/:instance_label",
+            "params": [
+              {
+                "name": "policy_name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance_label",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a stream of decisions"
+        },
+        {
+          "info": {
+            "name": "query decision logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v2/decision_logs/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a collection of raw decision logs strings matching the query specification."
+        },
+        {
+          "info": {
+            "name": "List users referenced by decision logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/decision_logs/users",
+            "params": [
+              {
+                "name": "page.size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page.token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a collection of users that may be referenced by decision logs."
+        },
+        {
+          "info": {
+            "name": "Get a user referenced by decision logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v2/decision_logs/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the location of a single user that may be referenced by decision logs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

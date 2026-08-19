@@ -1,0 +1,3504 @@
+{
+  "item": [
+    {
+      "id": "ba3fe82b-43ee-442c-bca2-f04793860661",
+      "name": "directory",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eda934ee-8f8f-41a1-8690-2494b42f1245",
+          "name": "Set assertion",
+          "request": {
+            "name": "Set assertion",
+            "description": {
+              "content": "Set assertion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "assertion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assert\": {\n    \"expected\": \"<boolean>\",\n    \"check\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_permission\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"permission\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_relation\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"description\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f075ae9d-291c-4b09-af59-9eb0913c040f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assert\": {\n    \"expected\": \"<boolean>\",\n    \"check\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_permission\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"permission\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_relation\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"description\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"expected\": \"<boolean>\",\n    \"check\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_permission\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"permission\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_relation\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"description\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e94bb63b-5dd7-47cc-8507-47a54ecb9c86",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assert\": {\n    \"expected\": \"<boolean>\",\n    \"check\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_permission\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"permission\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_relation\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"description\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2021,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ae14942-4121-4dc7-bf36-7c897de68bae",
+          "name": "Delete assertion",
+          "request": {
+            "name": "Delete assertion",
+            "description": {
+              "content": "Delete assertion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "assertion",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) assertion identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "d936bb03-ae0b-44c6-b5e4-f8198f181aef",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertion",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) assertion identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0fcf7fa-f69d-4fd9-a72c-449b81d34ced",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertion",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) assertion identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9d7fe26-f55d-412f-be32-00ab58c4a513",
+          "name": "Get assertion instance",
+          "request": {
+            "name": "Get assertion instance",
+            "description": {
+              "content": "Returns single assertion instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "assertion",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) assertion identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "b120475b-f7da-40a8-8685-2256010d3cbe",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertion",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) assertion identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"expected\": \"<boolean>\",\n    \"check\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_permission\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"permission\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"check_relation\": {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    \"description\": \"<string>\",\n    \"id\": \"<long>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b283bafa-cae0-47a3-94b1-543feed37da0",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertion",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) assertion identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad78d518-d0d2-48d2-a232-feb0fba56666",
+          "name": "List assertions",
+          "request": {
+            "name": "List assertions",
+            "description": {
+              "content": "Returns list of assertion instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "assertions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page.size",
+                  "value": "<integer>",
+                  "description": "requested page size, valid value between 1-100 rows (default 100)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page.token",
+                  "value": "<string>",
+                  "description": "pagination start token, default \"\""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "98de299b-89db-4561-8248-f0ad0a0d5845",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": {\n    \"next_token\": \"string\"\n  },\n  \"results\": [\n    {\n      \"expected\": \"<boolean>\",\n      \"check\": {\n        \"object_type\": \"<string>\",\n        \"object_id\": \"<string>\",\n        \"relation\": \"<string>\",\n        \"subject_type\": \"<string>\",\n        \"subject_id\": \"<string>\",\n        \"trace\": \"<boolean>\"\n      },\n      \"check_permission\": {\n        \"object_type\": \"<string>\",\n        \"object_id\": \"<string>\",\n        \"permission\": \"<string>\",\n        \"subject_type\": \"<string>\",\n        \"subject_id\": \"<string>\",\n        \"trace\": \"<boolean>\"\n      },\n      \"check_relation\": {\n        \"object_type\": \"<string>\",\n        \"object_id\": \"<string>\",\n        \"relation\": \"<string>\",\n        \"subject_type\": \"<string>\",\n        \"subject_id\": \"<string>\",\n        \"trace\": \"<boolean>\"\n      },\n      \"description\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"expected\": \"<boolean>\",\n      \"check\": {\n        \"object_type\": \"<string>\",\n        \"object_id\": \"<string>\",\n        \"relation\": \"<string>\",\n        \"subject_type\": \"<string>\",\n        \"subject_id\": \"<string>\",\n        \"trace\": \"<boolean>\"\n      },\n      \"check_permission\": {\n        \"object_type\": \"<string>\",\n        \"object_id\": \"<string>\",\n        \"permission\": \"<string>\",\n        \"subject_type\": \"<string>\",\n        \"subject_id\": \"<string>\",\n        \"trace\": \"<boolean>\"\n      },\n      \"check_relation\": {\n        \"object_type\": \"<string>\",\n        \"object_id\": \"<string>\",\n        \"relation\": \"<string>\",\n        \"subject_type\": \"<string>\",\n        \"subject_id\": \"<string>\",\n        \"trace\": \"<boolean>\"\n      },\n      \"description\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e00e0063-0d44-414d-ac49-9faff503b638",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "assertions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4b444c3-89c9-4711-8bf7-662a4954ca6b",
+          "name": "Check",
+          "request": {
+            "name": "Check",
+            "description": {
+              "content": "Returns check outcome.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7e3bc15-7f7a-4377-a7b7-26da5d835816",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "check"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"check\": false,\n  \"context\": {},\n  \"trace\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72442b74-7ea9-42a2-926e-377cc3731fe7",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "check"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "713559ed-5b8d-4574-b8b6-71c4251763c1",
+          "name": "Check permission",
+          "request": {
+            "name": "Check permission",
+            "description": {
+              "content": "Returns check permission outcome.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "check",
+                "permission"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"permission\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9ee23d3d-0d58-4026-9f5a-c30334cbef9d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "check",
+                    "permission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"permission\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"check\": true,\n  \"trace\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "414cb41a-0ca3-4323-be6a-723df5598fa5",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "check",
+                    "permission"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"permission\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9ab197d-89d6-40c0-bd22-d02b2a011c52",
+          "name": "Check relation",
+          "request": {
+            "name": "Check relation",
+            "description": {
+              "content": "Returns check relation outcome.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "check",
+                "relation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4a51b812-d484-48f9-96ac-ad762f5b2525",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "check",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"check\": true,\n  \"trace\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0083b2f2-e57c-4e60-b115-a6e47f50e335",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "check",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object_type\": \"<string>\",\n  \"object_id\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_type\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"trace\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "652973b0-4615-40a3-a921-b714d5b7a99f",
+          "name": "Checks",
+          "request": {
+            "name": "Checks",
+            "description": {
+              "content": "Returns multiple check outcomes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "checks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"checks\": [\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    }\n  ],\n  \"default\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"trace\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "56ee0343-5056-4983-b213-0adc6e5355fb",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "checks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"checks\": [\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    }\n  ],\n  \"default\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"trace\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"checks\": [\n    {\n      \"check\": false,\n      \"context\": {},\n      \"trace\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"check\": true,\n      \"context\": {},\n      \"trace\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebd355e4-a6be-48ec-9ee2-e70d07842689",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "checks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"checks\": [\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    },\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"trace\": \"<boolean>\"\n    }\n  ],\n  \"default\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"trace\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae3e9497-d28b-4f97-97d7-facf1219f010",
+          "name": "Get graph",
+          "request": {
+            "name": "Get graph",
+            "description": {
+              "content": "Returns object graph from anchor to subject or object.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "graph",
+                ":object_type",
+                ":relation",
+                ":subject_type"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "object_id",
+                  "value": "<string>",
+                  "description": "object identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_id",
+                  "value": "<string>",
+                  "description": "subject identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_relation",
+                  "value": "<string>",
+                  "description": "subject relation"
+                },
+                {
+                  "disabled": false,
+                  "key": "explain",
+                  "value": "<boolean>",
+                  "description": "return graph paths for each result"
+                },
+                {
+                  "disabled": false,
+                  "key": "trace",
+                  "value": "<boolean>",
+                  "description": "collect trace information"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "object_type",
+                  "description": "(Required) object type"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "relation",
+                  "description": "(Required) relation name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subject_type",
+                  "description": "(Required) subject type"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "00f41cc7-0ff0-42c3-8cd7-535ae2f3701f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "graph",
+                    ":object_type",
+                    ":relation",
+                    ":subject_type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "explain",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "trace",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "relation",
+                      "description": "(Required) relation name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subject_type",
+                      "description": "(Required) subject type"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"explanation\": {},\n  \"results\": [\n    {\n      \"object_type\": \"string\",\n      \"object_id\": \"string\"\n    },\n    {\n      \"object_type\": \"string\",\n      \"object_id\": \"string\"\n    }\n  ],\n  \"trace\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66bc3c23-2c07-441b-9b62-b27436d8316a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "graph",
+                    ":object_type",
+                    ":relation",
+                    ":subject_type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "explain",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "trace",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "relation",
+                      "description": "(Required) relation name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subject_type",
+                      "description": "(Required) subject type"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdc3fa9d-8d62-4db0-8490-11038b8a7b52",
+          "name": "Delete manifest",
+          "request": {
+            "name": "Delete manifest",
+            "description": {
+              "content": "Delete manifest.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "manifest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "456ee181-5d28-4a5e-8c3a-b0d64fdfe775",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "manifest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65228dd3-2f49-4867-b9f2-b60fda2e818e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "manifest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6c6d71d-8a41-4110-9dc4-45c2ba88d710",
+          "name": "Set object",
+          "request": {
+            "name": "Set object",
+            "description": {
+              "content": "Set object.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "object"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"display_name\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"properties\": \"<object>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a6175cfb-99d5-4e44-9cc1-e09fbaf09b82",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"display_name\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"properties\": \"<object>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"created_at\": \"1967-07-17T17:23:47.011Z\",\n    \"display_name\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"updated_at\": \"1971-03-22T00:49:53.670Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "527d6fc0-3ca7-4f86-b146-8d37407bdcf4",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"object\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"display_name\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"properties\": \"<object>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c222519-63ae-42d2-a485-3d87155db476",
+          "name": "Delete object",
+          "request": {
+            "name": "Delete object",
+            "description": {
+              "content": "Delete object.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "object",
+                ":object_type",
+                ":object_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "with_relations",
+                  "value": "<boolean>",
+                  "description": "delete object relations, both object and subject relations."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "object_type",
+                  "description": "(Required) object type"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "object_id",
+                  "description": "(Required) object identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "db681d6f-418a-46d9-b6f1-f0db6be9498e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object",
+                    ":object_type",
+                    ":object_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "with_relations",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_id",
+                      "description": "(Required) object identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c2acddf-a43a-4121-ad9b-f3274983d3ec",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object",
+                    ":object_type",
+                    ":object_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "with_relations",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_id",
+                      "description": "(Required) object identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69281c96-3c4f-476e-84a9-d497fed4a891",
+          "name": "Get object instance",
+          "request": {
+            "name": "Get object instance",
+            "description": {
+              "content": "Returns single object instance, optionally with relations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "object",
+                ":object_type",
+                ":object_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "with_relations",
+                  "value": "<boolean>",
+                  "description": "materialize the object relations objects"
+                },
+                {
+                  "disabled": false,
+                  "key": "page.size",
+                  "value": "<integer>",
+                  "description": "requested page size, valid value between 1-100 rows (default 100)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page.token",
+                  "value": "<string>",
+                  "description": "pagination start token, default \"\""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "object_type",
+                  "description": "(Required) object type name (lc-string)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "object_id",
+                  "description": "(Required) object identifier (cs-string)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "79e1deaa-4309-49d0-99ad-d0dfbbfcd2c0",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object",
+                    ":object_type",
+                    ":object_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "with_relations",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type name (lc-string)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_id",
+                      "description": "(Required) object identifier (cs-string)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": {\n    \"next_token\": \"string\"\n  },\n  \"relations\": [\n    {\n      \"object_type\": \"string\",\n      \"object_id\": \"string\",\n      \"relation\": \"string\",\n      \"subject_type\": \"string\",\n      \"subject_id\": \"string\",\n      \"created_at\": \"2010-03-14T11:55:12.019Z\",\n      \"etag\": \"string\",\n      \"subject_relation\": \"string\",\n      \"updated_at\": \"2001-05-05T08:14:48.998Z\"\n    },\n    {\n      \"object_type\": \"string\",\n      \"object_id\": \"string\",\n      \"relation\": \"string\",\n      \"subject_type\": \"string\",\n      \"subject_id\": \"string\",\n      \"created_at\": \"1965-12-23T05:00:32.132Z\",\n      \"etag\": \"string\",\n      \"subject_relation\": \"string\",\n      \"updated_at\": \"1984-06-16T14:28:57.912Z\"\n    }\n  ],\n  \"result\": {\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"created_at\": \"2025-11-30T09:00:00.419Z\",\n    \"display_name\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"updated_at\": \"1957-10-14T17:10:45.640Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c455490a-c897-4e1a-b8ac-07d3ebc17812",
+              "name": "Object not modified.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object",
+                    ":object_type",
+                    ":object_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "with_relations",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type name (lc-string)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_id",
+                      "description": "(Required) object identifier (cs-string)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89a835c3-068a-425f-9c20-0d442293b584",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "object",
+                    ":object_type",
+                    ":object_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "with_relations",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_type",
+                      "description": "(Required) object type name (lc-string)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "object_id",
+                      "description": "(Required) object identifier (cs-string)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce3de516-6b2f-4361-bdb8-9e72b48f0dbe",
+          "name": "List object instances",
+          "request": {
+            "name": "List object instances",
+            "description": {
+              "content": "Returns list of object instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "objects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "object_type",
+                  "value": "<string>",
+                  "description": "object type name (lc-string)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page.size",
+                  "value": "<integer>",
+                  "description": "requested page size, valid value between 1-100 rows (default 100)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page.token",
+                  "value": "<string>",
+                  "description": "pagination start token, default \"\""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "359db5a8-7270-4894-b02e-956f7d983051",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "objects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": {\n    \"next_token\": \"string\"\n  },\n  \"results\": [\n    {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"1968-08-06T13:40:45.111Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"2025-12-20T05:44:22.915Z\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"1979-11-17T14:45:23.322Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"2010-02-24T23:29:44.810Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8f0af86-da13-4ac6-8244-16fca3b00f1e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "objects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "053e1315-fb81-453a-b172-19451de93197",
+          "name": "Delete relation",
+          "request": {
+            "name": "Delete relation",
+            "description": {
+              "content": "Delete relation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "relation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "object_type",
+                  "value": "<string>",
+                  "description": "(Required) object type"
+                },
+                {
+                  "disabled": false,
+                  "key": "object_id",
+                  "value": "<string>",
+                  "description": "(Required) object identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "relation",
+                  "value": "<string>",
+                  "description": "(Required) object relation name"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_type",
+                  "value": "<string>",
+                  "description": "(Required) subject type"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_id",
+                  "value": "<string>",
+                  "description": "(Required) subject identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_relation",
+                  "value": "<string>",
+                  "description": "optional subject relation name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE"
+          },
+          "response": [
+            {
+              "id": "5d41481a-f1ab-4177-8c43-c3da2dd9d42d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e41fd9d-a7ec-4047-a4b4-5d55493e0088",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7bb5c79-3a16-4f43-9b84-31907661dd38",
+          "name": "Get relation instance",
+          "request": {
+            "name": "Get relation instance",
+            "description": {
+              "content": "Returns single relation instance, optionally with objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "relation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "object_type",
+                  "value": "<string>",
+                  "description": "(Required) object type"
+                },
+                {
+                  "disabled": false,
+                  "key": "object_id",
+                  "value": "<string>",
+                  "description": "(Required) object identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "relation",
+                  "value": "<string>",
+                  "description": "(Required) relation name"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_type",
+                  "value": "<string>",
+                  "description": "(Required) subject type"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_id",
+                  "value": "<string>",
+                  "description": "(Required) subject identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_relation",
+                  "value": "<string>",
+                  "description": "optional subject relation name"
+                },
+                {
+                  "disabled": false,
+                  "key": "with_objects",
+                  "value": "<boolean>",
+                  "description": "materialize relation objects"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "c47ae6fe-3fcc-4259-bc01-25cdd4aaeb44",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "with_objects",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"objects\": {\n    \"key_0\": {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"1952-08-06T10:28:48.375Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"1986-09-21T01:56:49.157Z\"\n    },\n    \"key_1\": {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"1981-05-10T00:45:10.269Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"1971-04-28T11:09:38.147Z\"\n    }\n  },\n  \"result\": {\n    \"object_type\": \"string\",\n    \"object_id\": \"string\",\n    \"relation\": \"string\",\n    \"subject_type\": \"string\",\n    \"subject_id\": \"string\",\n    \"created_at\": \"1985-07-08T16:44:33.785Z\",\n    \"etag\": \"string\",\n    \"subject_relation\": \"string\",\n    \"updated_at\": \"2019-06-10T22:41:10.139Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c56210a-2ac2-4a56-bd34-3bb7363ac186",
+              "name": "Relation not modified.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "with_objects",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3249440-cbb7-44b4-8cb7-940b9eabd6b9",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "with_objects",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aade5753-15eb-496f-8bb1-1cf9d3ef654b",
+          "name": "Set relation",
+          "request": {
+            "name": "Set relation",
+            "description": {
+              "content": "Set relation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "relation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relation\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"subject_relation\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6ea67d02-82a6-40e8-932a-ff93108e1103",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relation\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"subject_relation\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"created_at\": \"1962-09-22T07:53:17.136Z\",\n    \"etag\": \"<string>\",\n    \"subject_relation\": \"<string>\",\n    \"updated_at\": \"1985-07-08T21:31:23.011Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "639b5876-4b2e-4329-a8d0-beba24657a07",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relation\": {\n    \"object_type\": \"<string>\",\n    \"object_id\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_type\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"etag\": \"<string>\",\n    \"subject_relation\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14f4aa86-5112-4b7e-8603-ede742b7797d",
+          "name": "List relations instances",
+          "request": {
+            "name": "List relations instances",
+            "description": {
+              "content": "Returns list of relation instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "directory",
+                "relations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "object_type",
+                  "value": "<string>",
+                  "description": "object type"
+                },
+                {
+                  "disabled": false,
+                  "key": "object_id",
+                  "value": "<string>",
+                  "description": "object identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "relation",
+                  "value": "<string>",
+                  "description": "relation name"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_type",
+                  "value": "<string>",
+                  "description": "subject type"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_id",
+                  "value": "<string>",
+                  "description": "subject identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject_relation",
+                  "value": "<string>",
+                  "description": "optional subject relation name"
+                },
+                {
+                  "disabled": false,
+                  "key": "with_objects",
+                  "value": "<boolean>",
+                  "description": "materialize relation objects"
+                },
+                {
+                  "disabled": false,
+                  "key": "with_empty_subject_relation",
+                  "value": "<boolean>",
+                  "description": "only return relations that do not have a subject relation."
+                },
+                {
+                  "disabled": false,
+                  "key": "page.size",
+                  "value": "<integer>",
+                  "description": "requested page size, valid value between 1-100 rows (default 100)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page.token",
+                  "value": "<string>",
+                  "description": "pagination start token, default \"\""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "9aef71a3-1e6b-4de5-9402-07ec0ca7edd6",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "with_objects",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "with_empty_subject_relation",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"objects\": {\n    \"key_0\": {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"2003-10-28T02:19:12.620Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"1968-10-12T03:16:05.013Z\"\n    },\n    \"key_1\": {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"2013-01-17T13:31:07.430Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"1975-12-08T08:01:32.051Z\"\n    },\n    \"key_2\": {\n      \"type\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"1953-12-24T10:28:49.071Z\",\n      \"display_name\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"updated_at\": \"1993-01-23T16:49:45.266Z\"\n    }\n  },\n  \"page\": {\n    \"next_token\": \"string\"\n  },\n  \"results\": [\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"created_at\": \"1952-01-29T03:14:34.247Z\",\n      \"etag\": \"<string>\",\n      \"subject_relation\": \"<string>\",\n      \"updated_at\": \"1976-07-20T11:28:01.173Z\"\n    },\n    {\n      \"object_type\": \"<string>\",\n      \"object_id\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_type\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"created_at\": \"1998-04-11T08:08:12.335Z\",\n      \"etag\": \"<string>\",\n      \"subject_relation\": \"<string>\",\n      \"updated_at\": \"1977-11-15T14:58:33.349Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f59443e-3d5f-4ace-ac54-b16fc7eab0b1",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "directory",
+                    "relations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "object_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "object_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subject_relation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "with_objects",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "with_empty_subject_relation",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page.token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 663,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "67788a0c-d704-4cc0-a6ae-ffb27c90f4f5",
+    "name": "aserto//v2/.proto Authorizer directory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

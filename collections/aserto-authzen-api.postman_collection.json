@@ -1,0 +1,1910 @@
+{
+  "item": [
+    {
+      "id": "e5d31d0e-909b-42e4-aa73-941a2654d383",
+      "name": "authzen",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c1940105-a451-406c-a255-ad06b99daf3c",
+          "name": "Access Evaluation API",
+          "request": {
+            "name": "Access Evaluation API",
+            "description": {
+              "content": "TBD",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "evaluation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7e11e58-6cb0-4ff2-8cfc-286f37809d3e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"context\": {},\n  \"decision\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc648269-dc49-4b53-a15f-ed7a265cc229",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37bcc76f-bbc8-4cc3-bee7-2ab683b23f86",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3277f5e8-c0d0-4878-8e57-87941f230c05",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04822c0a-5f9e-4ef2-9002-50900df85772",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f8fb6f3-e55d-4655-99d4-caa1a019571f",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4398,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    {\n      \"@type\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc9ed0cb-2e89-46df-82b8-c83b7c756276",
+          "name": "Access Evaluations API",
+          "request": {
+            "name": "Access Evaluations API",
+            "description": {
+              "content": "TBD.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "evaluations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5232b4d-c58c-4b91-b554-a3cf10356e6a",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"decisions\": [\n    {\n      \"context\": {},\n      \"decision\": false\n    },\n    {\n      \"context\": {},\n      \"decision\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc465dc9-8c84-4dc6-88f3-6b4572816f58",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e2b350d-894a-4a33-bb25-4ec870a04a25",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb33de7b-3308-45c5-8661-6e666d5ac19c",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "28e69fa1-2af5-410b-830c-0203d1d0e62f",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "881cc9d6-fabc-4661-a91b-856f44f94177",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "evaluations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"evaluations\": [\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"action\": {\n        \"name\": \"<string>\",\n        \"properties\": \"<object>\"\n      },\n      \"context\": \"<object>\",\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      },\n      \"subject\": {\n        \"id\": \"<string>\",\n        \"properties\": \"<object>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"options\": \"<object>\",\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2813,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27372c42-6686-4bed-b39e-ac7b62bad3ad",
+          "name": "Action Search API",
+          "request": {
+            "name": "Action Search API",
+            "description": {
+              "content": "TBD.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "search",
+                "action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd3d442b-b8f3-4788-ad28-3db6a64aa1b3",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"results\": [\n    {\n      \"name\": \"<string>\",\n      \"properties\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"properties\": \"<object>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "39504b2c-638b-49c7-8f21-0c215305cfec",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42c13c44-4508-4736-9950-c4e924e2767d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1a7ba64-cb6f-478a-b562-b103dd2663ad",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dee5e64e-738a-4331-85c5-0b8076693518",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f1da3267-2063-4a72-8a7a-f76a07bf657e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2813,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3ebfcca-8cd3-4ab4-ad43-aebe7fd03ad9",
+          "name": "Resource Search API",
+          "request": {
+            "name": "Resource Search API",
+            "description": {
+              "content": "TBD.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "search",
+                "resource"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc544de6-09b0-41d7-a99e-729850e75281",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13d58e38-bf95-4d3b-841d-6657100e1f08",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11003f5f-ab84-4013-a465-f5bfe9b8a3fd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fa5896e-8fab-4ab2-968c-81794ecfb5c3",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97689f8d-083a-48e0-a3e7-ac2bcb2fe0c8",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f6a022f-7f67-4ae2-ad98-2a4bb104f0da",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2813,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d84857f0-d774-4308-8f32-7461d36fcae9",
+          "name": "Subject Search API",
+          "request": {
+            "name": "Subject Search API",
+            "description": {
+              "content": "TBD.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "v1",
+                "search",
+                "subject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4a539b0-10bc-4c42-ba55-4f277c381fd2",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"properties\": \"<object>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03c1227a-0273-4ba2-8e47-d3eebd0b2e2a",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "159548b0-803d-4d3e-a33d-9a973e1a8359",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "596b22e4-0e74-4cae-9bf1-9ab1bbf1fb41",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1169e4e-3507-48a1-a88e-57ec661f8c09",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "196f2373-e16a-4905-9a7f-23a3a8371525",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "v1",
+                    "search",
+                    "subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": {\n    \"name\": \"<string>\",\n    \"properties\": \"<object>\"\n  },\n  \"context\": \"<object>\",\n  \"page\": {\n    \"next_token\": \"<string>\"\n  },\n  \"resource\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  },\n  \"subject\": {\n    \"id\": \"<string>\",\n    \"properties\": \"<object>\",\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2813,\n  \"details\": [\n    {\n      \"@type\": \"string\",\n      \"key_0\": {}\n    },\n    {\n      \"@type\": \"string\",\n      \"key_0\": {},\n      \"key_1\": {}\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3120e137-0250-4a9c-a71d-b9ea68d25289",
+    "name": "aserto//v2/.proto Authorizer authzen API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
