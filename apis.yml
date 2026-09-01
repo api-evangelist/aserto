@@ -103,7 +103,7 @@ apis:
   humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
   baseURL: https://authorizer.prod.aserto.com
   tags:
-  - authzen
+  - AuthZEN
   tags_raw:
   - authzen
   properties:
@@ -118,7 +118,8 @@ apis:
   description: The decision_logs API from Aserto — 6 operation(s) for decision_logs.
   humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
   baseURL: https://authorizer.prod.aserto.com
-  tags: []
+  tags:
+  - Decision Logs
   tags_raw:
   - decision_logs
   properties:
