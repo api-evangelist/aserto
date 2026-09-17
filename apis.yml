@@ -98,22 +98,6 @@ apis:
     url: https://docs.aserto.com/docs/authorizer-guide/overview
   - type: Documentation
     url: https://docs.aserto.com/docs/api-reference
-- aid: aserto:aserto-authzen-api
-  name: Aserto authzen API
-  description: The authzen API from Aserto — 5 operation(s) for authzen.
-  humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
-  baseURL: https://authorizer.prod.aserto.com
-  tags:
-  - AuthZEN
-  tags_raw:
-  - authzen
-  properties:
-  - type: OpenAPI
-    url: openapi/aserto-authzen-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aserto.com/docs/authorizer-guide/overview
-  - type: Documentation
-    url: https://docs.aserto.com/docs/api-reference
 - aid: aserto:aserto-decision-logs-api
   name: Aserto decision_logs API
   description: The decision_logs API from Aserto — 6 operation(s) for decision_logs.
@@ -170,6 +154,20 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/aserto-policy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aserto.com/docs/authorizer-guide/overview
+  - type: Documentation
+    url: https://docs.aserto.com/docs/api-reference
+- aid: aserto:aserto-auth-zen-api
+  name: Aserto Auth ZEN API
+  description: The Auth ZEN API from Aserto — 5 operation(s) for auth zen.
+  humanURL: https://docs.aserto.com/docs/api-reference
+  baseURL: https://console.aserto.com
+  tags:
+  - Auth ZEN
+  properties:
+  - type: OpenAPI
+    url: openapi/aserto-auth-zen-api-openapi.yml
   - type: Documentation
     url: https://docs.aserto.com/docs/authorizer-guide/overview
   - type: Documentation
