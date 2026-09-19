@@ -164,6 +164,8 @@ apis:
   humanURL: https://docs.aserto.com/docs/api-reference
   baseURL: https://console.aserto.com
   tags:
+  - AuthZEN
+  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
