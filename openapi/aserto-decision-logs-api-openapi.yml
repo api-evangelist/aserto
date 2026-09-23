@@ -1,9 +1,9 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: aserto//v2/.proto Authorizer decision_logs API
+  title: aserto/decision-logs/v2/.proto Decision Logs API
   version: version not set
 security:
-- AuthorizerAPIKey: []
+- DecisionLogsAPIKey: []
   TenantID: []
 tags:
 - name: decision_logs
@@ -221,66 +221,6 @@ paths:
       - decision_logs
 components:
   schemas:
-    v2ListDecisionLogsResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v2PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v2DecisionLogItem'
-          type: array
-      type: object
-    v2PolicyInstance:
-      properties:
-        instance_label:
-          type: string
-        name:
-          type: string
-      type: object
-    v2DecisionLog:
-      properties:
-        url:
-          type: string
-      type: object
-    v2ListUsersResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v2PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v2UserItem'
-          type: array
-      type: object
-    v2UserItem:
-      properties:
-        id:
-          type: string
-        updated_at:
-          format: date-time
-          type: string
-      type: object
-    protobufAny:
-      properties:
-        type_url:
-          type: string
-        value:
-          format: byte
-          type: string
-      type: object
-    v2GetDecisionLogResponse:
-      properties:
-        log:
-          $ref: '#/components/schemas/v2DecisionLog'
-      type: object
-    v2ExecuteQueryResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v2PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v2Result'
-          type: array
-      type: object
     v2DecisionPolicy:
       properties:
         context:
@@ -297,10 +237,89 @@ components:
           type: string
       title: information about a policy used in a decision
       type: object
-    v2GetUserResponse:
+    v2UserItem:
       properties:
-        user:
-          $ref: '#/components/schemas/v2User'
+        id:
+          type: string
+        updated_at:
+          format: date-time
+          type: string
+      type: object
+    v2User:
+      properties:
+        url:
+          type: string
+      type: object
+    v2DecisionLogItem:
+      properties:
+        name:
+          type: string
+      type: object
+    v2PolicyInstance:
+      properties:
+        instance_label:
+          type: string
+        name:
+          type: string
+      type: object
+    v2ExecuteQueryResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v2PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v2Result'
+          type: array
+      type: object
+    v2PaginationResponse:
+      properties:
+        next_token:
+          type: string
+        result_size:
+          format: int32
+          type: integer
+        total_size:
+          format: int32
+          type: integer
+      type: object
+    v2ListUsersResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v2PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v2UserItem'
+          type: array
+      type: object
+    v2PolicyContext:
+      properties:
+        decisions:
+          items:
+            type: string
+          type: array
+        path:
+          type: string
+      type: object
+    v2IdentityContext:
+      properties:
+        identity:
+          type: string
+        type:
+          $ref: '#/components/schemas/v2IdentityType'
+      type: object
+    v2DecisionLog:
+      properties:
+        url:
+          type: string
+      type: object
+    v2ListDecisionLogsResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v2PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v2DecisionLogItem'
+          type: array
       type: object
     v2Decision:
       properties:
@@ -329,25 +348,6 @@ components:
           $ref: '#/components/schemas/v2DecisionUser'
       title: represents a decision that an authorizer performed in the past
       type: object
-    v2User:
-      properties:
-        url:
-          type: string
-      type: object
-    v2GetDecisionsResponse:
-      properties:
-        decision:
-          $ref: '#/components/schemas/v2Decision'
-      type: object
-    v2IdentityType:
-      default: IDENTITY_TYPE_UNKNOWN
-      description: "Identity types, describes the payload type of the identity field inside the IdentityContext message.\n\n - IDENTITY_TYPE_UNKNOWN: Unknown, value not set, requests will fail with identity type not set error.\n - IDENTITY_TYPE_NONE: None, no explicit identity context set, equals anonymous.\n - IDENTITY_TYPE_SUB: Sub(ject), identity field contains an oAUTH subject.\n - IDENTITY_TYPE_JWT: JWT, identity field contains a JWT access token."
-      enum:
-      - IDENTITY_TYPE_UNKNOWN
-      - IDENTITY_TYPE_NONE
-      - IDENTITY_TYPE_SUB
-      - IDENTITY_TYPE_JWT
-      type: string
     v2DecisionUser:
       properties:
         context:
@@ -358,28 +358,10 @@ components:
           type: string
       title: information about a user on behalf of whom a decision was made
       type: object
-    v2PaginationResponse:
+    v2GetUserResponse:
       properties:
-        next_token:
-          type: string
-        result_size:
-          format: int32
-          type: integer
-        total_size:
-          format: int32
-          type: integer
-      type: object
-    rpcStatus:
-      properties:
-        code:
-          format: int32
-          type: integer
-        details:
-          items:
-            $ref: '#/components/schemas/protobufAny'
-          type: array
-        message:
-          type: string
+        user:
+          $ref: '#/components/schemas/v2User'
       type: object
     v2Result:
       properties:
@@ -396,6 +378,25 @@ components:
         token:
           type: string
       type: object
+    v2GetDecisionLogResponse:
+      properties:
+        log:
+          $ref: '#/components/schemas/v2DecisionLog'
+      type: object
+    v2IdentityType:
+      default: IDENTITY_TYPE_UNKNOWN
+      description: "Identity types, describes the payload type of the identity field inside the IdentityContext message.\n\n - IDENTITY_TYPE_UNKNOWN: Unknown, value not set, requests will fail with identity type not set error.\n - IDENTITY_TYPE_NONE: None, no explicit identity context set, equals anonymous.\n - IDENTITY_TYPE_SUB: Sub(ject), identity field contains an oAUTH subject.\n - IDENTITY_TYPE_JWT: JWT, identity field contains a JWT access token."
+      enum:
+      - IDENTITY_TYPE_UNKNOWN
+      - IDENTITY_TYPE_NONE
+      - IDENTITY_TYPE_SUB
+      - IDENTITY_TYPE_JWT
+      type: string
+    v2GetDecisionsResponse:
+      properties:
+        decision:
+          $ref: '#/components/schemas/v2Decision'
+      type: object
     v2ExecuteQueryRequest:
       properties:
         instance_label:
@@ -408,29 +409,28 @@ components:
           format: int64
           type: string
       type: object
-    v2DecisionLogItem:
+    protobufAny:
       properties:
-        name:
+        type_url:
+          type: string
+        value:
+          format: byte
           type: string
       type: object
-    v2PolicyContext:
+    rpcStatus:
       properties:
-        decisions:
+        code:
+          format: int32
+          type: integer
+        details:
           items:
-            type: string
+            $ref: '#/components/schemas/protobufAny'
           type: array
-        path:
+        message:
           type: string
-      type: object
-    v2IdentityContext:
-      properties:
-        identity:
-          type: string
-        type:
-          $ref: '#/components/schemas/v2IdentityType'
       type: object
   securitySchemes:
-    AuthorizerAPIKey:
+    DecisionLogsAPIKey:
       in: header
       name: authorization
       type: apiKey

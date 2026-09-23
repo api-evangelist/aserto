@@ -1,24 +1,42 @@
 {
   "provider": "aserto",
   "sources": [
-    "aserto-authorizer-api-openapi.yml",
-    "aserto-authzen-api-openapi.yml",
-    "aserto-decision-logs-api-openapi.yml",
-    "aserto-directory-api-openapi.yml",
-    "aserto-info-api-openapi.yml",
-    "aserto-policy-api-openapi.yml"
+    "_original/aserto-authorizer-openapi.yml",
+    "_original/aserto-decision-logs-openapi.yml",
+    "_original/aserto-directory-openapi.yml"
   ],
   "outputs": [
     "aserto-authorizer-api-openapi.yml",
-    "aserto-authzen-api-openapi.yml",
-    "aserto-decision-logs-api-openapi.yml",
-    "aserto-directory-api-openapi.yml",
     "aserto-info-api-openapi.yml",
-    "aserto-policy-api-openapi.yml"
+    "aserto-policy-api-openapi.yml",
+    "aserto-decision-logs-api-openapi.yml",
+    "aserto-authzen-api-openapi.yml",
+    "aserto-directory-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (3 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "aserto-authorizer-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "aserto-authorizer-openapi.yml: declared missing tag: Info",
+    "aserto-authorizer-openapi.yml: declared missing tag: Policy",
+    "aserto-decision-logs-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "aserto-decision-logs-openapi.yml: declared missing tag: decision_logs",
+    "aserto-directory-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "aserto-directory-openapi.yml: declared missing tag: authzen",
+    "aserto-directory-openapi.yml: declared missing tag: directory",
+    "superseded outputs removed: aserto-auth-zen-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 8 total)"
+  ],
+  "skipped": [
+    "aserto-auth-zen-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aserto-authorizer-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aserto-decision-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aserto-directory-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aserto-info-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aserto-policy-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

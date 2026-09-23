@@ -1,12 +1,19 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: aserto//v2/.proto Authorizer directory API
-  version: version not set
+  contact:
+    email: support@aserto.com
+    name: Aserto, Inc.
+    url: https://github.com/aserto-dev/pb-directory
+  license:
+    name: Apache v2
+    url: https://github.com/aserto-dev/pb-directory/blob/main/LICENSE
+  title: OpenID AuthZen Access Service Directory API
+  version: 1.0.0-3
 security:
-- AuthorizerAPIKey: []
+- DirectoryAPIKey: []
   TenantID: []
 tags:
-- name: directory
+- name: Directory
 paths:
   /api/v3/directory/assertion:
     post:
@@ -36,7 +43,7 @@ paths:
         TenantID: []
       summary: Set assertion
       tags:
-      - directory
+      - Directory
   /api/v3/directory/assertion/{id}:
     delete:
       description: Delete assertion.
@@ -67,7 +74,7 @@ paths:
         TenantID: []
       summary: Delete assertion
       tags:
-      - directory
+      - Directory
     get:
       description: Returns single assertion instance.
       operationId: directory.assertion.v3.assertion.get
@@ -97,7 +104,7 @@ paths:
         TenantID: []
       summary: Get assertion instance
       tags:
-      - directory
+      - Directory
   /api/v3/directory/assertions:
     get:
       description: Returns list of assertion instances.
@@ -134,7 +141,7 @@ paths:
         TenantID: []
       summary: List assertions
       tags:
-      - directory
+      - Directory
   /api/v3/directory/check:
     post:
       description: Returns check outcome.
@@ -163,7 +170,7 @@ paths:
         TenantID: []
       summary: Check
       tags:
-      - directory
+      - Directory
   /api/v3/directory/check/permission:
     post:
       deprecated: true
@@ -193,7 +200,7 @@ paths:
         TenantID: []
       summary: Check permission
       tags:
-      - directory
+      - Directory
   /api/v3/directory/check/relation:
     post:
       deprecated: true
@@ -223,7 +230,7 @@ paths:
         TenantID: []
       summary: Check relation
       tags:
-      - directory
+      - Directory
   /api/v3/directory/checks:
     post:
       description: Returns multiple check outcomes.
@@ -252,7 +259,7 @@ paths:
         TenantID: []
       summary: Checks
       tags:
-      - directory
+      - Directory
   /api/v3/directory/graph/{object_type}/{relation}/{subject_type}:
     get:
       description: Returns object graph from anchor to subject or object.
@@ -324,7 +331,7 @@ paths:
         TenantID: []
       summary: Get graph
       tags:
-      - directory
+      - Directory
   /api/v3/directory/manifest:
     delete:
       description: Delete manifest.
@@ -354,7 +361,7 @@ paths:
         TenantID: []
       summary: Delete manifest
       tags:
-      - directory
+      - Directory
   /api/v3/directory/object:
     post:
       description: Set object.
@@ -383,7 +390,7 @@ paths:
         TenantID: []
       summary: Set object
       tags:
-      - directory
+      - Directory
   /api/v3/directory/object/{object_type}/{object_id}:
     delete:
       description: Delete object.
@@ -425,7 +432,7 @@ paths:
         TenantID: []
       summary: Delete object
       tags:
-      - directory
+      - Directory
     get:
       description: Returns single object instance, optionally with relations.
       operationId: directory.reader.v3.object.get
@@ -484,7 +491,7 @@ paths:
         TenantID: []
       summary: Get object instance
       tags:
-      - directory
+      - Directory
   /api/v3/directory/objects:
     get:
       description: Returns list of object instances.
@@ -527,7 +534,7 @@ paths:
         TenantID: []
       summary: List object instances
       tags:
-      - directory
+      - Directory
   /api/v3/directory/relation:
     delete:
       description: Delete relation.
@@ -587,7 +594,7 @@ paths:
         TenantID: []
       summary: Delete relation
       tags:
-      - directory
+      - Directory
     get:
       description: Returns single relation instance, optionally with objects.
       operationId: directory.reader.v3.relation.get
@@ -657,7 +664,7 @@ paths:
         TenantID: []
       summary: Get relation instance
       tags:
-      - directory
+      - Directory
     post:
       description: Set relation.
       operationId: directory.writer.v3.relation.set
@@ -685,7 +692,7 @@ paths:
         TenantID: []
       summary: Set relation
       tags:
-      - directory
+      - Directory
   /api/v3/directory/relations:
     get:
       description: Returns list of relation instances.
@@ -770,67 +777,103 @@ paths:
         TenantID: []
       summary: List relations instances
       tags:
-      - directory
+      - Directory
 components:
   schemas:
-    v3SetAssertionRequest:
-      properties:
-        assert:
-          $ref: '#/components/schemas/v3Assert'
-      required:
-      - assert
-      type: object
-    v3Object:
-      properties:
-        created_at:
-          format: date-time
-          readOnly: true
-          title: created at timestamp (UTC)
-          type: string
-        display_name:
-          title: display name object
-          type: string
-        etag:
-          title: object instance etag
-          type: string
-        id:
-          title: external object identifier (cs-string, no spaces or tabs)
-          type: string
-        properties:
-          title: property bag
-          type: object
-        type:
-          title: object type name
-          type: string
-        updated_at:
-          format: date-time
-          readOnly: true
-          title: last updated timestamp (UTC)
-          type: string
-      required:
-      - type
-      - id
-      type: object
-    v3DeleteObjectResponse:
-      properties:
-        result:
-          properties: {}
-          title: empty result
-          type: object
-      type: object
-    v3CheckResponse:
+    v3CheckRelationResponse:
       properties:
         check:
           title: check result
           type: boolean
-        context:
-          title: context
-          type: object
         trace:
           items:
             type: string
           title: trace information
           type: array
+      type: object
+    v3Assert:
+      properties:
+        check:
+          $ref: '#/components/schemas/v3CheckRequest'
+        check_permission:
+          $ref: '#/components/schemas/v3CheckPermissionRequest'
+        check_relation:
+          $ref: '#/components/schemas/v3CheckRelationRequest'
+        description:
+          title: description
+          type: string
+        expected:
+          title: expected outcome of assertion
+          type: boolean
+        id:
+          format: int64
+          title: assertion identifier
+          type: integer
+      required:
+      - expected
+      type: object
+    v3ChecksRequest:
+      properties:
+        checks:
+          items:
+            $ref: '#/components/schemas/v3CheckRequest'
+          type: array
+        default:
+          $ref: '#/components/schemas/v3CheckRequest'
+      title: EXPERIMENTAL
+      type: object
+    v3GetGraphResponse:
+      properties:
+        explanation:
+          title: explanation of results
+          type: object
+        results:
+          items:
+            $ref: '#/components/schemas/v3ObjectIdentifier'
+          title: matching object identifiers
+          type: array
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3GetRelationResponse:
+      properties:
+        objects:
+          additionalProperties:
+            $ref: '#/components/schemas/v3Object'
+          title: map of materialized relation objects
+          type: object
+        result:
+          $ref: '#/components/schemas/v3Relation'
+      type: object
+    v3GetObjectsResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Object'
+          title: array of object instances
+          type: array
+      type: object
+    v3GetAssertionResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Assert'
+      type: object
+    v3GetObjectResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        relations:
+          items:
+            $ref: '#/components/schemas/v3Relation'
+          title: object relations
+          type: array
+        result:
+          $ref: '#/components/schemas/v3Object'
       type: object
     v3CheckRequest:
       properties:
@@ -859,17 +902,16 @@ components:
       - subject_type
       - subject_id
       type: object
-    v3GetAssertionResponse:
+    v3CheckPermissionResponse:
       properties:
-        result:
-          $ref: '#/components/schemas/v3Assert'
-      type: object
-    v3SetRelationRequest:
-      properties:
-        relation:
-          $ref: '#/components/schemas/v3Relation'
-      required:
-      - relation
+        check:
+          title: check result
+          type: boolean
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
       type: object
     v3Relation:
       properties:
@@ -911,140 +953,36 @@ components:
       - subject_type
       - subject_id
       type: object
-    v3DeleteAssertionResponse:
+    v3Object:
       properties:
-        result:
-          properties: {}
-          title: empty result
-          type: object
-      type: object
-    v3Assert:
-      properties:
-        check:
-          $ref: '#/components/schemas/v3CheckRequest'
-        check_permission:
-          $ref: '#/components/schemas/v3CheckPermissionRequest'
-        check_relation:
-          $ref: '#/components/schemas/v3CheckRelationRequest'
-        description:
-          title: description
+        created_at:
+          format: date-time
+          readOnly: true
+          title: created at timestamp (UTC)
           type: string
-        expected:
-          title: expected outcome of assertion
-          type: boolean
+        display_name:
+          title: display name object
+          type: string
+        etag:
+          title: object instance etag
+          type: string
         id:
-          format: int64
-          title: assertion identifier
-          type: integer
-      required:
-      - expected
-      type: object
-    protobufAny:
-      additionalProperties: {}
-      properties:
-        '@type':
+          title: external object identifier (cs-string, no spaces or tabs)
           type: string
-      type: object
-    v3ChecksRequest:
-      properties:
-        checks:
-          items:
-            $ref: '#/components/schemas/v3CheckRequest'
-          type: array
-        default:
-          $ref: '#/components/schemas/v3CheckRequest'
-      title: EXPERIMENTAL
-      type: object
-    v3ListAssertionsResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v3PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v3Assert'
-          type: array
-      type: object
-    v3CheckRelationResponse:
-      properties:
-        check:
-          title: check result
-          type: boolean
-        trace:
-          items:
-            type: string
-          title: trace information
-          type: array
-      type: object
-    v3CheckPermissionResponse:
-      properties:
-        check:
-          title: check result
-          type: boolean
-        trace:
-          items:
-            type: string
-          title: trace information
-          type: array
-      type: object
-    v3DeleteManifestResponse:
-      properties:
-        result:
-          properties: {}
-          title: empty result
+        properties:
+          title: property bag
           type: object
-      type: object
-    v3SetRelationResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/v3Relation'
-      type: object
-    v3SetObjectResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/v3Object'
-      type: object
-    v3GetObjectResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v3PaginationResponse'
-        relations:
-          items:
-            $ref: '#/components/schemas/v3Relation'
-          title: object relations
-          type: array
-        result:
-          $ref: '#/components/schemas/v3Object'
-      type: object
-    v3GetGraphResponse:
-      properties:
-        explanation:
-          title: explanation of results
-          type: object
-        results:
-          items:
-            $ref: '#/components/schemas/v3ObjectIdentifier'
-          title: matching object identifiers
-          type: array
-        trace:
-          items:
-            type: string
-          title: trace information
-          type: array
-      type: object
-    v3ChecksResponse:
-      properties:
-        checks:
-          items:
-            $ref: '#/components/schemas/v3CheckResponse'
-          type: array
-      title: EXPERIMENTAL
-      type: object
-    v3SetObjectRequest:
-      properties:
-        object:
-          $ref: '#/components/schemas/v3Object'
+        type:
+          title: object type name
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: last updated timestamp (UTC)
+          type: string
       required:
-      - object
+      - type
+      - id
       type: object
     v3GetRelationsResponse:
       properties:
@@ -1061,35 +999,12 @@ components:
           title: array of relation instances
           type: array
       type: object
-    rpcStatus:
+    v3DeleteManifestResponse:
       properties:
-        code:
-          format: int32
-          type: integer
-        details:
-          items:
-            $ref: '#/components/schemas/protobufAny'
-          type: array
-        message:
-          type: string
-      type: object
-    v3PaginationResponse:
-      properties:
-        next_token:
-          readOnly: true
-          title: next page token, when empty there are no more pages to fetch
-          type: string
-      title: Pagination response
-      type: object
-    v3GetRelationResponse:
-      properties:
-        objects:
-          additionalProperties:
-            $ref: '#/components/schemas/v3Object'
-          title: map of materialized relation objects
-          type: object
         result:
-          $ref: '#/components/schemas/v3Relation'
+          properties: {}
+          title: empty result
+          type: object
       type: object
     v3CheckRelationRequest:
       properties:
@@ -1118,40 +1033,43 @@ components:
       - subject_type
       - subject_id
       type: object
-    v3SetAssertionResponse:
+    v3ListAssertionsResponse:
       properties:
-        result:
-          $ref: '#/components/schemas/v3Assert'
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Assert'
+          type: array
       type: object
-    v3ObjectIdentifier:
+    v3CheckResponse:
       properties:
-        object_id:
-          title: object identifier (cs-string)
-          type: string
-        object_type:
-          title: object type (lc-string)
-          type: string
-      required:
-      - object_type
-      - object_id
-      title: Object identifier
+        check:
+          title: check result
+          type: boolean
+        context:
+          title: context
+          type: object
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
       type: object
-    v3DeleteRelationResponse:
+    v3DeleteAssertionResponse:
       properties:
         result:
           properties: {}
           title: empty result
           type: object
       type: object
-    v3GetObjectsResponse:
+    v3PaginationResponse:
       properties:
-        page:
-          $ref: '#/components/schemas/v3PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v3Object'
-          title: array of object instances
-          type: array
+        next_token:
+          readOnly: true
+          title: next page token, when empty there are no more pages to fetch
+          type: string
+      title: Pagination response
       type: object
     v3CheckPermissionRequest:
       properties:
@@ -1180,8 +1098,97 @@ components:
       - subject_type
       - subject_id
       type: object
+    v3SetRelationResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Relation'
+      type: object
+    v3SetAssertionResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Assert'
+      type: object
+    v3DeleteRelationResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3SetRelationRequest:
+      properties:
+        relation:
+          $ref: '#/components/schemas/v3Relation'
+      required:
+      - relation
+      type: object
+    v3SetAssertionRequest:
+      properties:
+        assert:
+          $ref: '#/components/schemas/v3Assert'
+      required:
+      - assert
+      type: object
+    v3ObjectIdentifier:
+      properties:
+        object_id:
+          title: object identifier (cs-string)
+          type: string
+        object_type:
+          title: object type (lc-string)
+          type: string
+      required:
+      - object_type
+      - object_id
+      title: Object identifier
+      type: object
+    v3SetObjectResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Object'
+      type: object
+    v3ChecksResponse:
+      properties:
+        checks:
+          items:
+            $ref: '#/components/schemas/v3CheckResponse'
+          type: array
+      title: EXPERIMENTAL
+      type: object
+    v3SetObjectRequest:
+      properties:
+        object:
+          $ref: '#/components/schemas/v3Object'
+      required:
+      - object
+      type: object
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    v3DeleteObjectResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
   securitySchemes:
-    AuthorizerAPIKey:
+    DirectoryAPIKey:
       in: header
       name: authorization
       type: apiKey
@@ -1189,3 +1196,6 @@ components:
       in: header
       name: aserto-tenant-id
       type: apiKey
+externalDocs:
+  description: Authorization API 1.0 - draft 03
+  url: https://openid.github.io/authzen/

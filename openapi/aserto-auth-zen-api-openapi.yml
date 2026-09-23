@@ -1,12 +1,19 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: aserto//v2/.proto Authorizer authzen API
-  version: version not set
+  contact:
+    email: support@aserto.com
+    name: Aserto, Inc.
+    url: https://github.com/aserto-dev/pb-directory
+  license:
+    name: Apache v2
+    url: https://github.com/aserto-dev/pb-directory/blob/main/LICENSE
+  title: OpenID Access Service Authzen API
+  version: 1.0.0-3
 security:
-- AuthorizerAPIKey: []
+- DirectoryAPIKey: []
   TenantID: []
 tags:
-- name: authzen
+- name: Auth ZEN
 paths:
   /access/v1/evaluation:
     post:
@@ -53,7 +60,7 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
       summary: Access Evaluation API
       tags:
-      - authzen
+      - Auth ZEN
   /access/v1/evaluations:
     post:
       description: TBD.
@@ -99,7 +106,7 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
       summary: Access Evaluations API
       tags:
-      - authzen
+      - Auth ZEN
   /access/v1/search/action:
     post:
       description: TBD.
@@ -145,7 +152,7 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
       summary: Action Search API
       tags:
-      - authzen
+      - Auth ZEN
   /access/v1/search/resource:
     post:
       description: TBD.
@@ -191,7 +198,7 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
       summary: Resource Search API
       tags:
-      - authzen
+      - Auth ZEN
   /access/v1/search/subject:
     post:
       description: TBD.
@@ -237,9 +244,41 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
       summary: Subject Search API
       tags:
-      - authzen
+      - Auth ZEN
 components:
   schemas:
+    v1SubjectSearchResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v1Page'
+        results:
+          items:
+            $ref: '#/components/schemas/v1Subject'
+          type: array
+      title: https://openid.github.io/authzen/#name-the-subject-search-api-resp
+      type: object
+    v1SubjectSearchRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        page:
+          $ref: '#/components/schemas/v1Page'
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-subject-search-api-requ
+      type: object
+    v1EvaluationsResponse:
+      properties:
+        decisions:
+          items:
+            $ref: '#/components/schemas/v1EvaluationResponse'
+          type: array
+      title: https://openid.github.io/authzen/#name-access-evaluations-api-resp
+      type: object
     v1ResourceSearchResponse:
       properties:
         page:
@@ -249,6 +288,18 @@ components:
             $ref: '#/components/schemas/v1Resource'
           type: array
       title: https://openid.github.io/authzen/#name-the-resource-search-api-res
+      type: object
+    v1EvaluationRequest:
+      properties:
+        action:
+          $ref: '#/components/schemas/v1Action'
+        context:
+          type: object
+        resource:
+          $ref: '#/components/schemas/v1Resource'
+        subject:
+          $ref: '#/components/schemas/v1Subject'
+      title: https://openid.github.io/authzen/#name-the-access-evaluation-api-r
       type: object
     v1ResourceSearchRequest:
       properties:
@@ -264,6 +315,11 @@ components:
           $ref: '#/components/schemas/v1Subject'
       title: https://openid.github.io/authzen/#name-the-resource-search-api-req
       type: object
+    v1Page:
+      properties:
+        next_token:
+          type: string
+      type: object
     v1Action:
       properties:
         name:
@@ -272,19 +328,69 @@ components:
           type: object
       title: https://openid.github.io/authzen/#name-action
       type: object
-    v1SubjectSearchRequest:
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    v1Subject:
+      properties:
+        id:
+          type: string
+        properties:
+          type: object
+        type:
+          type: string
+      title: https://openid.github.io/authzen/#name-subject
+      type: object
+    v1Resource:
+      properties:
+        id:
+          type: string
+        properties:
+          type: object
+        type:
+          type: string
+      title: https://openid.github.io/authzen/#name-resource
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
+    v1EvaluationsRequest:
       properties:
         action:
           $ref: '#/components/schemas/v1Action'
         context:
           type: object
-        page:
-          $ref: '#/components/schemas/v1Page'
+        evaluations:
+          items:
+            $ref: '#/components/schemas/v1EvaluationRequest'
+          type: array
+        options:
+          type: object
         resource:
           $ref: '#/components/schemas/v1Resource'
         subject:
           $ref: '#/components/schemas/v1Subject'
-      title: https://openid.github.io/authzen/#name-the-subject-search-api-requ
+      title: https://openid.github.io/authzen/#name-the-access-evaluations-api-
+      type: object
+    v1EvaluationResponse:
+      properties:
+        context:
+          type: object
+        decision:
+          type: boolean
+      title: https://openid.github.io/authzen/#name-the-access-evaluation-api-re
       type: object
     v1ActionSearchRequest:
       properties:
@@ -310,107 +416,8 @@ components:
           type: array
       title: https://openid.github.io/authzen/#name-the-action-search-api-respo
       type: object
-    protobufAny:
-      additionalProperties: {}
-      properties:
-        '@type':
-          type: string
-      type: object
-    v1Page:
-      properties:
-        next_token:
-          type: string
-      type: object
-    v1EvaluationResponse:
-      properties:
-        context:
-          type: object
-        decision:
-          type: boolean
-      title: https://openid.github.io/authzen/#name-the-access-evaluation-api-re
-      type: object
-    v1Resource:
-      properties:
-        id:
-          type: string
-        properties:
-          type: object
-        type:
-          type: string
-      title: https://openid.github.io/authzen/#name-resource
-      type: object
-    v1EvaluationsRequest:
-      properties:
-        action:
-          $ref: '#/components/schemas/v1Action'
-        context:
-          type: object
-        evaluations:
-          items:
-            $ref: '#/components/schemas/v1EvaluationRequest'
-          type: array
-        options:
-          type: object
-        resource:
-          $ref: '#/components/schemas/v1Resource'
-        subject:
-          $ref: '#/components/schemas/v1Subject'
-      title: https://openid.github.io/authzen/#name-the-access-evaluations-api-
-      type: object
-    v1Subject:
-      properties:
-        id:
-          type: string
-        properties:
-          type: object
-        type:
-          type: string
-      title: https://openid.github.io/authzen/#name-subject
-      type: object
-    v1EvaluationRequest:
-      properties:
-        action:
-          $ref: '#/components/schemas/v1Action'
-        context:
-          type: object
-        resource:
-          $ref: '#/components/schemas/v1Resource'
-        subject:
-          $ref: '#/components/schemas/v1Subject'
-      title: https://openid.github.io/authzen/#name-the-access-evaluation-api-r
-      type: object
-    rpcStatus:
-      properties:
-        code:
-          format: int32
-          type: integer
-        details:
-          items:
-            $ref: '#/components/schemas/protobufAny'
-          type: array
-        message:
-          type: string
-      type: object
-    v1EvaluationsResponse:
-      properties:
-        decisions:
-          items:
-            $ref: '#/components/schemas/v1EvaluationResponse'
-          type: array
-      title: https://openid.github.io/authzen/#name-access-evaluations-api-resp
-      type: object
-    v1SubjectSearchResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v1Page'
-        results:
-          items:
-            $ref: '#/components/schemas/v1Subject'
-          type: array
-      title: https://openid.github.io/authzen/#name-the-subject-search-api-resp
-      type: object
   securitySchemes:
-    AuthorizerAPIKey:
+    DirectoryAPIKey:
       in: header
       name: authorization
       type: apiKey
@@ -418,3 +425,6 @@ components:
       in: header
       name: aserto-tenant-id
       type: apiKey
+externalDocs:
+  description: Authorization API 1.0 - draft 03
+  url: https://openid.github.io/authzen/

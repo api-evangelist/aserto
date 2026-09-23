@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: aserto//v2/.proto Authorizer API
   version: version not set
@@ -136,19 +136,98 @@ components:
       - IDENTITY_TYPE_JWT
       - IDENTITY_TYPE_MANUAL
       type: string
-    authorizerv2Decision:
+    v2QueryResponse:
       properties:
-        decision:
-          type: string
-        is:
-          type: boolean
+        metrics:
+          type: object
+        response:
+          type: object
+        trace:
+          items:
+            type: object
+          type: array
+        trace_summary:
+          items:
+            type: string
+          type: array
       type: object
-    apiIdentityContext:
+    v2PathSeparator:
+      default: PATH_SEPARATOR_UNKNOWN
+      enum:
+      - PATH_SEPARATOR_UNKNOWN
+      - PATH_SEPARATOR_DOT
+      - PATH_SEPARATOR_SLASH
+      title: "- PATH_SEPARATOR_UNKNOWN: Value not set.\n - PATH_SEPARATOR_DOT: Dot \".\" path separator\n - PATH_SEPARATOR_SLASH: Slash \"/\" path separtor"
+      type: string
+    v2QueryRequest:
       properties:
-        identity:
+        identity_context:
+          $ref: '#/components/schemas/apiIdentityContext'
+        input:
           type: string
-        type:
-          $ref: '#/components/schemas/apiIdentityType'
+        options:
+          $ref: '#/components/schemas/v2QueryOptions'
+        policy_context:
+          $ref: '#/components/schemas/apiPolicyContext'
+        policy_instance:
+          $ref: '#/components/schemas/apiPolicyInstance'
+        query:
+          type: string
+        resource_context:
+          type: object
+      type: object
+    v2IsRequest:
+      properties:
+        identity_context:
+          $ref: '#/components/schemas/apiIdentityContext'
+        policy_context:
+          $ref: '#/components/schemas/apiPolicyContext'
+        policy_instance:
+          $ref: '#/components/schemas/apiPolicyInstance'
+        resource_context:
+          type: object
+      type: object
+    v2DecisionTreeRequest:
+      properties:
+        identity_context:
+          $ref: '#/components/schemas/apiIdentityContext'
+        options:
+          $ref: '#/components/schemas/v2DecisionTreeOptions'
+        policy_context:
+          $ref: '#/components/schemas/apiPolicyContext'
+        policy_instance:
+          $ref: '#/components/schemas/apiPolicyInstance'
+        resource_context:
+          type: object
+      type: object
+    apiPolicyInstance:
+      properties:
+        instance_label:
+          title: label identifying the instance of the policy
+          type: string
+        name:
+          title: policy name
+          type: string
+      type: object
+    v2DecisionTreeOptions:
+      properties:
+        path_separator:
+          $ref: '#/components/schemas/v2PathSeparator'
+      type: object
+    v2CompileResponse:
+      properties:
+        metrics:
+          type: object
+        result:
+          type: object
+        trace:
+          items:
+            type: object
+          type: array
+        trace_summary:
+          items:
+            type: string
+          type: array
       type: object
     v2TraceLevel:
       default: TRACE_LEVEL_UNKNOWN
@@ -160,6 +239,34 @@ components:
       - TRACE_LEVEL_FAILS
       title: "- TRACE_LEVEL_UNKNOWN: Value not set.\n - TRACE_LEVEL_OFF: ExplainOffV1   ExplainModeV1 = \"off\"\n - TRACE_LEVEL_FULL: ExplainFullV1  ExplainModeV1 = \"full\"\n - TRACE_LEVEL_NOTES: ExplainNotesV1 ExplainModeV1 = \"notes\"\n - TRACE_LEVEL_FAILS: ExplainFailsV1 ExplainModeV1 = \"fails\""
       type: string
+    v2QueryOptions:
+      properties:
+        instrument:
+          title: default false
+          type: boolean
+        metrics:
+          title: default false
+          type: boolean
+        trace:
+          $ref: '#/components/schemas/v2TraceLevel'
+        trace_summary:
+          title: default false
+          type: boolean
+      type: object
+    v2DecisionTreeResponse:
+      properties:
+        path:
+          type: object
+        path_root:
+          type: string
+      type: object
+    v2IsResponse:
+      properties:
+        decisions:
+          items:
+            $ref: '#/components/schemas/authorizerv2Decision'
+          type: array
+      type: object
     v2CompileRequest:
       properties:
         disable_inlining:
@@ -185,102 +292,25 @@ components:
             type: string
           type: array
       type: object
-    v2IsRequest:
+    authorizerv2Decision:
       properties:
-        identity_context:
-          $ref: '#/components/schemas/apiIdentityContext'
-        policy_context:
-          $ref: '#/components/schemas/apiPolicyContext'
-        policy_instance:
-          $ref: '#/components/schemas/apiPolicyInstance'
-        resource_context:
-          type: object
+        decision:
+          type: string
+        is:
+          type: boolean
       type: object
-    v2PathSeparator:
-      default: PATH_SEPARATOR_UNKNOWN
-      enum:
-      - PATH_SEPARATOR_UNKNOWN
-      - PATH_SEPARATOR_DOT
-      - PATH_SEPARATOR_SLASH
-      title: "- PATH_SEPARATOR_UNKNOWN: Value not set.\n - PATH_SEPARATOR_DOT: Dot \".\" path separator\n - PATH_SEPARATOR_SLASH: Slash \"/\" path separtor"
-      type: string
     protobufAny:
       additionalProperties: {}
       properties:
         '@type':
           type: string
       type: object
-    apiPolicyContext:
+    apiIdentityContext:
       properties:
-        decisions:
-          items:
-            type: string
-          title: list (1..N) of policy decisions (aka rules)
-          type: array
-        path:
-          title: policy path aka package name
+        identity:
           type: string
-      type: object
-    v2DecisionTreeOptions:
-      properties:
-        path_separator:
-          $ref: '#/components/schemas/v2PathSeparator'
-      type: object
-    apiPolicyInstance:
-      properties:
-        instance_label:
-          title: label identifying the instance of the policy
-          type: string
-        name:
-          title: policy name
-          type: string
-      type: object
-    v2QueryResponse:
-      properties:
-        metrics:
-          type: object
-        response:
-          type: object
-        trace:
-          items:
-            type: object
-          type: array
-        trace_summary:
-          items:
-            type: string
-          type: array
-      type: object
-    v2QueryRequest:
-      properties:
-        identity_context:
-          $ref: '#/components/schemas/apiIdentityContext'
-        input:
-          type: string
-        options:
-          $ref: '#/components/schemas/v2QueryOptions'
-        policy_context:
-          $ref: '#/components/schemas/apiPolicyContext'
-        policy_instance:
-          $ref: '#/components/schemas/apiPolicyInstance'
-        query:
-          type: string
-        resource_context:
-          type: object
-      type: object
-    v2CompileResponse:
-      properties:
-        metrics:
-          type: object
-        result:
-          type: object
-        trace:
-          items:
-            type: object
-          type: array
-        trace_summary:
-          items:
-            type: string
-          type: array
+        type:
+          $ref: '#/components/schemas/apiIdentityType'
       type: object
     rpcStatus:
       properties:
@@ -294,46 +324,16 @@ components:
         message:
           type: string
       type: object
-    v2QueryOptions:
-      properties:
-        instrument:
-          title: default false
-          type: boolean
-        metrics:
-          title: default false
-          type: boolean
-        trace:
-          $ref: '#/components/schemas/v2TraceLevel'
-        trace_summary:
-          title: default false
-          type: boolean
-      type: object
-    v2IsResponse:
+    apiPolicyContext:
       properties:
         decisions:
           items:
-            $ref: '#/components/schemas/authorizerv2Decision'
+            type: string
+          title: list (1..N) of policy decisions (aka rules)
           type: array
-      type: object
-    v2DecisionTreeResponse:
-      properties:
         path:
-          type: object
-        path_root:
+          title: policy path aka package name
           type: string
-      type: object
-    v2DecisionTreeRequest:
-      properties:
-        identity_context:
-          $ref: '#/components/schemas/apiIdentityContext'
-        options:
-          $ref: '#/components/schemas/v2DecisionTreeOptions'
-        policy_context:
-          $ref: '#/components/schemas/apiPolicyContext'
-        policy_instance:
-          $ref: '#/components/schemas/apiPolicyInstance'
-        resource_context:
-          type: object
       type: object
   securitySchemes:
     AuthorizerAPIKey:
