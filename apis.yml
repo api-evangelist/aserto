@@ -99,7 +99,7 @@ apis:
   - type: Documentation
     url: https://docs.aserto.com/docs/api-reference
 - aid: aserto:aserto-decision-logs-api
-  name: Aserto decision_logs API
+  name: Aserto Decision Logs API
   description: The decision_logs API from Aserto — 6 operation(s) for decision_logs.
   humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
   baseURL: https://authorizer.prod.aserto.com
@@ -115,7 +115,7 @@ apis:
   - type: Documentation
     url: https://docs.aserto.com/docs/api-reference
 - aid: aserto:aserto-directory-api
-  name: Aserto directory API
+  name: Aserto Directory API
   description: The directory API from Aserto — 14 operation(s) for directory.
   humanURL: https://docs.aserto.com/docs/authorizer-guide/overview
   baseURL: https://authorizer.prod.aserto.com
@@ -164,8 +164,6 @@ apis:
   humanURL: https://docs.aserto.com/docs/api-reference
   baseURL: https://console.aserto.com
   tags:
-  - AuthZEN
-  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
@@ -206,3 +204,4 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-status: defunct

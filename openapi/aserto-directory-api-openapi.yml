@@ -780,128 +780,6 @@ paths:
       - Directory
 components:
   schemas:
-    v3CheckRelationResponse:
-      properties:
-        check:
-          title: check result
-          type: boolean
-        trace:
-          items:
-            type: string
-          title: trace information
-          type: array
-      type: object
-    v3Assert:
-      properties:
-        check:
-          $ref: '#/components/schemas/v3CheckRequest'
-        check_permission:
-          $ref: '#/components/schemas/v3CheckPermissionRequest'
-        check_relation:
-          $ref: '#/components/schemas/v3CheckRelationRequest'
-        description:
-          title: description
-          type: string
-        expected:
-          title: expected outcome of assertion
-          type: boolean
-        id:
-          format: int64
-          title: assertion identifier
-          type: integer
-      required:
-      - expected
-      type: object
-    v3ChecksRequest:
-      properties:
-        checks:
-          items:
-            $ref: '#/components/schemas/v3CheckRequest'
-          type: array
-        default:
-          $ref: '#/components/schemas/v3CheckRequest'
-      title: EXPERIMENTAL
-      type: object
-    v3GetGraphResponse:
-      properties:
-        explanation:
-          title: explanation of results
-          type: object
-        results:
-          items:
-            $ref: '#/components/schemas/v3ObjectIdentifier'
-          title: matching object identifiers
-          type: array
-        trace:
-          items:
-            type: string
-          title: trace information
-          type: array
-      type: object
-    v3GetRelationResponse:
-      properties:
-        objects:
-          additionalProperties:
-            $ref: '#/components/schemas/v3Object'
-          title: map of materialized relation objects
-          type: object
-        result:
-          $ref: '#/components/schemas/v3Relation'
-      type: object
-    v3GetObjectsResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v3PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v3Object'
-          title: array of object instances
-          type: array
-      type: object
-    v3GetAssertionResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/v3Assert'
-      type: object
-    v3GetObjectResponse:
-      properties:
-        page:
-          $ref: '#/components/schemas/v3PaginationResponse'
-        relations:
-          items:
-            $ref: '#/components/schemas/v3Relation'
-          title: object relations
-          type: array
-        result:
-          $ref: '#/components/schemas/v3Object'
-      type: object
-    v3CheckRequest:
-      properties:
-        object_id:
-          title: object identifier
-          type: string
-        object_type:
-          title: object type
-          type: string
-        relation:
-          title: relation name
-          type: string
-        subject_id:
-          title: subject identifier
-          type: string
-        subject_type:
-          title: subject type
-          type: string
-        trace:
-          title: collect trace information
-          type: boolean
-      required:
-      - object_type
-      - object_id
-      - relation
-      - subject_type
-      - subject_id
-      type: object
     v3CheckPermissionResponse:
       properties:
         check:
@@ -953,6 +831,146 @@ components:
       - subject_type
       - subject_id
       type: object
+    v3Assert:
+      properties:
+        check:
+          $ref: '#/components/schemas/v3CheckRequest'
+        check_permission:
+          $ref: '#/components/schemas/v3CheckPermissionRequest'
+        check_relation:
+          $ref: '#/components/schemas/v3CheckRelationRequest'
+        description:
+          title: description
+          type: string
+        expected:
+          title: expected outcome of assertion
+          type: boolean
+        id:
+          format: int64
+          title: assertion identifier
+          type: integer
+      required:
+      - expected
+      type: object
+    v3ObjectIdentifier:
+      properties:
+        object_id:
+          title: object identifier (cs-string)
+          type: string
+        object_type:
+          title: object type (lc-string)
+          type: string
+      required:
+      - object_type
+      - object_id
+      title: Object identifier
+      type: object
+    v3SetObjectRequest:
+      properties:
+        object:
+          $ref: '#/components/schemas/v3Object'
+      required:
+      - object
+      type: object
+    v3DeleteManifestResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3ChecksResponse:
+      properties:
+        checks:
+          items:
+            $ref: '#/components/schemas/v3CheckResponse'
+          type: array
+      title: EXPERIMENTAL
+      type: object
+    v3GetAssertionResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Assert'
+      type: object
+    v3CheckResponse:
+      properties:
+        check:
+          title: check result
+          type: boolean
+        context:
+          title: context
+          type: object
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3ChecksRequest:
+      properties:
+        checks:
+          items:
+            $ref: '#/components/schemas/v3CheckRequest'
+          type: array
+        default:
+          $ref: '#/components/schemas/v3CheckRequest'
+      title: EXPERIMENTAL
+      type: object
+    v3CheckRelationResponse:
+      properties:
+        check:
+          title: check result
+          type: boolean
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
+      type: object
+    v3CheckRelationRequest:
+      properties:
+        object_id:
+          title: object identifier
+          type: string
+        object_type:
+          title: object type
+          type: string
+        relation:
+          title: relation name
+          type: string
+        subject_id:
+          title: subject identifier
+          type: string
+        subject_type:
+          title: subject type
+          type: string
+        trace:
+          title: collect trace information
+          type: boolean
+      required:
+      - object_type
+      - object_id
+      - relation
+      - subject_type
+      - subject_id
+      type: object
+    v3SetAssertionRequest:
+      properties:
+        assert:
+          $ref: '#/components/schemas/v3Assert'
+      required:
+      - assert
+      type: object
+    v3GetRelationResponse:
+      properties:
+        objects:
+          additionalProperties:
+            $ref: '#/components/schemas/v3Object'
+          title: map of materialized relation objects
+          type: object
+        result:
+          $ref: '#/components/schemas/v3Relation'
+      type: object
     v3Object:
       properties:
         created_at:
@@ -984,29 +1002,15 @@ components:
       - type
       - id
       type: object
-    v3GetRelationsResponse:
+    v3PaginationResponse:
       properties:
-        objects:
-          additionalProperties:
-            $ref: '#/components/schemas/v3Object'
-          title: map of materialized relation objects
-          type: object
-        page:
-          $ref: '#/components/schemas/v3PaginationResponse'
-        results:
-          items:
-            $ref: '#/components/schemas/v3Relation'
-          title: array of relation instances
-          type: array
+        next_token:
+          readOnly: true
+          title: next page token, when empty there are no more pages to fetch
+          type: string
+      title: Pagination response
       type: object
-    v3DeleteManifestResponse:
-      properties:
-        result:
-          properties: {}
-          title: empty result
-          type: object
-      type: object
-    v3CheckRelationRequest:
+    v3CheckRequest:
       properties:
         object_id:
           title: object identifier
@@ -1033,43 +1037,42 @@ components:
       - subject_type
       - subject_id
       type: object
-    v3ListAssertionsResponse:
+    v3GetRelationsResponse:
+      properties:
+        objects:
+          additionalProperties:
+            $ref: '#/components/schemas/v3Object'
+          title: map of materialized relation objects
+          type: object
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Relation'
+          title: array of relation instances
+          type: array
+      type: object
+    v3GetObjectsResponse:
       properties:
         page:
           $ref: '#/components/schemas/v3PaginationResponse'
         results:
           items:
-            $ref: '#/components/schemas/v3Assert'
+            $ref: '#/components/schemas/v3Object'
+          title: array of object instances
           type: array
       type: object
-    v3CheckResponse:
-      properties:
-        check:
-          title: check result
-          type: boolean
-        context:
-          title: context
-          type: object
-        trace:
-          items:
-            type: string
-          title: trace information
-          type: array
-      type: object
-    v3DeleteAssertionResponse:
+    v3DeleteRelationResponse:
       properties:
         result:
           properties: {}
           title: empty result
           type: object
       type: object
-    v3PaginationResponse:
+    v3SetRelationResponse:
       properties:
-        next_token:
-          readOnly: true
-          title: next page token, when empty there are no more pages to fetch
-          type: string
-      title: Pagination response
+        result:
+          $ref: '#/components/schemas/v3Relation'
       type: object
     v3CheckPermissionRequest:
       properties:
@@ -1098,17 +1101,7 @@ components:
       - subject_type
       - subject_id
       type: object
-    v3SetRelationResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/v3Relation'
-      type: object
-    v3SetAssertionResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/v3Assert'
-      type: object
-    v3DeleteRelationResponse:
+    v3DeleteObjectResponse:
       properties:
         result:
           properties: {}
@@ -1122,58 +1115,21 @@ components:
       required:
       - relation
       type: object
-    v3SetAssertionRequest:
+    v3GetGraphResponse:
       properties:
-        assert:
-          $ref: '#/components/schemas/v3Assert'
-      required:
-      - assert
-      type: object
-    v3ObjectIdentifier:
-      properties:
-        object_id:
-          title: object identifier (cs-string)
-          type: string
-        object_type:
-          title: object type (lc-string)
-          type: string
-      required:
-      - object_type
-      - object_id
-      title: Object identifier
-      type: object
-    v3SetObjectResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/v3Object'
-      type: object
-    v3ChecksResponse:
-      properties:
-        checks:
-          items:
-            $ref: '#/components/schemas/v3CheckResponse'
-          type: array
-      title: EXPERIMENTAL
-      type: object
-    v3SetObjectRequest:
-      properties:
-        object:
-          $ref: '#/components/schemas/v3Object'
-      required:
-      - object
-      type: object
-    protobufAny:
-      additionalProperties: {}
-      properties:
-        '@type':
-          type: string
-      type: object
-    v3DeleteObjectResponse:
-      properties:
-        result:
-          properties: {}
-          title: empty result
+        explanation:
+          title: explanation of results
           type: object
+        results:
+          items:
+            $ref: '#/components/schemas/v3ObjectIdentifier'
+          title: matching object identifiers
+          type: array
+        trace:
+          items:
+            type: string
+          title: trace information
+          type: array
       type: object
     rpcStatus:
       properties:
@@ -1186,6 +1142,50 @@ components:
           type: array
         message:
           type: string
+      type: object
+    v3DeleteAssertionResponse:
+      properties:
+        result:
+          properties: {}
+          title: empty result
+          type: object
+      type: object
+    v3ListAssertionsResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        results:
+          items:
+            $ref: '#/components/schemas/v3Assert'
+          type: array
+      type: object
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
+    v3SetObjectResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Object'
+      type: object
+    v3GetObjectResponse:
+      properties:
+        page:
+          $ref: '#/components/schemas/v3PaginationResponse'
+        relations:
+          items:
+            $ref: '#/components/schemas/v3Relation'
+          title: object relations
+          type: array
+        result:
+          $ref: '#/components/schemas/v3Object'
+      type: object
+    v3SetAssertionResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/v3Assert'
       type: object
   securitySchemes:
     DirectoryAPIKey:

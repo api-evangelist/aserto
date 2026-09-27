@@ -98,6 +98,24 @@ paths:
       - Policy
 components:
   schemas:
+    v2GetPolicyResponse:
+      properties:
+        result:
+          $ref: '#/components/schemas/apiModule'
+      type: object
+    v2ListPoliciesResponse:
+      properties:
+        result:
+          items:
+            $ref: '#/components/schemas/apiModule'
+          type: array
+      type: object
+    protobufAny:
+      additionalProperties: {}
+      properties:
+        '@type':
+          type: string
+      type: object
     apiModule:
       properties:
         ast: {}
@@ -109,24 +127,6 @@ components:
           type: string
         raw:
           type: string
-      type: object
-    v2GetPolicyResponse:
-      properties:
-        result:
-          $ref: '#/components/schemas/apiModule'
-      type: object
-    protobufAny:
-      additionalProperties: {}
-      properties:
-        '@type':
-          type: string
-      type: object
-    v2ListPoliciesResponse:
-      properties:
-        result:
-          items:
-            $ref: '#/components/schemas/apiModule'
-          type: array
       type: object
     rpcStatus:
       properties:
