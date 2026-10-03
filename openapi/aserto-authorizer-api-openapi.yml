@@ -126,54 +126,6 @@ paths:
       - Authorizer
 components:
   schemas:
-    v2IsResponse:
-      properties:
-        decisions:
-          items:
-            $ref: '#/components/schemas/authorizerv2Decision'
-          type: array
-      type: object
-    v2QueryRequest:
-      properties:
-        identity_context:
-          $ref: '#/components/schemas/apiIdentityContext'
-        input:
-          type: string
-        options:
-          $ref: '#/components/schemas/v2QueryOptions'
-        policy_context:
-          $ref: '#/components/schemas/apiPolicyContext'
-        policy_instance:
-          $ref: '#/components/schemas/apiPolicyInstance'
-        query:
-          type: string
-        resource_context:
-          type: object
-      type: object
-    v2PathSeparator:
-      default: PATH_SEPARATOR_UNKNOWN
-      enum:
-      - PATH_SEPARATOR_UNKNOWN
-      - PATH_SEPARATOR_DOT
-      - PATH_SEPARATOR_SLASH
-      title: "- PATH_SEPARATOR_UNKNOWN: Value not set.\n - PATH_SEPARATOR_DOT: Dot \".\" path separator\n - PATH_SEPARATOR_SLASH: Slash \"/\" path separtor"
-      type: string
-    apiPolicyInstance:
-      properties:
-        instance_label:
-          title: label identifying the instance of the policy
-          type: string
-        name:
-          title: policy name
-          type: string
-      type: object
-    v2DecisionTreeResponse:
-      properties:
-        path:
-          type: object
-        path_root:
-          type: string
-      type: object
     v2QueryOptions:
       properties:
         instrument:
@@ -188,23 +140,12 @@ components:
           title: default false
           type: boolean
       type: object
-    apiIdentityContext:
+    protobufAny:
+      additionalProperties: {}
       properties:
-        identity:
+        '@type':
           type: string
-        type:
-          $ref: '#/components/schemas/apiIdentityType'
       type: object
-    v2TraceLevel:
-      default: TRACE_LEVEL_UNKNOWN
-      enum:
-      - TRACE_LEVEL_UNKNOWN
-      - TRACE_LEVEL_OFF
-      - TRACE_LEVEL_FULL
-      - TRACE_LEVEL_NOTES
-      - TRACE_LEVEL_FAILS
-      title: "- TRACE_LEVEL_UNKNOWN: Value not set.\n - TRACE_LEVEL_OFF: ExplainOffV1   ExplainModeV1 = \"off\"\n - TRACE_LEVEL_FULL: ExplainFullV1  ExplainModeV1 = \"full\"\n - TRACE_LEVEL_NOTES: ExplainNotesV1 ExplainModeV1 = \"notes\"\n - TRACE_LEVEL_FAILS: ExplainFailsV1 ExplainModeV1 = \"fails\""
-      type: string
     v2CompileRequest:
       properties:
         disable_inlining:
@@ -230,38 +171,67 @@ components:
             type: string
           type: array
       type: object
+    apiPolicyInstance:
+      properties:
+        instance_label:
+          title: label identifying the instance of the policy
+          type: string
+        name:
+          title: policy name
+          type: string
+      type: object
+    v2DecisionTreeResponse:
+      properties:
+        path:
+          type: object
+        path_root:
+          type: string
+      type: object
+    v2DecisionTreeRequest:
+      properties:
+        identity_context:
+          $ref: '#/components/schemas/apiIdentityContext'
+        options:
+          $ref: '#/components/schemas/v2DecisionTreeOptions'
+        policy_context:
+          $ref: '#/components/schemas/apiPolicyContext'
+        policy_instance:
+          $ref: '#/components/schemas/apiPolicyInstance'
+        resource_context:
+          type: object
+      type: object
+    v2QueryRequest:
+      properties:
+        identity_context:
+          $ref: '#/components/schemas/apiIdentityContext'
+        input:
+          type: string
+        options:
+          $ref: '#/components/schemas/v2QueryOptions'
+        policy_context:
+          $ref: '#/components/schemas/apiPolicyContext'
+        policy_instance:
+          $ref: '#/components/schemas/apiPolicyInstance'
+        query:
+          type: string
+        resource_context:
+          type: object
+      type: object
     v2DecisionTreeOptions:
       properties:
         path_separator:
           $ref: '#/components/schemas/v2PathSeparator'
       type: object
-    rpcStatus:
-      properties:
-        code:
-          format: int32
-          type: integer
-        details:
-          items:
-            $ref: '#/components/schemas/protobufAny'
-          type: array
-        message:
-          type: string
-      type: object
-    v2QueryResponse:
-      properties:
-        metrics:
-          type: object
-        response:
-          type: object
-        trace:
-          items:
-            type: object
-          type: array
-        trace_summary:
-          items:
-            type: string
-          type: array
-      type: object
+    apiIdentityType:
+      default: IDENTITY_TYPE_UNKNOWN
+      description: "Identity types, describes the payload type of the identity field inside the IdentityContext message.\n\n - IDENTITY_TYPE_UNKNOWN: Unknown, value not set, requests will fail with identity type not set error.\n - IDENTITY_TYPE_NONE: None, no explicit identity context set, equals anonymous.\n - IDENTITY_TYPE_SUB: Sub(ject), identity field contains an oAUTH subject.\n - IDENTITY_TYPE_JWT: JWT, identity field contains a JWT access token.\n - IDENTITY_TYPE_MANUAL: Manual, propagates thw identity field as-is, without validation, into the input object."
+      enum:
+      - IDENTITY_TYPE_UNKNOWN
+      - IDENTITY_TYPE_NONE
+      - IDENTITY_TYPE_SUB
+      - IDENTITY_TYPE_JWT
+      - IDENTITY_TYPE_MANUAL
+      type: string
     v2IsRequest:
       properties:
         identity_context:
@@ -272,6 +242,24 @@ components:
           $ref: '#/components/schemas/apiPolicyInstance'
         resource_context:
           type: object
+      type: object
+    authorizerv2Decision:
+      properties:
+        decision:
+          type: string
+        is:
+          type: boolean
+      type: object
+    apiPolicyContext:
+      properties:
+        decisions:
+          items:
+            type: string
+          title: list (1..N) of policy decisions (aka rules)
+          type: array
+        path:
+          title: policy path aka package name
+          type: string
       type: object
     v2CompileResponse:
       properties:
@@ -288,52 +276,64 @@ components:
             type: string
           type: array
       type: object
-    protobufAny:
-      additionalProperties: {}
-      properties:
-        '@type':
-          type: string
-      type: object
-    authorizerv2Decision:
-      properties:
-        decision:
-          type: string
-        is:
-          type: boolean
-      type: object
-    apiIdentityType:
-      default: IDENTITY_TYPE_UNKNOWN
-      description: "Identity types, describes the payload type of the identity field inside the IdentityContext message.\n\n - IDENTITY_TYPE_UNKNOWN: Unknown, value not set, requests will fail with identity type not set error.\n - IDENTITY_TYPE_NONE: None, no explicit identity context set, equals anonymous.\n - IDENTITY_TYPE_SUB: Sub(ject), identity field contains an oAUTH subject.\n - IDENTITY_TYPE_JWT: JWT, identity field contains a JWT access token.\n - IDENTITY_TYPE_MANUAL: Manual, propagates thw identity field as-is, without validation, into the input object."
+    v2PathSeparator:
+      default: PATH_SEPARATOR_UNKNOWN
       enum:
-      - IDENTITY_TYPE_UNKNOWN
-      - IDENTITY_TYPE_NONE
-      - IDENTITY_TYPE_SUB
-      - IDENTITY_TYPE_JWT
-      - IDENTITY_TYPE_MANUAL
+      - PATH_SEPARATOR_UNKNOWN
+      - PATH_SEPARATOR_DOT
+      - PATH_SEPARATOR_SLASH
+      title: "- PATH_SEPARATOR_UNKNOWN: Value not set.\n - PATH_SEPARATOR_DOT: Dot \".\" path separator\n - PATH_SEPARATOR_SLASH: Slash \"/\" path separtor"
       type: string
-    apiPolicyContext:
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
+          type: string
+      type: object
+    apiIdentityContext:
+      properties:
+        identity:
+          type: string
+        type:
+          $ref: '#/components/schemas/apiIdentityType'
+      type: object
+    v2TraceLevel:
+      default: TRACE_LEVEL_UNKNOWN
+      enum:
+      - TRACE_LEVEL_UNKNOWN
+      - TRACE_LEVEL_OFF
+      - TRACE_LEVEL_FULL
+      - TRACE_LEVEL_NOTES
+      - TRACE_LEVEL_FAILS
+      title: "- TRACE_LEVEL_UNKNOWN: Value not set.\n - TRACE_LEVEL_OFF: ExplainOffV1   ExplainModeV1 = \"off\"\n - TRACE_LEVEL_FULL: ExplainFullV1  ExplainModeV1 = \"full\"\n - TRACE_LEVEL_NOTES: ExplainNotesV1 ExplainModeV1 = \"notes\"\n - TRACE_LEVEL_FAILS: ExplainFailsV1 ExplainModeV1 = \"fails\""
+      type: string
+    v2IsResponse:
       properties:
         decisions:
           items:
-            type: string
-          title: list (1..N) of policy decisions (aka rules)
+            $ref: '#/components/schemas/authorizerv2Decision'
           type: array
-        path:
-          title: policy path aka package name
-          type: string
       type: object
-    v2DecisionTreeRequest:
+    v2QueryResponse:
       properties:
-        identity_context:
-          $ref: '#/components/schemas/apiIdentityContext'
-        options:
-          $ref: '#/components/schemas/v2DecisionTreeOptions'
-        policy_context:
-          $ref: '#/components/schemas/apiPolicyContext'
-        policy_instance:
-          $ref: '#/components/schemas/apiPolicyInstance'
-        resource_context:
+        metrics:
           type: object
+        response:
+          type: object
+        trace:
+          items:
+            type: object
+          type: array
+        trace_summary:
+          items:
+            type: string
+          type: array
       type: object
   securitySchemes:
     AuthorizerAPIKey:
