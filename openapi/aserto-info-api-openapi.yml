@@ -37,18 +37,6 @@ components:
         '@type':
           type: string
       type: object
-    rpcStatus:
-      properties:
-        code:
-          format: int32
-          type: integer
-        details:
-          items:
-            $ref: '#/components/schemas/protobufAny'
-          type: array
-        message:
-          type: string
-      type: object
     v2InfoResponse:
       properties:
         arch:
@@ -60,6 +48,18 @@ components:
         os:
           type: string
         version:
+          type: string
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
           type: string
       type: object
   securitySchemes:

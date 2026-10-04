@@ -104,29 +104,10 @@ components:
         '@type':
           type: string
       type: object
-    rpcStatus:
-      properties:
-        code:
-          format: int32
-          type: integer
-        details:
-          items:
-            $ref: '#/components/schemas/protobufAny'
-          type: array
-        message:
-          type: string
-      type: object
     v2GetPolicyResponse:
       properties:
         result:
           $ref: '#/components/schemas/apiModule'
-      type: object
-    v2ListPoliciesResponse:
-      properties:
-        result:
-          items:
-            $ref: '#/components/schemas/apiModule'
-          type: array
       type: object
     apiModule:
       properties:
@@ -138,6 +119,25 @@ components:
         package_root:
           type: string
         raw:
+          type: string
+      type: object
+    v2ListPoliciesResponse:
+      properties:
+        result:
+          items:
+            $ref: '#/components/schemas/apiModule'
+          type: array
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+        message:
           type: string
       type: object
   securitySchemes:
