@@ -52,6 +52,7 @@ tags:
   - OPA
   - Cloud-Native
   - Security
+  - Defunct
 apis:
 - name: Aserto Decision Logs API
   description: >
@@ -164,6 +165,8 @@ apis:
   humanURL: https://docs.aserto.com/docs/api-reference
   baseURL: https://console.aserto.com
   tags:
+  - AuthZEN
+  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
@@ -173,6 +176,9 @@ apis:
   - type: Documentation
     url: https://docs.aserto.com/docs/api-reference
 common:
+  - type: CapabilityMap
+    url: capabilities/aserto-capability-edges.yml
+    name: Aserto Business Capability Map
   - type: AgenticAccess
     url: agentic-access/aserto-agentic-access.yml
   - type: DomainSecurity
