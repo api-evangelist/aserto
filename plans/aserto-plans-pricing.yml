@@ -80,3 +80,29 @@ notes: >
   Aserto wound down its commercial SaaS control plane in May 2025. The
   open-source Topaz project (https://www.topaz.sh/) continues as the community
   successor, self-hosted at no licensing cost under Apache 2.0.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
