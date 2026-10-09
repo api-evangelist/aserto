@@ -1,179 +1,21 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/aserto-authorizer-openapi.yml, openapi/aserto-decision-logs-openapi.yml, openapi/aserto-directory-openapi.yml
+source: openapi/aserto-auth-zen-api-openapi.yml, openapi/aserto-authorizer-api-openapi.yml,
+  openapi/aserto-decision-logs-api-openapi.yml, openapi/aserto-directory-api-openapi.yml, openapi/aserto-info-api-openapi.yml,
+  openapi/aserto-policy-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 36
   by_action_class:
-    acting: 21
-    connected: 15
+    acting: 19
+    connected: 17
   by_consequence:
-    write: 21
-    read: 15
+    write: 19
+    read: 17
   human_in_the_loop_required: 0
 operations:
-- path: /api/v2/authz/compile
-  method: post
-  operationId: authorizer.compile
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v2/authz/decisiontree
-  method: post
-  operationId: authorizer.decision_tree
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v2/authz/is
-  method: post
-  operationId: authorizer.is
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v2/authz/query
-  method: post
-  operationId: authorizer.query
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v2/info
-  method: get
-  operationId: info.get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/policies
-  method: get
-  operationId: policies.list
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/policies/{id}
-  method: get
-  operationId: policies.get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/decision_logs/decision_logs
-  method: get
-  operationId: decision_logs.list_decision_logs
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/decision_logs/decision_logs/{name}
-  method: get
-  operationId: decision_logs.get_decision_log
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/decision_logs/decisions/policy/{policy_name}/{instance_label}
-  method: get
-  operationId: decision_logs.decisions
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/decision_logs/query
-  method: post
-  operationId: decision_logs.query
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/v2/decision_logs/users
-  method: get
-  operationId: decision_logs.list_users
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v2/decision_logs/users/{id}
-  method: get
-  operationId: decision_logs.get_user
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /access/v1/evaluation
   method: post
   operationId: openid.authzen.access.v1.evaluation.post
@@ -254,6 +96,124 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /api/v2/authz/compile
+  method: post
+  operationId: authorizer.compile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/v2/authz/decisiontree
+  method: post
+  operationId: authorizer.decision_tree
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/v2/authz/is
+  method: post
+  operationId: authorizer.is
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/v2/authz/query
+  method: post
+  operationId: authorizer.query
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/decision_logs/decision_logs
+  method: get
+  operationId: decision_logs.list_decision_logs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/decision_logs/decision_logs/{name}
+  method: get
+  operationId: decision_logs.get_decision_log
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/decision_logs/decisions/policy/{policy_name}/{instance_label}
+  method: get
+  operationId: decision_logs.decisions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/decision_logs/query
+  method: post
+  operationId: decision_logs.query
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/decision_logs/users
+  method: get
+  operationId: decision_logs.list_users
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/decision_logs/users/{id}
+  method: get
+  operationId: decision_logs.get_user
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/v3/directory/assertion
   method: post
   operationId: directory.assertion.v3.assertion.set
@@ -493,6 +453,36 @@ operations:
 - path: /api/v3/directory/relations
   method: get
   operationId: directory.reader.v3.relations.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/info
+  method: get
+  operationId: info.get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/policies
+  method: get
+  operationId: policies.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v2/policies/{id}
+  method: get
+  operationId: policies.get
   x-agentic-access:
     action-class: connected
     consequence: read
