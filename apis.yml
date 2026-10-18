@@ -48,6 +48,17 @@ tags:
   - ABAC
   - ReBAC
   - Policy
+  - OPA
+  - Cloud-Native
+  - Security
+  - Defunct
+tags_raw:
+  - Authorization
+  - Fine-Grained Access Control
+  - RBAC
+  - ABAC
+  - ReBAC
+  - Policy
   - Open Policy Agent
   - OPA
   - Cloud-Native
@@ -165,6 +176,8 @@ apis:
   humanURL: https://docs.aserto.com/docs/api-reference
   baseURL: https://console.aserto.com
   tags:
+  - AuthZEN
+  tags_raw:
   - Auth ZEN
   properties:
   - type: OpenAPI
