@@ -32,6 +32,42 @@ edges:
     detected: '2026-10-19'
   detected_by: sweep-cloud-native.py
   first_seen: '2026-10-15'
+- partner_name: Buf Schema Registry (BSR) public modules
+  partner: buf
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: third-party
+  evidence: https://buf.build/aserto-dev
+  category: Protocol Buffers schema publishing (BSR)
+  contract_reference:
+    register: Buf Schema Registry (BSR) public modules
+    spec_file: null
+    standard: Protocol Buffers
+    role: schema-publisher
+    registrations:
+    - registered_name: aserto-dev
+      register_status: public-modules
+      evidence_url: https://buf.build/aserto-dev
+      matched_domain: aserto.com
+      matched_by: domain
+      url_source: owner-url
+    modules:
+    - module: buf.build/aserto-dev/authorizer
+      state: active
+      lapsed: false
+      created: '2022-09-09'
+    - module: buf.build/aserto-dev/directory
+      state: active
+      lapsed: false
+      created: '2022-07-28'
+    signal_note: 'participation only: the owner publishes Protocol Buffers schema modules on the public BSR; a listing
+      is not conformance (no certified_products)'
+    detected_by: sweep-buf-schema-registry.py
+    detected: '2026-10-23'
+  detected_by: sweep-buf-schema-registry.py
+  first_seen: '2026-10-23'
 generated: '2026-10-15'
 method: searched
 source:
@@ -41,3 +77,6 @@ checked:
 - https://focus.finops.org/data-generators/
 - https://github.com/cncf/k8s-conformance
 - https://github.com/cncf/landscape
+- https://buf.build/buf.registry.module.v1.ModuleService/ListModules
+- https://buf.build/buf.registry.owner.v1.OwnerService/GetOwners
+- https://buf.build/explore
